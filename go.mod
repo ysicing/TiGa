@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/AlecAivazis/survey/v2 v2.3.6
-	github.com/Masterminds/semver/v3 v3.1.1
+	github.com/Masterminds/semver/v3 v3.2.1
 	github.com/cockroachdb/errors v1.9.1
 	github.com/ergoapi/util v0.3.20
 	github.com/inconshreveable/go-update v0.0.0-20160112193335-8152e7eb6ccf
