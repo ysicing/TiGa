@@ -1,0 +1,24 @@
+run:
+  timeout: 5m
+
+linters:
+  disable-all: true
+  enable:
+    - goheader
+    - goimports
+    - gofmt
+    - govet
+    - gosec
+    - gosimple
+    - misspell
+    - ineffassign
+    - typecheck
+    - unused
+    - whitespace
+    - gocyclo
+    - nakedret
+    - golint
+
+linters-settings:
+  goheader:
+    template-path: .go-header.txt

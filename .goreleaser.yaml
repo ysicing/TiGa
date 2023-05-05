@@ -1,0 +1,97 @@
+# This is an example .goreleaser.yml file with some sensible defaults.
+# Make sure to check the documentation at https://goreleaser.com
+project_name: tiga
+
+env:
+  - GO111MODULE=on
+
+before:
+  hooks:
+    - ./hack/scripts/gencompletions.sh
+    - ./hack/scripts/genmanpages.sh
+
+builds:
+  - ldflags:
+      - -w -s -X github.com/ysicing/tiga/common.Version={{.Summary}}
+      - -X github.com/ysicing/tiga/common.BuildDate={{.CommitDate}}
+      - -X github.com/ysicing/tiga/common.GitCommitHash={{.ShortCommit}}
+      - -X k8s.io/client-go/pkg/version.gitVersion={{.Summary}}
+      - -X k8s.io/client-go/pkg/version.gitCommit={{.FullCommit}}
+      - -X k8s.io/client-go/pkg/version.gitTreeState=dirty
+      - -X k8s.io/client-go/pkg/version.buildDate={{.CommitDate}}
+      - -X k8s.io/client-go/pkg/version.gitMajor=1
+      - -X k8s.io/client-go/pkg/version.gitMinor=24
+      - -X k8s.io/component-base/version.gitVersion={{.Summary}}
+      - -X k8s.io/component-base/version.gitCommit={{.FullCommit}}
+      - -X k8s.io/component-base/version.gitTreeState=dirty
+      - -X k8s.io/component-base/version.gitMajor=1
+      - -X k8s.io/component-base/version.gitMinor=24
+      - -X k8s.io/component-base/version.buildDate={{.CommitDate}}
+    flags:
+    - -trimpath
+    env:
+      - CGO_ENABLED=0
+    mod_timestamp: '{{ .CommitTimestamp }}'
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    main: tiga.go
+    binary: tiga
+
+archives:
+  - name_template: "{{.Binary}}_{{.Os}}_{{.Arch}}"
+    format: binary
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  name_template: "{{ .Version }}-snapshot-{{ .ShortCommit }}"
+
+nfpms:
+- vendor: TiGA
+  homepage: https://ysicing.me
+  maintainer: tiga
+  description: Simple Cli tool for sernior restart engineer written by golang
+  file_name_template: '{{.ProjectName}}_{{ .Tag }}_{{ .Os }}_{{ .Arch }}'
+  license: AGPL-3.0
+  priority: optional
+  version_metadata: git
+  formats:
+  - deb
+  - rpm
+  section: utils
+  contents:
+    - src: completions/tiga.bash
+      dst: /usr/share/bash-completion/completions/tiga
+    - src: completions/tiga.fish
+      dst: /usr/share/fish/completions/tiga.fish
+    - src: completions/tiga.zsh
+      dst: /usr/share/zsh/vendor-completions/_tiga
+    - src: manpages/tiga.1.gz
+      dst: /usr/share/man/man1/tiga.1.gz
+    - src: LICENSE
+      dst: /usr/share/doc/tiga/copyright
+    - dst: /root/.tiga
+      type: dir
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+      - '^feat(update):'
+      - '^feat(ci):'
+      - '^chore(ci):'
+      - '^chore(action):'
+      - '^Merge remote'
+
+release:
+  prerelease: auto
+  replace_existing_draft: true
+  mode: replace
