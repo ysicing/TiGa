@@ -92,8 +92,8 @@ jobs:
         branch: create-pull-request/changelog
         signoff: true
         delete-branch: true
-        assignees: ysicing
-        reviewers: ysicing
+        # assignees: ysicing
+        # reviewers: ysicing
         labels: |
           kind/doc
           kind/bot
