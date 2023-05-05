@@ -83,7 +83,7 @@ jobs:
     - run: ./hack/scripts/changelog.sh > CHANGELOG.md
     - name: "download checksums.txt"
       uses: actions/download-artifact@v3
-      with: { name: checksums.txt, path: dist/checksums.txt }
+      with: { name: checksums.txt, path: dist }
     - run: ./hack/scripts/gentap.sh
     - uses: peter-evans/create-pull-request@v5
       with:

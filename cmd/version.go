@@ -19,7 +19,7 @@ func newCmdVersion(f factory.Factory) *cobra.Command {
 		Short: "Show version",
 		Args:  cobra.NoArgs,
 		Run: func(cobraCmd *cobra.Command, args []string) {
-			version.ShowVersion(f.GetLog())
+			version.ShowVersion(f)
 		},
 	}
 }

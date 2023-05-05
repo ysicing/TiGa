@@ -19,6 +19,7 @@ import (
 	"github.com/ergoapi/util/color"
 	"github.com/ergoapi/util/github"
 	"github.com/ysicing/tiga/common"
+	"github.com/ysicing/tiga/pkg/factory"
 	logpkg "github.com/ysicing/tiga/pkg/log"
 )
 
@@ -92,7 +93,8 @@ func checkLatestVersionFromAPI() (string, error) {
 	return "", errors.New("not support now")
 }
 
-func ShowVersion(log logpkg.Logger) {
+func ShowVersion(f factory.Factory) {
+	log := f.GetLog()
 	if common.Version == "" {
 		common.Version = defaultVersion
 	}
@@ -123,7 +125,6 @@ func ShowVersion(log logpkg.Logger) {
 	log.StopWait()
 	if err != nil {
 		log.Debugf("get update message err: %v", err)
-		return
 	}
 	if lastVersion != "" && !strings.Contains(common.Version, lastVersion) {
 		nowVersion := gv.MustParse(strings.TrimPrefix(common.Version, "v"))
