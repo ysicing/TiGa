@@ -16,17 +16,6 @@ on:
       - '**.go'
       - 'go.mod'
       - '.github/**'
-  pull_request:
-    branches:
-      - "*"
-    paths:
-      - '**.go'
-      - 'go.mod'
-      - '.github/**'
-    # paths-ignore:
-    #   - 'docs/**'
-    #   - '*.md'
-    #   - '*.yml'
 
 jobs:
   build:
