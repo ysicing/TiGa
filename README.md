@@ -4,7 +4,6 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/ysicing/tiga?style=flat-square)
 ![GitHub](https://img.shields.io/badge/license-YPL%20%2B%20AGPL-blue)
 ![GitHub all releases](https://img.shields.io/github/downloads/ysicing/tiga/total?style=flat-square)
-![GitHub](https://img.shields.io/github/license/ysicing/tiga?style=flat-square)
 [![Go Report Card](https://goreportcard.com/badge/github.com/ysicing/tiga)](https://goreportcard.com/report/github.com/ysicing/tiga)
 [![Releases](https://img.shields.io/github/release-pre/ysicing/tiga.svg)](https://github.com/ysicing/ergo/releases)
 
