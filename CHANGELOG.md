@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.0.5 (2023-05-06)
+
+ * [ddbf4f7](https://github.com/ysicing/tiga/commit/ddbf4f77cb3d43eae388c7020b4bbb9f0b73c3a6) feat(action): change action step
+
+### Contributors
+
+ * ysicing
+
 ## v0.0.4 (2023-05-06)
 
  * [603d6d1](https://github.com/ysicing/tiga/commit/603d6d1a7debce163fdf15549da8413d8dcf86db) feat(action): fix action permissions
