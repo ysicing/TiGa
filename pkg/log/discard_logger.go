@@ -1,22 +1,21 @@
-// Copyright (c) 2023 ysicing(ysicing.me, ysicing@ysicing.cloud) All rights reserved.
-// Use of this source code is covered by the following dual licenses:
-// (1) Y PUBLIC LICENSE 1.0 (YPL 1.0)
-// (2) Affero General Public License 3.0 (AGPL 3.0)
-// License that can be found in the LICENSE file.
-
 package log
 
 import (
-	"fmt"
+	"io"
 	"os"
 
-	"github.com/sirupsen/logrus"
 	"github.com/ysicing/tiga/pkg/log/survey"
+	"github.com/sirupsen/logrus"
 )
 
+var _ Logger = &DiscardLogger{}
+
 // DiscardLogger just discards every log statement
-type DiscardLogger struct {
-	PanicOnExit bool
+type DiscardLogger struct{}
+
+// WithLevel implements logger interface
+func (d *DiscardLogger) WithLevel(level logrus.Level) Logger {
+	return &DiscardLogger{}
 }
 
 // Debug implements logger interface
@@ -45,30 +44,16 @@ func (d *DiscardLogger) Errorf(format string, args ...interface{}) {}
 
 // Fatal implements logger interface
 func (d *DiscardLogger) Fatal(args ...interface{}) {
-	if d.PanicOnExit {
-		d.Panic(args...)
-	}
-
 	os.Exit(1)
+}
+
+func (d *DiscardLogger) Children() []Logger {
+	return nil
 }
 
 // Fatalf implements logger interface
 func (d *DiscardLogger) Fatalf(format string, args ...interface{}) {
-	if d.PanicOnExit {
-		d.Panicf(format, args...)
-	}
-
 	os.Exit(1)
-}
-
-// Panic implements logger interface
-func (d *DiscardLogger) Panic(args ...interface{}) {
-	panic(fmt.Sprint(args...))
-}
-
-// Panicf implements logger interface
-func (d *DiscardLogger) Panicf(format string, args ...interface{}) {
-	panic(fmt.Sprintf(format, args...))
 }
 
 // Done implements logger interface
@@ -76,6 +61,12 @@ func (d *DiscardLogger) Done(args ...interface{}) {}
 
 // Donef implements logger interface
 func (d *DiscardLogger) Donef(format string, args ...interface{}) {}
+
+// Fail implements logger interface
+func (d *DiscardLogger) Fail(args ...interface{}) {}
+
+// Failf implements logger interface
+func (d *DiscardLogger) Failf(format string, args ...interface{}) {}
 
 // Print implements logger interface
 func (d *DiscardLogger) Print(level logrus.Level, args ...interface{}) {}
@@ -100,8 +91,12 @@ func (d *DiscardLogger) Write(message []byte) (int, error) {
 	return len(message), nil
 }
 
+func (d *DiscardLogger) Writer(level logrus.Level, raw bool) io.WriteCloser {
+	return &NopCloser{io.Discard}
+}
+
 // WriteString implements logger interface
-func (d *DiscardLogger) WriteString(message string) {}
+func (d *DiscardLogger) WriteString(level logrus.Level, message string) {}
 
 // Question asks a new question
 func (d *DiscardLogger) Question(params *survey.QuestionOptions) (string, error) {
@@ -114,4 +109,22 @@ type SurveyError struct{}
 // Error implements error interface
 func (s SurveyError) Error() string {
 	return "Asking questions is not possible in silenced mode"
+}
+
+func (d *DiscardLogger) WithSink(log Logger) Logger {
+	return d
+}
+
+func (d *DiscardLogger) AddSink(log Logger) {}
+
+func (d *DiscardLogger) WithPrefix(prefix string) Logger {
+	return d
+}
+
+func (d *DiscardLogger) WithPrefixColor(prefix, color string) Logger {
+	return d
+}
+
+func (d *DiscardLogger) ErrorStreamOnly() Logger {
+	return d
 }

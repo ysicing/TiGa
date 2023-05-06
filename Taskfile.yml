@@ -77,16 +77,16 @@ tasks:
     cmds:
       - go install github.com/mitchellh/gox@latest
       - gox -os={{.GOOS}} -arch={{.GOARCH}} -output="{{.BUILD_DIR}}/tiga_{{.GOOS}}_{{.GOARCH}}" -ldflags "{{.LDFLAGS}}"
-    status:
-      - test -f {{.BUILD_DIR}}/tiga_{{.GOOS}}_{{.GOARCH}}
+    # status:
+    #   - test -f {{.BUILD_DIR}}/tiga_{{.GOOS}}_{{.GOARCH}}
 
   local:
     desc: build local for test
     cmds:
       - go install github.com/mitchellh/gox@latest
       - gox -os={{.GOOS}} -arch={{.GOARCH}} -output="{{.BUILD_DIR}}/tiga_{{.GOOS}}_{{.GOARCH}}" -ldflags "{{.LDFLAGS}}"
-    status:
-      - test -f {{.BUILD_DIR}}/tiga_{{.GOOS}}_{{.GOARCH}}
+    # status:
+    #   - test -f {{.BUILD_DIR}}/tiga_{{.GOOS}}_{{.GOARCH}}
 
   clean:
     desc: Clean Up Build Cache Files

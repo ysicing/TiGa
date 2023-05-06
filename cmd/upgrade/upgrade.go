@@ -17,6 +17,7 @@ import (
 	"github.com/ysicing/tiga/pkg/factory"
 	"github.com/ysicing/tiga/pkg/log"
 	"github.com/ysicing/tiga/pkg/selfupdate"
+  gv "github.com/Masterminds/semver/v3"
 )
 
 type option struct {
@@ -31,31 +32,37 @@ func NewUpgradeTiga(f factory.Factory) {
 }
 
 func (up option) DoTiGA() {
-	up.log.StartWait("fetch latest version from remote...")
+	up.log.Info("fetch latest version from remote...")
 	lastVersion, lastType, err := version.PreCheckLatestVersion(up.log)
-	up.log.StopWait()
 	if err != nil {
 		up.log.Errorf("fetch latest version err, reason: %v", err)
 		return
 	}
 	if lastVersion == "" || lastVersion == common.Version || strings.Contains(common.Version, lastVersion) {
-		up.log.Infof("The current version %s is the latest version", common.Version)
+		up.log.Infof("current version %s is the latest version", common.Version)
 		return
 	}
+  if lastVersion != "" && !strings.Contains(common.Version, lastVersion) {
+		nowVersion := gv.MustParse(strings.TrimPrefix(common.Version, "v"))
+		needUpgrade := nowVersion.LessThan(gv.MustParse(lastVersion))
+		if !needUpgrade {
+      up.log.Infof("current version %s is the newest version", common.Version)
+      return
+    }
+  }
 	cmdPath, err := os.Executable()
 	if err != nil {
 		up.log.Errorf("tiga executable err:%v", err)
 		return
 	}
-	up.log.StartWait(fmt.Sprintf("downloading version %s...", lastVersion))
-	assetURL := fmt.Sprintf("https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/%s/tiga_%s_%s", lastVersion, runtime.GOOS, runtime.GOARCH)
+	up.log.Infof("downloading version %s...", lastVersion)
+	assetURL := fmt.Sprintf("https://github.com/ysicing/tiga/releases/download/%s/tiga_%s_%s", lastVersion, runtime.GOOS, runtime.GOARCH)
 
 	if lastType == "api" {
 		// TODO 暂不支持
 		panic("not support now from api")
 	}
 	err = selfupdate.UpdateTo(up.log, assetURL, cmdPath)
-	up.log.StopWait()
 	if err != nil {
 		up.log.Errorf("upgrade failed, reason: %v", err)
 		return

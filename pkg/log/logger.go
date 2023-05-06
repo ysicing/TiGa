@@ -1,22 +1,17 @@
-// Copyright (c) 2023 ysicing(ysicing.me, ysicing@ysicing.cloud) All rights reserved.
-// Use of this source code is covered by the following dual licenses:
-// (1) Y PUBLIC LICENSE 1.0 (YPL 1.0)
-// (2) Affero General Public License 3.0 (AGPL 3.0)
-// License that can be found in the LICENSE file.
-
 package log
 
 import (
-	"github.com/sirupsen/logrus"
 	"github.com/ysicing/tiga/pkg/log/survey"
+	log "github.com/loft-sh/utils/pkg/log"
+	"github.com/sirupsen/logrus"
+	"io"
 )
 
-// Level type
+// logFunctionType type
 type logFunctionType uint32
 
 const (
-	panicFn logFunctionType = iota
-	fatalFn
+	fatalFn logFunctionType = iota
 	errorFn
 	warnFn
 	infoFn
@@ -24,40 +19,18 @@ const (
 	doneFn
 )
 
-// Logger defines the common logging interface
+// Logger defines the devspace common logging interface
 type Logger interface {
-	Debug(args ...interface{})
-	Debugf(format string, args ...interface{})
-
-	Info(args ...interface{})
-	Infof(format string, args ...interface{})
-
-	Warn(args ...interface{})
-	Warnf(format string, args ...interface{})
-
-	Error(args ...interface{})
-	Errorf(format string, args ...interface{})
-
-	Fatal(args ...interface{})
-	Fatalf(format string, args ...interface{})
-
-	Panic(args ...interface{})
-	Panicf(format string, args ...interface{})
-
-	Done(args ...interface{})
-	Donef(format string, args ...interface{})
-
-	StartWait(message string)
-	StopWait()
-
-	Print(level logrus.Level, args ...interface{})
-	Printf(level logrus.Level, format string, args ...interface{})
-
-	Write(message []byte) (int, error)
-	WriteString(message string)
-
+	log.Logger
+	// WithLevel creates a new logger with the given level
+	WithLevel(level logrus.Level) Logger
 	Question(params *survey.QuestionOptions) (string, error)
+	ErrorStreamOnly() Logger
+	WithPrefix(prefix string) Logger
+	WithPrefixColor(prefix, color string) Logger
+	WithSink(sink Logger) Logger
+	AddSink(sink Logger)
 
-	SetLevel(level logrus.Level)
-	GetLevel() logrus.Level
+	Writer(level logrus.Level, raw bool) io.WriteCloser
+	WriteString(level logrus.Level, message string)
 }

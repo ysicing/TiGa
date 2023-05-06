@@ -1,0 +1,5 @@
+{"level":"info","msg":"check update...","time":"2023-05-06T20:56:17+08:00"}
+{"level":"info","msg":"check update...","time":"2023-05-06T20:56:23+08:00"}
+{"level":"info","msg":"fetch latest version from remote...","time":"2023-05-06T20:57:13+08:00"}
+{"level":"info","msg":"downloading version v0.0.5...","time":"2023-05-06T20:57:13+08:00"}
+{"level":"error","msg":"upgrade failed, reason: failed to download a release file from https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/v0.0.5/tiga_darwin_arm64: Get \"https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/v0.0.5/tiga_darwin_arm64\": net/http: TLS handshake timeout","time":"2023-05-06T20:57:23+08:00"}

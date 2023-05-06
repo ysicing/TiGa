@@ -120,9 +120,8 @@ func ShowVersion(f factory.Factory) {
 			Experimental: true,
 		},
 	}
-	log.StartWait("check update...")
+	log.Debug("check update...")
 	lastVersion, lastType, err := PreCheckLatestVersion(log)
-	log.StopWait()
 	if err != nil {
 		log.Debugf("get update message err: %v", err)
 	}

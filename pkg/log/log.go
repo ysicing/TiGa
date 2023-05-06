@@ -1,35 +1,25 @@
-// Copyright (c) 2023 ysicing(ysicing.me, ysicing@ysicing.cloud) All rights reserved.
-// Use of this source code is covered by the following dual licenses:
-// (1) Y PUBLIC LICENSE 1.0 (YPL 1.0)
-// (2) Affero General Public License 3.0 (AGPL 3.0)
-// License that can be found in the LICENSE file.
-
 package log
 
 import (
-	"fmt"
-	"strings"
+	"io"
+	"os"
+	"runtime"
 
-	"github.com/mgutz/ansi"
+	"github.com/olekukonko/tablewriter"
 	"github.com/sirupsen/logrus"
-	"github.com/ysicing/tiga/common"
 )
 
-var defaultLog Logger = &stdoutLogger{
-	level: logrus.InfoLevel,
-}
+var baseLog = NewStdoutLogger(os.Stdin, stdout, stderr, logrus.InfoLevel)
+var defaultLog = baseLog
+
+//var defaultLog Logger = NewStreamLoggerWithFormat(os.Stdin, logrus.InfoLevel, JsonFormat)
 
 // Discard is a logger implementation that just discards every log statement
 var Discard = &DiscardLogger{}
 
 // StartFileLogging logs the output of the global logger to the file default.log
 func StartFileLogging() {
-	defaultLogStdout, ok := defaultLog.(*stdoutLogger)
-	if ok {
-		filename := fmt.Sprintf("%s.default.log", common.Version)
-		defaultLogStdout.fileLogger = GetFileLogger(filename)
-	}
-
+	defaultLog.AddSink(GetFileLogger("default"))
 	OverrideRuntimeErrorHandler(false)
 }
 
@@ -38,82 +28,51 @@ func GetInstance() Logger {
 	return defaultLog
 }
 
-// SetInstance sets the default logger instance
-func SetInstance(logger Logger) {
-	defaultLog = logger
+// GetBaseInstance returns the base stdout logger
+func GetBaseInstance() Logger {
+	return baseLog
 }
 
-// WriteColored writes a message in color
-func writeColored(message string, color string) {
-	_, _ = defaultLog.Write([]byte(ansi.Color(message, color)))
-}
-
-// SetFakePrintTable is a testing tool that allows overwriting the function PrintTable
-func SetFakePrintTable(fake func(s Logger, header []string, values [][]string)) {
-	fakePrintTable = fake
-}
-
-var fakePrintTable func(s Logger, header []string, values [][]string)
-
-// PrintTable prints a table with header columns and string values
 func PrintTable(s Logger, header []string, values [][]string) {
-	if fakePrintTable != nil {
-		fakePrintTable(s, header, values)
-		return
-	}
+	PrintTableWithOptions(s, header, values, nil)
+}
 
-	columnLengths := make([]int, len(header))
-	for k, v := range header {
-		columnLengths[k] = len(v)
-	}
+// PrintTableWithOptions prints a table with header columns and string values
+func PrintTableWithOptions(s Logger, header []string, values [][]string, modify func(table *tablewriter.Table)) {
+	reader, writer := io.Pipe()
+	defer writer.Close()
 
-	// Get maximum column length
-	for _, v := range values {
-		for key, value := range v {
-			if len(value) > 64 {
-				value = value[:61] + "..."
-				v[key] = value
-			}
+	done := make(chan struct{})
+	go func() {
+		defer close(done)
 
-			if len(value) > columnLengths[key] {
-				columnLengths[key] = len(value)
-			}
+		sa := NewScanner(reader)
+		for sa.Scan() {
+			s.WriteString(logrus.InfoLevel, "  "+sa.Text()+"\n")
 		}
-	}
+	}()
 
-	_, _ = s.Write([]byte("\n"))
-
-	// Print Header
-	for key, value := range header {
-		writeColored(" "+value+"  ", "green+b")
-
-		padding := columnLengths[key] - len(value)
-
-		if padding > 0 {
-			_, _ = s.Write([]byte(strings.Repeat(" ", padding)))
+	table := tablewriter.NewWriter(writer)
+	table.SetHeader(header)
+	if runtime.GOOS == "darwin" || runtime.GOOS == "linux" {
+		colors := []tablewriter.Colors{}
+		for range header {
+			colors = append(colors, tablewriter.Color(tablewriter.FgGreenColor))
 		}
+		table.SetHeaderColor(colors...)
 	}
 
-	_, _ = s.Write([]byte("\n"))
-
-	if len(values) == 0 {
-		_, _ = s.Write([]byte(" No entries found\n"))
+	table.SetAlignment(tablewriter.ALIGN_LEFT)
+	table.SetBorders(tablewriter.Border{Left: false, Top: false, Right: false, Bottom: false})
+	table.AppendBulk(values)
+	if modify != nil {
+		modify(table)
 	}
 
-	// Print Values
-	for _, v := range values {
-		for key, value := range v {
-			_, _ = s.Write([]byte(" " + value + "  "))
-
-			padding := columnLengths[key] - len(value)
-
-			if padding > 0 {
-				_, _ = s.Write([]byte(strings.Repeat(" ", padding)))
-			}
-		}
-
-		_, _ = s.Write([]byte("\n"))
-	}
-
-	_, _ = s.Write([]byte("\n"))
+	// Render
+	_, _ = writer.Write([]byte("\n"))
+	table.Render()
+	_, _ = writer.Write([]byte("\n"))
+	_ = writer.Close()
+	<-done
 }
