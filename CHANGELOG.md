@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.6 (2023-05-06)
+
+ * [20e28ff](https://github.com/ysicing/tiga/commit/20e28ff1e9e03c2a112416725a426ec31e2fc799) fix(upgrade): fix cli upgrade
+ * [6a10d86](https://github.com/ysicing/tiga/commit/6a10d8615744d7baa0b35fdd81d17c00f8d89806) feat(dev): add devcontainer
+ * [1ae0987](https://github.com/ysicing/tiga/commit/1ae0987311a278161caed9d2c65fb3a88158a5ef) docs(tap): del ghproxy
+ * [1b36c82](https://github.com/ysicing/tiga/commit/1b36c82c461b7c098b91abb0580f5a0196c79205) fix(tap): fix tap download url
+ * [38b5c90](https://github.com/ysicing/tiga/commit/38b5c90771ff37f0f415684c4eee4ac7ba44237c) docs(copyright): skip rb file
+
+### Contributors
+
+ * ysicing
+
 ## v0.0.5 (2023-05-06)
 
  * [ddbf4f7](https://github.com/ysicing/tiga/commit/ddbf4f77cb3d43eae388c7020b4bbb9f0b73c3a6) feat(action): change action step
