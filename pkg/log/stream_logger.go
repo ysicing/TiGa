@@ -1,3 +1,9 @@
+// Copyright (c) 2023 ysicing(ysicing.me, ysicing@ysicing.cloud) All rights reserved.
+// Use of this source code is covered by the following dual licenses:
+// (1) Y PUBLIC LICENSE 1.0 (YPL 1.0)
+// (2) Affero General Public License 3.0 (AGPL 3.0)
+// License that can be found in the LICENSE file.
+
 package log
 
 import (
@@ -401,15 +407,12 @@ func (s *StreamLogger) Fatalf(format string, args ...interface{}) {
 func (s *StreamLogger) Done(args ...interface{}) {
 	s.m.Lock()
 	defer s.m.Unlock()
-
 	s.writeMessage(doneFn, fmt.Sprintln(args...))
-
 }
 
 func (s *StreamLogger) Donef(format string, args ...interface{}) {
 	s.m.Lock()
 	defer s.m.Unlock()
-
 	s.writeMessage(doneFn, fmt.Sprintf(format, args...)+"\n")
 }
 
@@ -446,21 +449,18 @@ func (s *StreamLogger) Printf(level logrus.Level, format string, args ...interfa
 func (s *StreamLogger) SetLevel(level logrus.Level) {
 	s.m.Lock()
 	defer s.m.Unlock()
-
 	s.level = level
 }
 
 func (s *StreamLogger) GetLevel() logrus.Level {
 	s.m.Lock()
 	defer s.m.Unlock()
-
 	return s.level
 }
 
 func (s *StreamLogger) Writer(level logrus.Level, raw bool) io.WriteCloser {
 	s.m.Lock()
 	defer s.m.Unlock()
-
 	if s.level < level {
 		return &NopCloser{io.Discard}
 	}
@@ -512,7 +512,6 @@ func (s *StreamLogger) write(level logrus.Level, message []byte) (int, error) {
 func (s *StreamLogger) Question(params *survey.QuestionOptions) (string, error) {
 	s.m.Lock()
 	defer s.m.Unlock()
-
 	if !s.isTerminal && !params.DefaultValueSet {
 		return "", fmt.Errorf("cannot ask question '%s' because currently you're not using devspace in a terminal and default value is also not provided", params.Question)
 	} else if !s.isTerminal && params.DefaultValueSet {

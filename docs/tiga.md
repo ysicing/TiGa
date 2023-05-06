@@ -5,7 +5,7 @@ tiga is a cli tool for sernior restart engineer
 ### Options
 
 ```
-      --config string   The tiga config file to use (default "/home/runner/.tiga/config/default.yaml")
+      --config string   The tiga config file to use (default "/Users/ysicing/.config/tiga/config/default.yaml")
       --debug           Prints the stack trace if an error occurs
   -h, --help            help for tiga
       --silent          Run in silent mode and prevents any tiga log output except panics & fatals

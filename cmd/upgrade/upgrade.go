@@ -12,12 +12,12 @@ import (
 	"runtime"
 	"strings"
 
+	gv "github.com/Masterminds/semver/v3"
 	"github.com/ysicing/tiga/cmd/version"
 	"github.com/ysicing/tiga/common"
 	"github.com/ysicing/tiga/pkg/factory"
 	"github.com/ysicing/tiga/pkg/log"
 	"github.com/ysicing/tiga/pkg/selfupdate"
-  gv "github.com/Masterminds/semver/v3"
 )
 
 type option struct {
@@ -42,14 +42,14 @@ func (up option) DoTiGA() {
 		up.log.Infof("current version %s is the latest version", common.Version)
 		return
 	}
-  if lastVersion != "" && !strings.Contains(common.Version, lastVersion) {
+	if lastVersion != "" && !strings.Contains(common.Version, lastVersion) {
 		nowVersion := gv.MustParse(strings.TrimPrefix(common.Version, "v"))
 		needUpgrade := nowVersion.LessThan(gv.MustParse(lastVersion))
 		if !needUpgrade {
-      up.log.Infof("current version %s is the newest version", common.Version)
-      return
-    }
-  }
+			up.log.Infof("current version %s is the newest version", common.Version)
+			return
+		}
+	}
 	cmdPath, err := os.Executable()
 	if err != nil {
 		up.log.Errorf("tiga executable err:%v", err)
