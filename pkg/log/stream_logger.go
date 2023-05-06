@@ -21,7 +21,7 @@ import (
 	"github.com/acarl005/stripansi"
 	goansi "github.com/k0kubun/go-ansi"
 	"github.com/mgutz/ansi"
-	"github.com/pkg/errors"
+	"github.com/cockroachdb/errors"
 	"github.com/sirupsen/logrus"
 	"github.com/ysicing/tiga/pkg/log/survey"
 	"github.com/ysicing/tiga/pkg/log/terminal"

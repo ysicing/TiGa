@@ -9,7 +9,7 @@ package boot
 import (
 	"os"
 
-	"github.com/pkg/errors"
+	"github.com/cockroachdb/errors"
 	"github.com/ysicing/tiga/common"
 )
 

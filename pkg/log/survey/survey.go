@@ -12,7 +12,7 @@ import (
 	"sort"
 
 	surveypkg "github.com/AlecAivazis/survey/v2"
-	"github.com/pkg/errors"
+	"github.com/cockroachdb/errors"
 )
 
 // QuestionOptions defines a question and its options
