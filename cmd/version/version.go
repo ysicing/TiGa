@@ -33,7 +33,7 @@ Client:
  Experimental:      {{.Experimental}}
 {{- if .CanUpgrade }}
  Note:              {{ .UpgradeMessage }}
- URL:               https://github.com/easysoft/quickon_cli/releases/tag/v{{ .LastVersion }}
+ URL:               https://github.com/easysoft/quickon_cli/releases/tag/{{ .LastVersion }}
 {{- end }}
 {{- end}}
 `

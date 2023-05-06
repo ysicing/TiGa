@@ -41,7 +41,12 @@ func (up *Updater) downloadDirectlyFromURL(assetURL string) (io.ReadCloser, erro
 
 	req.Header.Add("Accept", "application/octet-stream")
 	req = req.WithContext(context.Background())
-	res, err := http.DefaultClient.Do(req)
+	client := &http.Client{
+		Transport: &http.Transport{
+			Proxy: http.ProxyFromEnvironment,
+		},
+	}
+	res, err := client.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("failed to download a release file from %s: %s", assetURL, err)
 	}
