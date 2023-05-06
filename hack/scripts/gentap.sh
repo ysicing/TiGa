@@ -14,19 +14,19 @@ class Tiga < Formula
 
     if OS.mac?
       if Hardware::CPU.arm?
-        url "https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/#{version}/tiga_darwin_arm64"
+        url "https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/v#{version}/tiga_darwin_arm64"
         sha256 "${macosarm64sha}"
       else
-        url "https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/#{version}/tiga_darwin_amd64"
+        url "https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/v#{version}/tiga_darwin_amd64"
         sha256 "${macosamd64sha}"
       end
     elsif OS.linux?
       if Hardware::CPU.intel?
-        url "https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/#{version}/tiga_linux_amd64"
+        url "https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/v#{version}/tiga_linux_amd64"
         sha256 "${linuxamd64sha}"
       end
       if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-        url "https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/#{version}/tiga_linux_arm64"
+        url "https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/v#{version}/tiga_linux_arm64"
         sha256 "${linuxarm64sha}"
       end
     end
