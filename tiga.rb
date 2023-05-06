@@ -1,24 +1,24 @@
 class Tiga < Formula
     desc "Simple and powerful tool for sernior restart engineer"
     homepage "https://github.com/ysicing/tiga"
-    version "0.0.5"
+    version "0.0.6"
 
     if OS.mac?
       if Hardware::CPU.arm?
-        url "https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/#{version}/tiga_darwin_arm64"
-        sha256 "6cb5eccb075b23b72b74143f301725ea81b6a983fa158ce26fb4a47008d8ffa7"
+        url "https://github.com/ysicing/tiga/releases/download/v#{version}/tiga_darwin_arm64"
+        sha256 "8b51bb02fe01bd12622bb5c7b23b4b426077d9f2b5d7e2849ffdb69241767394"
       else
-        url "https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/#{version}/tiga_darwin_amd64"
-        sha256 "a72c72c1147b427a65134ddaa41334eb900044c49f03585398c3bfb30fd48266"
+        url "https://github.com/ysicing/tiga/releases/download/v#{version}/tiga_darwin_amd64"
+        sha256 "c7d4365f198839c0397efffb23d6272db21730552064a35fe6c468d0f0d8cf00"
       end
     elsif OS.linux?
       if Hardware::CPU.intel?
-        url "https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/#{version}/tiga_linux_amd64"
-        sha256 "27fbebb8d058b98a9dec7dbec2e55f538370fa4cb563850561ce759319a0c01e"
+        url "https://github.com/ysicing/tiga/releases/download/v#{version}/tiga_linux_amd64"
+        sha256 "ff00a52aa611bb8aebac83eb69401b721adacdf6b11a7929ac311276ac22892e"
       end
       if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-        url "https://ghproxy.com/https://github.com/ysicing/tiga/releases/download/#{version}/tiga_linux_arm64"
-        sha256 "f99ef5dd15dfa8b3923c216e4353885ed67452a74088daaa8ee2da706bc8b440"
+        url "https://github.com/ysicing/tiga/releases/download/v#{version}/tiga_linux_arm64"
+        sha256 "5d0c738ad11e60e102a4a15ebd701555e892db9aa33fa77c4f95bffa7c74cd69"
       end
     end
 
