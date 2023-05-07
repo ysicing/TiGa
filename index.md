@@ -43,6 +43,17 @@ yum makecache
 yum install tiga
 ```
 
+## Build
+
+```bash
+git clone https://github.com/ysicing/tiga.git
+cd tiga
+# install task https://taskfile.dev/#/installation
+go install github.com/go-task/task/v3/cmd/task@latest
+# build
+task -v
+```
+
 ## Contributors
 
 <!-- readme: collaborators,contributors -start -->
