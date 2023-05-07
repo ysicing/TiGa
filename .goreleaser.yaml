@@ -41,6 +41,9 @@ builds:
       - arm64
     main: tiga.go
     binary: tiga
+    hooks:
+      post:
+        - ./hack/scripts/upx.sh {{.Os}} {{.Arch}}
 
 archives:
   - name_template: "{{.Binary}}_{{.Os}}_{{.Arch}}"
