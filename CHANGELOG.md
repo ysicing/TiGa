@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.0.7 (2023-05-07)
+
+ * [67982bf](https://github.com/ysicing/tiga/commit/67982bfb6ba8816fd53cf971d59bf9ea50c4be41) feat(plugin): add plugin list
+ * [4e7e4e3](https://github.com/ysicing/tiga/commit/4e7e4e3753e93d6178ce56951bf775a705aa0187) feat(error): clean pkg error
+ * [073df12](https://github.com/ysicing/tiga/commit/073df12a6097cefae4fa19ec930cb65858820d9b) style(fmt): update code fmt
+ * [50659f6](https://github.com/ysicing/tiga/commit/50659f63e24de9ce07759d71ea08550b213551de) feat(download): add use default proxy
+
+### Contributors
+
+ * ysicing
+
 ## v0.0.6 (2023-05-06)
 
  * [20e28ff](https://github.com/ysicing/tiga/commit/20e28ff1e9e03c2a112416725a426ec31e2fc799) fix(upgrade): fix cli upgrade
