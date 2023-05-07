@@ -43,7 +43,7 @@ builds:
     binary: tiga
     hooks:
       post:
-        - ./hack/scripts/upx.sh {{.Os}} {{.Arch}}
+        - ./hack/scripts/upx.sh {{ .Path }}
 
 archives:
   - name_template: "{{.Binary}}_{{.Os}}_{{.Arch}}"

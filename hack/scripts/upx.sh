@@ -2,15 +2,18 @@
 
 set -eu
 
-os=$1
-arch=$2
+bin=$1
 
-echo "upx compress tiga ${os} ${arch}"
+echo "upx compress tiga ${bin}"
 
 command_exists() {
-	command -v "$@" > /dev/null 2>&1
+  command -v "$@" > /dev/null 2>&1
 }
 
 if command_exists upx; then
-  upx --ultra-brute dist/tiga_"${os}"_"${arch}"/tiga
+  if [ -f "${bin}" ]; then
+      upx --ultra-brute "${bin}"
+  else
+      echo "not found ${bin}"
+  fi
 fi
