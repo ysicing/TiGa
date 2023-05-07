@@ -64,6 +64,7 @@ tasks:
 
   fmt:
     cmds:
+      - go mod tidy
       - task: gencopyright
       - task: godoc
       - task: gofmt
@@ -104,4 +105,5 @@ tasks:
   default:
     cmds:
       - task: clean
+      - task: fmt
       - task: local

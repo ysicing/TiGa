@@ -57,6 +57,7 @@ func BuildRoot(f factory.Factory) *cobra.Command {
 	globalFlags = flags.SetGlobalFlags(persistentFlags)
 	rootCmd.AddCommand(newCmdVersion(f))
 	rootCmd.AddCommand(newCmdUpgrade(f))
+	rootCmd.AddCommand(NewCmdPlugin())
 
 	rootCmd.AddCommand(newManCmd())
 

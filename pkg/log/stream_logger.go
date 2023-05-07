@@ -19,9 +19,9 @@ import (
 	"github.com/ergoapi/util/exhash"
 
 	"github.com/acarl005/stripansi"
+	"github.com/cockroachdb/errors"
 	goansi "github.com/k0kubun/go-ansi"
 	"github.com/mgutz/ansi"
-	"github.com/cockroachdb/errors"
 	"github.com/sirupsen/logrus"
 	"github.com/ysicing/tiga/pkg/log/survey"
 	"github.com/ysicing/tiga/pkg/log/terminal"
