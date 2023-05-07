@@ -38,12 +38,12 @@ jobs:
           echo "install task"
           go install github.com/go-task/task/v3/cmd/task@latest
       - name: install upx
-        run: |
-          echo "install upx"
-          sudo apt-get update -qq
-          sudo apt-get install -y upx
+        uses: crazy-max/ghaction-upx@v2
+        with:
+          install-only: true
       - name: build tiga
         run: |
+          upx --version
           task linux
           ./_output/tiga_linux_amd64 version
       - name: Run GoReleaser
