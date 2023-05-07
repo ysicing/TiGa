@@ -11,9 +11,10 @@ command_exists() {
 }
 
 if command_exists upx; then
-  if [ -f "${bin}" ]; then
-      upx --ultra-brute "${bin}"
-  else
-      echo "not found ${bin}"
-  fi
+  echo "${bin}" | grep "linux" | grep amd64 && upx -9 "${bin}" || exit 0
+#  if [ -f "${bin}" ]; then
+#      upx --ultra-brute "${bin}"
+#  else
+#      echo "not found ${bin}"
+#  fi
 fi
