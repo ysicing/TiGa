@@ -93,7 +93,7 @@ func NewRootCmd(f factory.Factory) *cobra.Command {
 		Use:           "tiga",
 		SilenceUsage:  true,
 		SilenceErrors: true,
-		Short:         "tiga is a cli tool for sernior restart engineer",
+		Short:         "tiga is a cli tool for senior restart engineer",
 		PersistentPreRunE: func(cobraCmd *cobra.Command, args []string) error {
 			if cobraCmd.Annotations != nil {
 				return nil
