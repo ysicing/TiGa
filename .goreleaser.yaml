@@ -83,12 +83,23 @@ nfpms:
       type: dir
 
 changelog:
+  use: github
   sort: asc
+  groups:
+    - title: 'New Features 🎉'
+      regexp: "^.*feat.*"
+      order: 0
+    - title: 'Bug Fixes 🐛'
+      regexp: "^.*(Fix|fix|bug).*"
+      order: 1
+    - title: 'Documentation 🖊️'
+      regexp: "^.*docs.*"
+      order: 2
+    - title: 'Others:'
+      order: 999
   filters:
     exclude:
-      - '^docs:'
       - '^test:'
-      - '^feat(update):'
       - '^feat(ci):'
       - '^chore(ci):'
       - '^chore(action):'
