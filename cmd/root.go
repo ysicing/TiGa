@@ -43,8 +43,8 @@ func Execute() {
 		}
 		if !strings.Contains(err.Error(), "unknown command") {
 			f.GetLog().Info("----------------------------")
-			bugmsg := "found bug: submit the error message to Github \n\t Github: https://github.com/ysicing/tiga"
-			f.GetLog().Info(bugmsg)
+			bugMsg := "found bug: submit the error message to Github \n\t Github: https://github.com/ysicing/tiga"
+			f.GetLog().Info(bugMsg)
 		}
 	}
 }
@@ -58,6 +58,7 @@ func BuildRoot(f factory.Factory) *cobra.Command {
 	rootCmd.AddCommand(newCmdVersion(f))
 	rootCmd.AddCommand(newCmdUpgrade(f))
 	rootCmd.AddCommand(NewCmdPlugin())
+	rootCmd.AddCommand(newCmdDebug(f))
 
 	rootCmd.AddCommand(newManCmd())
 

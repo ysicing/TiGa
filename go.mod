@@ -23,6 +23,7 @@ require (
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	k8s.io/apimachinery v0.27.1
 	k8s.io/kubectl v0.27.1
+	tailscale.com v1.40.0
 )
 
 require (
@@ -111,5 +112,4 @@ require (
 	sigs.k8s.io/kustomize/kyaml v0.14.1 // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.2.3 // indirect
 	sigs.k8s.io/yaml v1.3.0 // indirect
-	tailscale.com v1.40.0 // indirect
 )
