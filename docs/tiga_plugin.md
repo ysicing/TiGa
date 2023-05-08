@@ -11,7 +11,7 @@ provides utilities for interacting with plugins
 ### Options inherited from parent commands
 
 ```
-      --config string   The tiga config file to use (default "/Users/ysicing/.config/tiga/config/default.yaml")
+      --config string   The tiga config file to use (default "/home/runner/.tiga/config/default.yaml")
       --debug           Prints the stack trace if an error occurs
       --silent          Run in silent mode and prevents any tiga log output except panics & fatals
 ```

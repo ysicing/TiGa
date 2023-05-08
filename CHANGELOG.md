@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.0.8 (2023-05-08)
+
+ * [82df58e](https://github.com/ysicing/tiga/commit/82df58e4c29ee8aadcad06df5ab98ab7efcf7d50) feat(debug): add debug
+ * [760f28c](https://github.com/ysicing/tiga/commit/760f28cce4404e858c5a3123b475995e5e7f7bfc) build(deps): bump github.com/spf13/cobra from 1.6.1 to 1.7.0 (#6)
+ * [abe3371](https://github.com/ysicing/tiga/commit/abe33717d014bc2184a8789e2d8bf75c99579a75) feat(tap): update tap
+ * [b692e03](https://github.com/ysicing/tiga/commit/b692e03d39277f7d8d250b5d8698580218a4409f) feat(update): only upx linux amd64
+ * [a754dc6](https://github.com/ysicing/tiga/commit/a754dc6bae5c7592322ee9a59e641d4aef45db9a) fix(gorelease): update upx script
+ * [2f64df3](https://github.com/ysicing/tiga/commit/2f64df361fcd74e865bc17587310ac57de83569a) fix(action): fix upx install
+ * [1cc2060](https://github.com/ysicing/tiga/commit/1cc2060fad9418359b3ad2b43b76638f71d8eb81) feat(action): add upx support
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.0.7 (2023-05-07)
 
  * [67982bf](https://github.com/ysicing/tiga/commit/67982bfb6ba8816fd53cf971d59bf9ea50c4be41) feat(plugin): add plugin list
