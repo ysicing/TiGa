@@ -54,3 +54,8 @@ func GetDefaultTiGAConfig() string {
 func GetDefaultTiGACache() string {
 	return GetDefaultCacheDir() + "/cache.tiga"
 }
+
+// GetDefaultTiGAPluginConfig 获取插件配置
+func GetDefaultTiGAPluginConfig() string {
+	return GetDefaultCfgDir() + "/plugin.yaml"
+}

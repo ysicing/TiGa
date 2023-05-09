@@ -17,6 +17,12 @@ var (
 	pluginListExample = templates.Examples(`
           # List all available plugins
           tiga plugin list`)
+	pluginInstallExample = templates.Examples(`
+          # install a plugin from repository
+          tiga plugin install [options] [flags]`)
+	pluginSearchExample = templates.Examples(`
+          # search plugin from repository
+          tiga plugin search [options] [flags]`)
 )
 
 func NewCmdPlugin() *cobra.Command {
@@ -26,6 +32,8 @@ func NewCmdPlugin() *cobra.Command {
 		Short:                 "provides utilities for interacting with plugins",
 	}
 	cmd.AddCommand(NewCmdPluginList())
+	cmd.AddCommand(NewPluginInstall())
+	cmd.AddCommand(NewPluginSearch())
 	return cmd
 }
 
@@ -43,5 +51,30 @@ func NewCmdPluginList() *cobra.Command {
 		},
 	}
 	cmd.Flags().BoolVar(&o.NameOnly, "name-only", false, "print only the plugin names")
+	return cmd
+}
+
+func NewPluginInstall() *cobra.Command {
+	cmd := &cobra.Command{
+		Use:     "install [flags]",
+		Aliases: []string{"i"},
+		Short:   "install plugin",
+		Example: pluginInstallExample,
+		Run: func(cmd *cobra.Command, args []string) {
+
+		},
+	}
+	return cmd
+}
+
+func NewPluginSearch() *cobra.Command {
+	cmd := &cobra.Command{
+		Use:     "search [flags]",
+		Short:   "search plugin from repository",
+		Example: pluginSearchExample,
+		Run: func(cmd *cobra.Command, args []string) {
+
+		},
+	}
 	return cmd
 }

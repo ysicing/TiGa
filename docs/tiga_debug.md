@@ -4,7 +4,7 @@ debug, not a stable interface, contains misc debug facilities
 
 ### Synopsis
 
-"/var/folders/c4/z6_05vr960j5t290bv8g89nh0000gn/T/go-build2201268221/b001/exe/docs debug" contains misc debug facilities; it is not a stable interface.
+"/var/folders/59/glr2j03s3ws0bhb_v3zxt5lr0000gn/T/go-build488254765/b001/exe/docs debug" contains misc debug facilities; it is not a stable interface.
 
 ### Options
 
