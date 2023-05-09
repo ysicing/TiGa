@@ -45,7 +45,12 @@ func GetDefaultCacheDir() string {
 	return getOSPath() + DefaultCacheDir
 }
 
-// 获取默认配置
+// GetDefaultTiGAConfig 获取默认配置
 func GetDefaultTiGAConfig() string {
-	return getOSPath() + DefaultCfgDir + "/default.yaml"
+	return GetDefaultCfgDir() + "/default.yaml"
+}
+
+// GetDefaultTiGACache 获取默认cache
+func GetDefaultTiGACache() string {
+	return GetDefaultCacheDir() + "/cache.tiga"
 }

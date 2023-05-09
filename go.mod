@@ -7,7 +7,7 @@ require (
 	github.com/Masterminds/semver/v3 v3.2.1
 	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d
 	github.com/cockroachdb/errors v1.9.1
-	github.com/ergoapi/util v0.3.20
+	github.com/ergoapi/util v0.3.24
 	github.com/inconshreveable/go-update v0.0.0-20160112193335-8152e7eb6ccf
 	github.com/k0kubun/go-ansi v0.0.0-20180517002512-3bf9e2903213
 	github.com/loft-sh/utils v0.0.18
@@ -20,6 +20,7 @@ require (
 	github.com/spf13/cobra v1.7.0
 	github.com/spf13/pflag v1.0.5
 	github.com/ulikunitz/xz v0.5.11
+	go.etcd.io/bbolt v1.3.7
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	k8s.io/apimachinery v0.27.1
 	k8s.io/kubectl v0.27.1
