@@ -68,8 +68,8 @@ github.com/envoyproxy/go-control-plane v0.9.0/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymF
 github.com/envoyproxy/go-control-plane v0.9.1-0.20191026205805-5f8ba28d4473/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.9-0.20210217033140-668b12f5399d/go.mod h1:cXg6YxExXjJnVBQHBLXeUAgxn2UodCpnH306RInaBQk=
 github.com/envoyproxy/protoc-gen-validate v0.1.0/go.mod h1:iSmxcyjqTsJpI2R4NaDN7+kN2VEUnK/pcBlmesArF7c=
-github.com/ergoapi/util v0.3.20 h1:QLvYeUQoNVsrTOCoUw9DdP8pp1OTgTsNUvYiKvwKyBs=
-github.com/ergoapi/util v0.3.20/go.mod h1:y6pZ3qPN8F97RDFfMVgD9ddQa77+cWZRl2Ocj6OU/6s=
+github.com/ergoapi/util v0.3.24 h1:/G0lYHvt1KVlDyNJekm7JZh+OC+NRyS2rjuyjf4iA9U=
+github.com/ergoapi/util v0.3.24/go.mod h1:XKjIqyWptUP8PqVZBvf0iiVPcPfVWgxHuJhYJNztBXU=
 github.com/etcd-io/bbolt v1.3.3/go.mod h1:ZF2nL25h33cCyBtcyWeZ2/I3HQOfTP+0PIEvHjkjCrw=
 github.com/evanphx/json-patch v4.12.0+incompatible h1:4onqiflcdA9EOZ4RxV643DvftH5pOlLGNtQ5lPWQu84=
 github.com/evanphx/json-patch v4.12.0+incompatible/go.mod h1:50XU6AFN0ol/bzJsmQLiYLvXMP4fmwYFNcr97nuDLSk=
