@@ -117,13 +117,16 @@ func (v *CommandOverrideVerifier) Verify(path string) error {
 
 	// extract the plugin binary name
 	segs := strings.Split(path, "/")
-	binName := segs[len(segs)-1]
+	fullBinName := segs[len(segs)-1]
+	binName := strings.Join(strings.Split(fullBinName, "-")[1:], "-")
 
 	cmdPath := strings.Split(binName, "-")
 	if len(cmdPath) > 1 {
 		// the first argument is always "kubectl" for a plugin binary
 		cmdPath = cmdPath[1:]
 	}
+
+	logpkg.GetBaseInstance().Debugf("cmdPath: %v, fullBinName: %v , binName: %v", cmdPath, fullBinName, binName)
 
 	if isExec, err := isExecutable(path); err == nil && !isExec {
 		return fmt.Errorf("warning: %s identified as a tiga plugin, but it is not executable", path)
