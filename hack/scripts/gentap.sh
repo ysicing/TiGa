@@ -22,7 +22,7 @@ class Tiga < Formula
         sha256 "${macosARM64sha}"
 
         def install
-            bin.install "tiga"
+            bin.install "tiga_darwin_arm64" => "tiga"
         end
       end
 
@@ -31,7 +31,7 @@ class Tiga < Formula
         sha256 "${macosAMD64sha}"
 
         def install
-            bin.install "tiga"
+            bin.install "tiga_darwin_amd64" => "tiga"
         end
       end
     end
@@ -42,7 +42,7 @@ class Tiga < Formula
         sha256 "${linuxAMD64sha}"
 
         def install
-            bin.install "tiga"
+            bin.install "tiga_linux_amd64" => "tiga"
         end
       end
 
@@ -51,7 +51,7 @@ class Tiga < Formula
         sha256 "${linuxARM64sha}"
 
         def install
-            bin.install "tiga"
+            bin.install "tiga_linux_arm64" => "tiga"
         end
       end
     end
