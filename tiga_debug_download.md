@@ -1,15 +1,17 @@
-## tiga debug hostinfo
+## tiga debug download
 
-print hostinfo
+download
 
 ```
-tiga debug hostinfo [flags]
+tiga debug download [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help   help for hostinfo
+      --decompress   decompress
+  -h, --help         help for download
+      --url string   download file url
 ```
 
 ### Options inherited from parent commands
