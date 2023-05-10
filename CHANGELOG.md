@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.9 (2023-05-10)
+
+ * [e9a06f6](https://github.com/ysicing/tiga/commit/e9a06f6ff4627ebcacee8816a92858c93c099b4e) feat(debug): add debug download
+ * [0346a32](https://github.com/ysicing/tiga/commit/0346a323de75cb97eee17bf0ef3e29e6cc0f06f2) feat(update): update
+ * [60bb262](https://github.com/ysicing/tiga/commit/60bb26240a6d2d7ab3fb3561cafbc0a3eba8638b) feat(cache): add bbolt cache
+ * [7a27568](https://github.com/ysicing/tiga/commit/7a275685c7aaafffad63c1b17551df237c42983b) fix(plugin): fix plugin duplication
+ * [309b73a](https://github.com/ysicing/tiga/commit/309b73a46eed45218daa93cdc1f904b4c69a7da3) fix(tap): fix tap install
+ * [517630b](https://github.com/ysicing/tiga/commit/517630b122aceb6cfde2c899a6a8c8393f151554) docs(update): update docs
+
+### Contributors
+
+ * ysicing
+
 ## v0.0.8 (2023-05-08)
 
  * [82df58e](https://github.com/ysicing/tiga/commit/82df58e4c29ee8aadcad06df5ab98ab7efcf7d50) feat(debug): add debug

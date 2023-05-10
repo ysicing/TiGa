@@ -4,7 +4,7 @@ debug, not a stable interface, contains misc debug facilities
 
 ### Synopsis
 
-"/var/folders/59/glr2j03s3ws0bhb_v3zxt5lr0000gn/T/go-build2364553715/b001/exe/docs debug" contains misc debug facilities; it is not a stable interface.
+"/tmp/go-build477620434/b001/exe/docs debug" contains misc debug facilities; it is not a stable interface.
 
 ### Options
 
@@ -15,7 +15,7 @@ debug, not a stable interface, contains misc debug facilities
 ### Options inherited from parent commands
 
 ```
-      --config string   The tiga config file to use (default "/Users/ysicing/.config/tiga/config/default.yaml")
+      --config string   The tiga config file to use (default "/home/runner/.tiga/config/default.yaml")
       --debug           Prints the stack trace if an error occurs
       --silent          Run in silent mode and prevents any tiga log output except panics & fatals
 ```
