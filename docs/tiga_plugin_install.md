@@ -1,23 +1,22 @@
-## tiga plugin list
+## tiga plugin install
 
-list all visible plugins executable by tiga on your PATH
+install plugin
 
 ```
-tiga plugin list [flags]
+tiga plugin install [flags]
 ```
 
 ### Examples
 
 ```
-  # List all available plugins
-  tiga plugin list
+  # install a plugin from repository
+  tiga plugin install [options] [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help        help for list
-      --name-only   print only the plugin names
+  -h, --help   help for install
 ```
 
 ### Options inherited from parent commands

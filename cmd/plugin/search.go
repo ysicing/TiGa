@@ -24,11 +24,14 @@ type SearchResult struct {
 
 func (s *SearchOptions) Run() error {
 	// load repo file
+	if _, err := s.buildIndex(); err != nil {
+		return err
+	}
 	// search
 	return nil
 }
 
-func (s *SearchResult) buildIndex() (map[string]string, error) {
+func (s *SearchOptions) buildIndex() (map[string]string, error) {
 	pluginCfg := common.GetDefaultTiGAPluginConfig()
 	if !file.CheckFileExists(pluginCfg) {
 		// 下载插件配置, 重新buildIndex

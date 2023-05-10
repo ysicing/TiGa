@@ -1,23 +1,22 @@
-## tiga plugin list
+## tiga plugin search
 
-list all visible plugins executable by tiga on your PATH
+search plugin from repository
 
 ```
-tiga plugin list [flags]
+tiga plugin search [flags]
 ```
 
 ### Examples
 
 ```
-  # List all available plugins
-  tiga plugin list
+  # search plugin from repository
+  tiga plugin search [options] [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help        help for list
-      --name-only   print only the plugin names
+  -h, --help   help for search
 ```
 
 ### Options inherited from parent commands

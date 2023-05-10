@@ -7,21 +7,58 @@
 package repo
 
 import (
-	"github.com/cockroachdb/errors"
 	"os"
-	"sigs.k8s.io/yaml"
+	"runtime"
 	"time"
+
+	"github.com/cockroachdb/errors"
+	"github.com/ergoapi/util/zos"
+	"github.com/opencontainers/go-digest"
+	"sigs.k8s.io/yaml"
 )
 
 type File struct {
-	Generated    time.Time `json:"generated"`
-	Repositories []*Entry  `json:"repositories"`
+	Generated    time.Time `json:"generated" yaml:"generated"`
+	Repositories []*Entry  `json:"repositories" yaml:"repositories"`
 }
 
 type Entry struct {
-	Name string `json:"name"`
-	Url  string `json:"url"`
-	Desc string `json:"desc"`
+	Name      string        `json:"name" yaml:"name"`
+	Url       string        `json:"url" yaml:"url"`
+	Desc      string        `json:"desc" yaml:"desc"`
+	Digest    digest.Digest `json:"digest" yaml:"digest"`
+	Platforms Platforms     `json:"platforms" yaml:"platforms"`
+}
+
+type Platforms struct {
+	Windows bool `json:"windows" yaml:"windows"`
+	Linux   bool `json:"linux" yaml:"linux"`
+	MacOS   bool `json:"macos" yaml:"macos"`
+	Amd64   bool `json:"amd64" yaml:"amd64"`
+	Arm64   bool `json:"arm64" yaml:"arm64"`
+}
+
+func (e *Entry) ValidateArch() bool {
+	if e.Platforms.Amd64 && runtime.GOARCH == "amd64" {
+		return true
+	}
+	if e.Platforms.Arm64 && runtime.GOARCH == "arm64" {
+		return true
+	}
+	return false
+}
+
+func (e *Entry) ValidateOS() bool {
+	if zos.IsMacOS() {
+		return e.Platforms.MacOS
+	}
+	if zos.IsLinux() {
+		return e.Platforms.Linux
+	}
+	if zos.NotUnix() {
+		return e.Platforms.Windows
+	}
+	return false
 }
 
 func NewFile() *File {
@@ -38,5 +75,5 @@ func LoadFile(path string) (*File, error) {
 		return f, errors.Newf("failed to read file(%s):%v", path, err)
 	}
 	err = yaml.Unmarshal(b, f)
-	return f, nil
+	return f, err
 }
