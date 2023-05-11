@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.0.10 (2023-05-11)
+
+ * [2507abe](https://github.com/ysicing/tiga/commit/2507abebbf9a4c63775713f7a70d639a566c52b4) feat(debug): add debug clean cache
+
+### Contributors
+
+ * ysicing
+
 ## v0.0.9 (2023-05-10)
 
  * [e9a06f6](https://github.com/ysicing/tiga/commit/e9a06f6ff4627ebcacee8816a92858c93c099b4e) feat(debug): add debug download
