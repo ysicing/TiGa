@@ -19,8 +19,7 @@ import (
 
 func main() {
 	f := factory.DefaultFactory()
-	tcli := cmd.BuildRoot(f)
-	err := doc.GenMarkdownTree(tcli, "./docs")
+	err := doc.GenMarkdownTree(cmd.BuildRoot(f), "./docs")
 	if err != nil {
 		panic(err)
 	}

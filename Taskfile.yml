@@ -46,6 +46,11 @@ tasks:
       - go run ./docs/docs.go
       - cp -a README.md docs/index.md
 
+  gomod:
+    desc: update go mod
+    cmds:
+      - go mod tidy
+
   gofmt:
     cmds:
       - go install golang.org/x/tools/cmd/goimports@latest
@@ -64,14 +69,15 @@ tasks:
 
   fmt:
     cmds:
-      - go mod tidy
+      - task: gomod
       - task: gencopyright
-      - task: godoc
       - task: gofmt
       - task: golint
 
   linux:
     desc: build linux for remote test
+    deps:
+      - task: gomod
     vars:
       GOOS: linux
       GOARCH: amd64
@@ -83,6 +89,8 @@ tasks:
 
   local:
     desc: build local for test
+    deps:
+      - task: gomod
     cmds:
       - go install github.com/mitchellh/gox@latest
       - gox -os={{.GOOS}} -arch={{.GOARCH}} -output="{{.BUILD_DIR}}/tiga_{{.GOOS}}_{{.GOARCH}}" -ldflags "{{.LDFLAGS}}"

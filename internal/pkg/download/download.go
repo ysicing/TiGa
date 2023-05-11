@@ -287,9 +287,10 @@ func copyLocal(dst, src, ext string, decompress bool, description string, expect
 	if err != nil {
 		return err
 	}
-	if _, ok := Decompressor(ext); ok && decompress {
-		return decompressLocal(dstPath, srcPath, ext, description)
-	}
+	// TODO: support decompress
+	//if _, ok := Decompressor(ext); ok && decompress {
+	//	return decompressLocal(dstPath, srcPath, ext, description)
+	//}
 	// TODO: progress bar for copy
 	return fs.CopyFile(dstPath, srcPath)
 }
@@ -317,7 +318,7 @@ func decompressLocal(dst, src, ext string, description string) error {
 	if !found {
 		return fmt.Errorf("decompressLocal: unknown extension %s", ext)
 	}
-	log.GetInstance().Infof("decompressing %s with %v", ext, command)
+	log.GetInstance().Infof("decompressing %s with %v, src: %s, dst %s", ext, command, src, dst)
 
 	st, err := os.Stat(src)
 	if err != nil {

@@ -19,7 +19,6 @@ import (
 )
 
 func DownloadCommand(f factory.Factory) *cobra.Command {
-	var decompress bool
 	e := repo.Entry{
 		Name: "tiga",
 		Desc: "tiga",
@@ -45,15 +44,19 @@ func DownloadCommand(f factory.Factory) *cobra.Command {
 			u, _ := url.Parse(e.Url)
 			filename := filepath.Base(u.Path)
 			dlPath := common.GetDefaultCacheDir() + "/" + filename
-			cacheFile, err := fileutil.DownloadFile(&e, decompress, dlPath)
+			cacheFile, err := fileutil.DownloadFile(&e, dlPath)
 			if err != nil {
 				return err
 			}
-			f.GetLog().Donef("downloaded successfully to %s(%s)", dlPath, cacheFile)
+			if len(cacheFile) == 0 {
+				f.GetLog().Donef("skip downloaded, found %s", dlPath)
+			} else {
+				f.GetLog().Donef("downloaded success to %s(%s)", dlPath, cacheFile)
+			}
+
 			return nil
 		},
 	}
-	dl.Flags().BoolVar(&decompress, "decompress", false, "decompress")
 	dl.Flags().StringVar(&e.Url, "url", "", "download file url")
 	return dl
 }

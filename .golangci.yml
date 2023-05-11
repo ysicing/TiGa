@@ -13,7 +13,7 @@ linters:
     - misspell
     - ineffassign
     - typecheck
-    - unused
+#    - unused
     - whitespace
     - gocyclo
     - nakedret

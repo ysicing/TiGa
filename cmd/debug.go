@@ -23,5 +23,6 @@ func newCmdDebug(f factory.Factory) *cobra.Command {
 	}
 	debugCmd.AddCommand(debug.HostInfoCommand(f))
 	debugCmd.AddCommand(debug.DownloadCommand(f))
+	debugCmd.AddCommand(debug.CleanCacheCommand(f))
 	return debugCmd
 }

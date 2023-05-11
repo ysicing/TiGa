@@ -16,7 +16,7 @@ import (
 	"github.com/ysicing/tiga/pkg/log"
 )
 
-func DownloadFile(entry *repo.Entry, decompress bool, dlPath string) (string, error) {
+func DownloadFile(entry *repo.Entry, dlPath string) (string, error) {
 	if entry == nil {
 		return "", errors.New("entry is nil")
 	}
@@ -29,14 +29,14 @@ func DownloadFile(entry *repo.Entry, decompress bool, dlPath string) (string, er
 	log.GetInstance().Infof("attempting download file: %s", entry.Url)
 	res, err := download.Download(dlPath, entry.Url,
 		download.WithCache(),
-		download.WithDecompress(decompress),
+		download.WithDecompress(false),
 		download.WithDescription(fmt.Sprintf("%s (%s)", entry.Desc, path.Base(entry.Url))),
 		download.WithExpectedDigest(entry.Digest),
 	)
 	if err != nil {
 		return "", fmt.Errorf("failed to download %q: %w", entry.Url, err)
 	}
-	log.GetInstance().Debugf("res.ValidatedDigest=%v", res.ValidatedDigest)
+	// log.GetInstance().Debugf("res.ValidatedDigest=%v", res.ValidatedDigest)
 	switch res.Status {
 	case download.StatusDownloaded:
 		log.GetInstance().Infof("Downloaded %s from %q", entry.Desc, entry.Url)
