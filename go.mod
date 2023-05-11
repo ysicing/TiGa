@@ -29,7 +29,7 @@ require (
 	k8s.io/apimachinery v0.27.1
 	k8s.io/kubectl v0.27.1
 	sigs.k8s.io/yaml v1.3.0
-	tailscale.com v1.40.0
+	tailscale.com v1.40.1
 )
 
 require (
