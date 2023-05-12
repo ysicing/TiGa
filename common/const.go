@@ -19,3 +19,20 @@ const (
 
 	DefaultUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.0.0"
 )
+
+const Logo = `Open Source Cli Tools For Senior Restart Engineer`
+
+type AppType string
+
+func (a AppType) String() string {
+	return string(a)
+}
+
+const (
+	AppTypeDefault AppType = "bin"
+	AppTypeScript  AppType = "script"
+	AppTypeHelm    AppType = "helm"
+	AppTypeKube    AppType = "kube"
+	AppTypeDocker  AppType = "docker"
+	AppTypeSystem  AppType = "system"
+)

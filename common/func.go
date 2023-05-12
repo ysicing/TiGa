@@ -9,6 +9,8 @@ package common
 import (
 	"fmt"
 
+	"github.com/morikuni/aec"
+
 	"github.com/ergoapi/util/zos"
 )
 
@@ -58,4 +60,10 @@ func GetDefaultTiGACache() string {
 // GetDefaultTiGAPluginConfig 获取插件配置
 func GetDefaultTiGAPluginConfig() string {
 	return GetDefaultCfgDir() + "/plugin.yaml"
+}
+
+// ShowLogo show logo
+func ShowLogo() {
+	tigaLogo := aec.BlueF.Apply(Logo)
+	fmt.Println(tigaLogo)
 }

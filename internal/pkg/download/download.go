@@ -433,6 +433,7 @@ func downloadHTTP(localPath, url string, description string, expectedDigest dige
 		client.Transport = &http.Transport{Proxy: http.ProxyURL(proxyURL)}
 		log.GetInstance().Debugf("using proxy %q", proxyURL)
 	}
+	req.Header.Set("User-Agent", common.GetUG())
 	resp, err := client.Do(req)
 	if err != nil {
 		return err

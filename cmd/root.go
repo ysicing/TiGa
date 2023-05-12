@@ -58,6 +58,7 @@ func BuildRoot(f factory.Factory) *cobra.Command {
 	rootCmd.AddCommand(newCmdVersion(f))
 	rootCmd.AddCommand(newCmdUpgrade(f))
 	rootCmd.AddCommand(NewCmdPlugin())
+	rootCmd.AddCommand(newCmdApp(f))
 	rootCmd.AddCommand(newCmdDebug(f))
 
 	rootCmd.AddCommand(newManCmd())
@@ -94,7 +95,7 @@ func NewRootCmd(f factory.Factory) *cobra.Command {
 		Use:           "tiga",
 		SilenceUsage:  true,
 		SilenceErrors: true,
-		Short:         "tiga is a cli tool for senior restart engineer",
+		Short:         "Tiga is a cli tool for senior restart engineer",
 		PersistentPreRunE: func(cobraCmd *cobra.Command, args []string) error {
 			if cobraCmd.Annotations != nil {
 				return nil
@@ -108,6 +109,10 @@ func NewRootCmd(f factory.Factory) *cobra.Command {
 
 			log.StartFileLogging()
 			return nil
+		},
+		Run: func(cmd *cobra.Command, args []string) {
+			common.ShowLogo()
+			cmd.Help()
 		},
 	}
 }

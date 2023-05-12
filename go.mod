@@ -16,6 +16,7 @@ require (
 	github.com/mattn/go-isatty v0.0.18
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
 	github.com/moby/term v0.5.0
+	github.com/morikuni/aec v1.0.0
 	github.com/muesli/mango-cobra v1.2.0
 	github.com/muesli/roff v0.1.0
 	github.com/olekukonko/tablewriter v0.0.5

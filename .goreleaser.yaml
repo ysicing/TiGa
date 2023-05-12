@@ -83,7 +83,6 @@ nfpms:
       type: dir
 
 changelog:
-  use: github
   sort: asc
   groups:
     - title: 'New Features 🎉'
@@ -99,10 +98,6 @@ changelog:
       order: 999
   filters:
     exclude:
-      - '^test:'
-      - '^feat(ci):'
-      - '^chore(ci):'
-      - '^chore(action):'
       - '^Merge remote'
 
 release:
