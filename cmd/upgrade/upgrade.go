@@ -67,7 +67,7 @@ func (up option) DoTiGA() {
 		up.log.Errorf("upgrade failed, reason: %v", err)
 		return
 	}
-	up.log.Donef("Successfully updated tiga to version %s", lastVersion)
+	up.log.Donef("updated tiga to version %s", lastVersion)
 	up.log.Debugf("gen new version manifest")
 	up.log.Infof("Release note: \n\t release %s ", lastVersion)
 	up.log.Infof("Upgrade docs: \n\t https://github.com/ysicing/tiga/releases")
