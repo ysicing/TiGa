@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.11 (2023-05-15)
+
+ * [daf7924](https://github.com/ysicing/tiga/commit/daf792484c353e866e2228063f82691767d93f0e) feat(gops): add debug gops
+ * [97229f8](https://github.com/ysicing/tiga/commit/97229f872d00a4d6c41b750506b479e2512b5070) feat(update): update
+ * [d323dbd](https://github.com/ysicing/tiga/commit/d323dbd8c431361e59f627194d529f12fdd72d56) build(deps): bump tailscale.com from 1.40.0 to 1.40.1 (#10)
+ * [7711fa8](https://github.com/ysicing/tiga/commit/7711fa8ac0d2c14775290fbd9b25119a0966ed91) build(deps): bump github.com/cloudflare/circl from 1.1.0 to 1.3.3 (#12)
+ * [653b951](https://github.com/ysicing/tiga/commit/653b951d0f167ae79933a8aa24516a0a5252472b) feat(update): update
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.0.10 (2023-05-11)
 
  * [2507abe](https://github.com/ysicing/tiga/commit/2507abebbf9a4c63775713f7a70d639a566c52b4) feat(debug): add debug clean cache
