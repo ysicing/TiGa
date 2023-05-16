@@ -10,12 +10,15 @@ require (
 	github.com/cockroachdb/errors v1.9.1
 	github.com/containerd/continuity v0.3.0
 	github.com/ergoapi/util v0.4.0
+	github.com/go-ping/ping v1.1.0
 	github.com/google/gops v0.3.27
 	github.com/inconshreveable/go-update v0.0.0-20160112193335-8152e7eb6ccf
+	github.com/jackpal/gateway v1.0.10
 	github.com/k0kubun/go-ansi v0.0.0-20180517002512-3bf9e2903213
 	github.com/loft-sh/utils v0.0.18
 	github.com/mattn/go-isatty v0.0.18
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
+	github.com/miekg/dns v1.1.54
 	github.com/moby/term v0.5.0
 	github.com/morikuni/aec v1.0.0
 	github.com/muesli/mango-cobra v1.2.0
