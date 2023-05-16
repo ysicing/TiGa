@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.0.12 (2023-05-16)
+
+ * [7a889d7](https://github.com/ysicing/tiga/commit/7a889d7e3a60faa09beed6281d4dfd24fc0a317e) feat(debug): add netcheck
+ * [05d4298](https://github.com/ysicing/tiga/commit/05d4298843a836cfbc7ae911087ad90941438e94) feat(debug): add netcheck
+ * [31c80b3](https://github.com/ysicing/tiga/commit/31c80b37b55360f5c84db603c165d36638ac1fbc) build(deps): bump github.com/ergoapi/util from 0.3.24 to 0.4.0 (#13)
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.0.11 (2023-05-15)
 
  * [daf7924](https://github.com/ysicing/tiga/commit/daf792484c353e866e2228063f82691767d93f0e) feat(gops): add debug gops
