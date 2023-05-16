@@ -8,15 +8,21 @@ package netutil
 
 import (
 	"fmt"
+	"io"
+	"io/fs"
+	"net"
+	"net/http"
+	"os"
+	"regexp"
+	"strings"
+	"time"
+
+	"github.com/ysicing/tiga/common"
+
 	"github.com/cockroachdb/errors"
 	"github.com/go-ping/ping"
 	"github.com/jackpal/gateway"
 	"github.com/miekg/dns"
-	"io/fs"
-	"net"
-	"os"
-	"regexp"
-	"time"
 )
 
 // CheckDefaultRoute checks if the default route is reachable
@@ -46,15 +52,11 @@ func CheckReachabilityWithICMP(host string) bool {
 	pinger.Debug = true
 	pinger.Interval = 200 * time.Millisecond
 	pinger.Timeout = 3 * time.Second
-
 	err = pinger.Run()
-
 	if err != nil {
 		return false
 	}
-
 	stats := pinger.Statistics()
-
 	return stats.PacketsRecv != 0
 }
 
@@ -89,4 +91,58 @@ func CheckNameserverAvailability(s string) error {
 		return err
 	}
 	return nil
+}
+
+// CheckCaptivePortal checks if a captive portal is present
+func CheckCaptivePortal(p ...string) error {
+	checkURL := common.DefaultGenerate204URL
+	if len(p) > 0 && strings.HasPrefix(p[0], "https://") {
+		checkURL = p[0]
+	}
+	// nolint:gosec
+	resp, err := http.Get(checkURL)
+	if err != nil || resp.StatusCode != 204 {
+		return err
+	}
+	return nil
+}
+
+// GetCloudflareEdgeTrace returns the edge POP
+func GetCloudflareEdgeTrace() (string, error) {
+	resp, err := http.Get("https://www.cloudflare.com/cdn-cgi/trace")
+	if err != nil {
+		return "", err
+	}
+	defer resp.Body.Close()
+	bodyBytes, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return "", err
+	}
+	body := string(bodyBytes)
+	re := regexp.MustCompile(`colo=(.*?)\n`)
+	match := re.FindStringSubmatch(body)
+	if len(match) < 2 {
+		return "", fmt.Errorf("could not determine edge pop")
+	}
+	return match[1], nil
+}
+
+// GetSkkMoeTrace returns the edge POP
+func GetSkkMoeTrace() (string, error) {
+	resp, err := http.Get("https://ip.skk.moe/cdn-cgi/trace")
+	if err != nil {
+		return "", err
+	}
+	defer resp.Body.Close()
+	bodyBytes, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return "", err
+	}
+	body := string(bodyBytes)
+	re := regexp.MustCompile(`colo=(.*?)\n`)
+	match := re.FindStringSubmatch(body)
+	if len(match) < 2 {
+		return "", fmt.Errorf("could not determine edge pop")
+	}
+	return match[1], nil
 }
