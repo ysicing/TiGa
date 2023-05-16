@@ -17,6 +17,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/ysicing/tiga/pkg/log"
+
 	"github.com/ysicing/tiga/common"
 
 	"github.com/cockroachdb/errors"
@@ -47,13 +49,14 @@ func CheckReachabilityWithICMP(host string) bool {
 	if err != nil {
 		return false
 	}
-
+	pinger.SetPrivileged(true)
 	pinger.Count = 3
 	pinger.Debug = true
 	pinger.Interval = 200 * time.Millisecond
 	pinger.Timeout = 3 * time.Second
 	err = pinger.Run()
 	if err != nil {
+		log.GetInstance().Debugf("ping %s error: %s", host, err)
 		return false
 	}
 	stats := pinger.Statistics()
