@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.0.13 (2023-05-16)
+
+ * [a742e87](https://github.com/ysicing/tiga/commit/a742e87001a57e2ec193bf7fe0eb7d3501bd7b31) fix(netcheck): fix ping
+ * [7f83881](https://github.com/ysicing/tiga/commit/7f83881011721f174e428eefcee4cd7385c6f8a1) build(deps): bump github.com/xlab/treeprint from 1.1.0 to 1.2.0 (#15)
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.0.12 (2023-05-16)
 
  * [7a889d7](https://github.com/ysicing/tiga/commit/7a889d7e3a60faa09beed6281d4dfd24fc0a317e) feat(debug): add netcheck
