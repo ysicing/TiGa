@@ -67,3 +67,18 @@ func ShowLogo() {
 	tigaLogo := aec.BlueF.Apply(Logo)
 	fmt.Println(tigaLogo)
 }
+
+// GetDefaultTiGAIndex 获取默认index配置
+func GetDefaultTiGAIndex() string {
+	return GetDefaultCfgDir() + "/index.yaml"
+}
+
+// GetLockCacheFile 获取lock文件
+func GetLockCacheFile(name string) string {
+	return fmt.Sprintf("%s/%s.lock", GetDefaultCacheDir(), name)
+}
+
+// GetDefaultCustomIndex 获取index
+func GetDefaultCustomIndex(name string) string {
+	return fmt.Sprintf("%s/.%s.index", GetDefaultCacheDir(), name)
+}

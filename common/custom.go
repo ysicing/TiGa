@@ -6,13 +6,7 @@
 
 package common
 
-var (
-	Version       string
-	BuildDate     string
-	GitCommitHash string
-)
+import "embed"
 
-var (
-	ValidPrefixes = []string{"tiga", "ergo", "ysicing"}
-	ListOutput    string
-)
+//go:embed index.yaml
+var RepoIndex embed.FS
