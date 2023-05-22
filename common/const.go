@@ -7,18 +7,17 @@
 package common
 
 const (
-	FileMode0777    = 0o777
-	FileMode0755    = 0o755
-	FileMode0644    = 0o644
-	FileMode0600    = 0o600
-	DefaultLogDir   = "tiga/log"
-	DefaultDataDir  = "tiga/data"
-	DefaultBinDir   = "tiga/bin"
-	DefaultCfgDir   = "tiga/config"
-	DefaultCacheDir = "tiga/cache"
-
-	DefaultUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.0.0"
-
+	FileMode0777          = 0o777
+	FileMode0755          = 0o755
+	FileMode0644          = 0o644
+	FileMode0600          = 0o600
+	DefaultLogDir         = "tiga/log"
+	DefaultDataDir        = "tiga/data"
+	DefaultBinDir         = "tiga/bin"
+	DefaultCfgDir         = "tiga/config"
+	DefaultCacheDir       = "tiga/cache"
+	DefaultUserAgent      = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.0.0"
+	DefaultMMDB           = "https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb"
 	DefaultGenerate204URL = "https://connectivitycheck.gstatic.com/generate_204"
 	MiuiGenerate204URL    = "https://connect.rom.miui.com/generate_204"
 	V2exGenerate204URL    = "https://captive.v2ex.co/generate_204"

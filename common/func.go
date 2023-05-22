@@ -82,3 +82,8 @@ func GetLockCacheFile(name string) string {
 func GetDefaultCustomIndex(name string) string {
 	return fmt.Sprintf("%s/.%s.index", GetDefaultCacheDir(), name)
 }
+
+// GetDefaultMMDB 获取mmdb
+func GetDefaultMMDB() string {
+	return fmt.Sprintf("%s/ipdb.mmdb", GetDefaultDataDir())
+}

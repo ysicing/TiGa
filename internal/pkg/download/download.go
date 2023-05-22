@@ -193,7 +193,7 @@ func Download(local, remote string, opts ...Opt) (*Result, error) {
 	if _, err := os.Stat(shadData); err == nil {
 		log.GetInstance().Debugf("file %q is cached as %q", localPath, shadData)
 		if shadDigestB, err := os.ReadFile(shadDigest); err == nil {
-			log.GetInstance().Debugf("Comparing digest %q with the cached digest file %q, not computing the actual digest of %q",
+			log.GetInstance().Debugf("comparing digest %q with the cached digest file %q, not computing the actual digest of %q",
 				o.expectedDigest, shadDigest, shadData)
 			shadDigestS := strings.TrimSpace(string(shadDigestB))
 			if o.expectedDigest.String() != shadDigestS {
@@ -464,7 +464,7 @@ func downloadHTTP(localPath, url string, description string, expectedDigest dige
 		if description == "" {
 			description = url
 		}
-		fmt.Printf("Downloading %s\n", description)
+		log.GetInstance().Infof("downloading %s\n", description)
 	}
 	bar.Start()
 	if _, err := io.Copy(multiWriter, bar.NewProxyReader(resp.Body)); err != nil {

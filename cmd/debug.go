@@ -26,5 +26,6 @@ func newCmdDebug(f factory.Factory) *cobra.Command {
 	debugCmd.AddCommand(debug.CleanCacheCommand(f))
 	debugCmd.AddCommand(debug.GOpsCommand(f))
 	debugCmd.AddCommand(debug.NetCheckCommand(f))
+	debugCmd.AddCommand(debug.IPMMDBCommand(f))
 	return debugCmd
 }
