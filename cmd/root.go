@@ -11,6 +11,8 @@ import (
 	"os"
 	"strings"
 
+	"github.com/ergoapi/util/zos"
+
 	"github.com/ergoapi/util/excmd"
 	mcobra "github.com/muesli/mango-cobra"
 	"github.com/muesli/roff"
@@ -61,6 +63,10 @@ func BuildRoot(f factory.Factory) *cobra.Command {
 	rootCmd.AddCommand(newCmdApp(f))
 	rootCmd.AddCommand(newCmdRepo(f))
 	rootCmd.AddCommand(newCmdDebug(f))
+
+	if zos.IsLinux() {
+		rootCmd.AddCommand(newCmdSystem(f))
+	}
 
 	rootCmd.AddCommand(newManCmd())
 
