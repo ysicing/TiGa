@@ -4,19 +4,28 @@
 // (2) Affero General Public License 3.0 (AGPL 3.0)
 // License that can be found in the LICENSE file.
 
-package cmd
+package app
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/ysicing/tiga/cmd/app"
-	"github.com/ysicing/tiga/pkg/factory"
 )
 
-func newCmdApp(f factory.Factory) *cobra.Command {
-	var cmd = &cobra.Command{
-		Use:   "app",
-		Short: "app",
+const (
+	appInstall = `
+  # Install app
+  tiga app install --help
+`
+)
+
+func InstallApp() *cobra.Command {
+	cmd := &cobra.Command{
+		Use:     "install",
+		Aliases: []string{"i"},
+		Short:   "Install app",
+		Example: appInstall,
 	}
-	cmd.AddCommand(app.InstallApp())
+	// if zos.IsLinux() {
+	cmd.AddCommand(InstallGo())
+	// }
 	return cmd
 }

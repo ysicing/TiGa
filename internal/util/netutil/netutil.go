@@ -4,19 +4,15 @@
 // (2) Affero General Public License 3.0 (AGPL 3.0)
 // License that can be found in the LICENSE file.
 
-package cmd
+package netutil
 
 import (
-	"github.com/spf13/cobra"
-	"github.com/ysicing/tiga/cmd/app"
-	"github.com/ysicing/tiga/pkg/factory"
+	"github.com/ergoapi/util/exnet"
+	"github.com/ysicing/tiga/pkg/util/ipdb"
 )
 
-func newCmdApp(f factory.Factory) *cobra.Command {
-	var cmd = &cobra.Command{
-		Use:   "app",
-		Short: "app",
-	}
-	cmd.AddCommand(app.InstallApp())
-	return cmd
+// ValidChinaNetwork check if the network is in China
+func ValidChinaNetwork() bool {
+	ip, _ := exnet.OutboundIPv2()
+	return ipdb.MatchCN(ip)
 }

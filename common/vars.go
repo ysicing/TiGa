@@ -6,6 +6,8 @@
 
 package common
 
+import "runtime"
+
 var (
 	Version       string
 	BuildDate     string
@@ -15,4 +17,8 @@ var (
 var (
 	ValidPrefixes = []string{"tiga", "ergo", "ysicing"}
 	ListOutput    string
+)
+
+var (
+	GoDefaultVersion = runtime.Version()
 )

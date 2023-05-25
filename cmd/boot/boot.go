@@ -9,6 +9,9 @@ package boot
 import (
 	"os"
 
+	"github.com/ergoapi/util/environ"
+	"github.com/ysicing/tiga/pkg/util/ipdb"
+
 	"github.com/cockroachdb/errors"
 	"github.com/ysicing/tiga/common"
 )
@@ -31,5 +34,10 @@ func initRootDirectory() error {
 }
 
 func OnBoot() error {
+	if environ.GetEnv("TIGA_SKIP_IPDB", "false") == "false" {
+		if err := ipdb.InitMMDB(); err != nil {
+			return err
+		}
+	}
 	return initRootDirectory()
 }

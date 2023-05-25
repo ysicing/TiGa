@@ -45,7 +45,7 @@ func InitMMDB() error {
 		logpkg.Info("mmdb file download success")
 	} else {
 		if time.Since(file.ModTime()) > 7*24*time.Hour {
-			logpkg.Debugf("mmdb file expired, downloading...")
+			logpkg.Debugf("mmdb file expired 7d, downloading...")
 			_ = os.Remove(dbfile)
 			return InitMMDB()
 		}
