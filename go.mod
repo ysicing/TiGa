@@ -8,7 +8,7 @@ require (
 	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d
 	github.com/cheggaaa/pb/v3 v3.1.2
 	github.com/cockroachdb/errors v1.9.1
-	github.com/containerd/continuity v0.3.0
+	github.com/containerd/continuity v0.4.1
 	github.com/ergoapi/util v0.4.2
 	github.com/go-ping/ping v1.1.0
 	github.com/gofrs/flock v0.8.1
