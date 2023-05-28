@@ -8,9 +8,10 @@ package app
 
 import (
 	"fmt"
-	"github.com/ysicing/tiga/internal/pkg/download"
 	"runtime"
 	"strings"
+
+	"github.com/ysicing/tiga/internal/pkg/download"
 
 	"github.com/ysicing/tiga/internal/util/netutil"
 

@@ -7,6 +7,7 @@
 package cmd
 
 import (
+	"github.com/ergoapi/util/zos"
 	"github.com/spf13/cobra"
 	"github.com/ysicing/tiga/cmd/system"
 	"github.com/ysicing/tiga/pkg/factory"
@@ -18,6 +19,8 @@ func newCmdSystem(f factory.Factory) *cobra.Command {
 		Short: "system ops tools",
 		Long:  "system ops tools",
 	}
-	systemCmd.AddCommand(system.DebianCommand(f))
+	if zos.IsLinux() {
+		systemCmd.AddCommand(system.DebianCommand(f))
+	}
 	return systemCmd
 }
