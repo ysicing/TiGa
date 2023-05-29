@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.1.1 (2023-05-29)
+
+ * [af8764b](https://github.com/ysicing/tiga/commit/af8764be80bb9e07f00a5f314a0bb732329e1b32) chore(ci): fix typo
+
+### Contributors
+
+ * ysicing
+
 ## v0.1.0 (2023-05-29)
 
  * [5ce5761](https://github.com/ysicing/tiga/commit/5ce5761b1934e59f49eee56fae92201c7d209b05) feat(update): update mod
