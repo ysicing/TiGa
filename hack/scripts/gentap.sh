@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-version=$(cat VERSION)
+version=${1:-$(cat VERSION)}
 # shellcheck disable=SC2002
 macosAMD64sha=$(cat dist/checksums.txt | grep tiga_darwin_amd64 | awk '{print $1}')
 # shellcheck disable=SC2002
