@@ -1,7 +1,7 @@
 class Tiga < Formula
     desc "Simple and powerful tool for senior restart engineer"
     homepage "https://github.com/ysicing/tiga"
-    version "v0.1.1"
+    version "0.1.1"
 
     on_macos do
       if Hardware::CPU.arm?
