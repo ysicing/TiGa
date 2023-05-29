@@ -9,6 +9,7 @@ package debug
 import (
 	"net/url"
 	"path/filepath"
+	"runtime"
 
 	"github.com/cockroachdb/errors"
 	"github.com/spf13/cobra"
@@ -19,31 +20,32 @@ import (
 )
 
 func DownloadCommand(f factory.Factory) *cobra.Command {
-	e := repo.Entry{
-		Name: "tiga",
-		Desc: "tiga",
-		Platforms: repo.Platforms{
-			Windows: true,
-			Linux:   true,
-			MacOS:   true,
-			Amd64:   true,
-			Arm64:   true,
-		},
-	}
+	var dlUrl string
 	dl := &cobra.Command{
 		Use:     "download",
 		Short:   "download",
 		Aliases: []string{"dl"},
 		PreRunE: func(cmd *cobra.Command, args []string) error {
-			if len(e.Url) == 0 {
+			if len(dlUrl) == 0 {
 				return errors.New("url is empty")
 			}
 			return nil
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			u, _ := url.Parse(e.Url)
+			u, _ := url.Parse(dlUrl)
 			filename := filepath.Base(u.Path)
 			dlPath := common.GetDefaultCacheDir() + "/" + filename
+			e := repo.Plugin{
+				Name: "tiga",
+				Desc: "test download",
+				Platforms: []repo.Platform{
+					{
+						OS:   runtime.GOOS,
+						Arch: runtime.GOARCH,
+						URL:  dlUrl,
+					},
+				},
+			}
 			cacheFile, err := fileutil.DownloadFile(&e, dlPath)
 			if err != nil {
 				return err
@@ -53,10 +55,9 @@ func DownloadCommand(f factory.Factory) *cobra.Command {
 			} else {
 				f.GetLog().Donef("downloaded success to %s(%s)", dlPath, cacheFile)
 			}
-
 			return nil
 		},
 	}
-	dl.Flags().StringVar(&e.Url, "url", "", "download file url")
+	dl.Flags().StringVar(&dlUrl, "url", "", "download file url")
 	return dl
 }

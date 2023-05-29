@@ -1,11 +1,12 @@
 generated: "2021-10-20T14:00:00Z"
 repositories:
 - name: "helm"
-  url: ""
+  home: ""
   desc: ""
   version: 0.0.1
   type: script
-  linux: true
-  darwin: true
-  arm64: true
-  amd64: true
+  platforms:
+    - os: linux
+      arch: arm64
+      url: ""
+      digest: ""

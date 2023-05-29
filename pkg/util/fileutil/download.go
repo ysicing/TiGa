@@ -16,7 +16,7 @@ import (
 	"github.com/ysicing/tiga/pkg/log"
 )
 
-func DownloadFile(entry *repo.Entry, dlPath string) (string, error) {
+func DownloadFile(entry *repo.Plugin, dlPath string) (string, error) {
 	if entry == nil {
 		return "", errors.New("entry is nil")
 	}
@@ -26,24 +26,24 @@ func DownloadFile(entry *repo.Entry, dlPath string) (string, error) {
 	if !entry.ValidateArch() {
 		return "", errors.New("arch is not support")
 	}
-	log.GetInstance().Infof("attempting download file: %s", entry.Url)
-	res, err := download.Download(dlPath, entry.Url,
+	dlURL := entry.GetCurrentURL()
+	log.GetInstance().Infof("attempting download file: %s", dlURL)
+	res, err := download.Download(dlPath, dlURL,
 		download.WithCache(),
 		download.WithDecompress(false),
-		download.WithDescription(fmt.Sprintf("%s (%s)", entry.Desc, path.Base(entry.Url))),
-		download.WithExpectedDigest(entry.Digest),
+		download.WithDescription(fmt.Sprintf("%s (%s)", entry.Desc, path.Base(dlURL))),
 	)
 	if err != nil {
-		return "", fmt.Errorf("failed to download %q: %w", entry.Url, err)
+		return "", fmt.Errorf("failed to download %q: %w", dlURL, err)
 	}
 	// log.GetInstance().Debugf("res.ValidatedDigest=%v", res.ValidatedDigest)
 	switch res.Status {
 	case download.StatusDownloaded:
-		log.GetInstance().Infof("Downloaded %s from %q", entry.Desc, entry.Url)
+		log.GetInstance().Debugf("downloaded %s from %s", entry.Desc, dlURL)
 	case download.StatusUsedCache:
-		log.GetInstance().Infof("Using cache %q", res.CachePath)
+		log.GetInstance().Debugf("using cache %s", res.CachePath)
 	case download.StatusSkipped:
-		log.GetInstance().Infof("Skipped download from %q", entry.Url)
+		log.GetInstance().Debugf("skipped download from %s", dlURL)
 	default:
 		return "", errors.Newf("Unexpected result from download.Download(): %+v", res)
 	}

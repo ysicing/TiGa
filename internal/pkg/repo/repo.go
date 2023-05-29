@@ -12,59 +12,62 @@ import (
 	"time"
 
 	"github.com/cockroachdb/errors"
-	"github.com/ergoapi/util/zos"
 	"github.com/opencontainers/go-digest"
 	"sigs.k8s.io/yaml"
 )
 
 type File struct {
-	Generated    time.Time `json:"generated" yaml:"generated"`
-	Repositories []*Entry  `json:"repositories" yaml:"repositories"`
+	Generated time.Time `json:"generated" yaml:"generated"`
+	Plugins   []*Plugin `json:"plugins" yaml:"plugins"`
 }
 
-type Entry struct {
-	Name      string        `json:"name" yaml:"name"`
-	Url       string        `json:"url" yaml:"url"`
-	Desc      string        `json:"desc" yaml:"desc"`
-	Digest    digest.Digest `json:"digest" yaml:"digest"`
-	Platforms Platforms     `json:"platforms" yaml:"platforms"`
+type Plugin struct {
+	Name      string     `json:"name" yaml:"name"`
+	Home      string     `json:"home,omitempty" yaml:"home,omitempty"`
+	Desc      string     `json:"desc,omitempty" yaml:"desc,omitempty"`
+	Version   string     `json:"version" yaml:"version"`
+	Type      string     `json:"type" yaml:"type"`
+	Platforms []Platform `json:"platforms" yaml:"platforms"`
 }
 
-type Platforms struct {
-	Windows bool `json:"windows" yaml:"windows"`
-	Linux   bool `json:"linux" yaml:"linux"`
-	MacOS   bool `json:"macos" yaml:"macos"`
-	Amd64   bool `json:"amd64" yaml:"amd64"`
-	Arm64   bool `json:"arm64" yaml:"arm64"`
+type Platform struct {
+	OS     string        `json:"os" yaml:"os"`
+	Arch   string        `json:"arch" yaml:"arch"`
+	URL    string        `json:"url" yaml:"url"`
+	Digest digest.Digest `json:"digest,omitempty" yaml:"digest,omitempty"`
 }
 
-func (e *Entry) ValidateArch() bool {
-	if e.Platforms.Amd64 && runtime.GOARCH == "amd64" {
-		return true
-	}
-	if e.Platforms.Arm64 && runtime.GOARCH == "arm64" {
-		return true
+func (e *Plugin) ValidateArch() bool {
+	for _, a := range e.Platforms {
+		if a.Arch == runtime.GOARCH {
+			return true
+		}
 	}
 	return false
 }
 
-func (e *Entry) ValidateOS() bool {
-	if zos.IsMacOS() {
-		return e.Platforms.MacOS
-	}
-	if zos.IsLinux() {
-		return e.Platforms.Linux
-	}
-	if zos.NotUnix() {
-		return e.Platforms.Windows
+func (e *Plugin) ValidateOS() bool {
+	for _, a := range e.Platforms {
+		if a.OS == runtime.GOOS {
+			return true
+		}
 	}
 	return false
+}
+
+func (e *Plugin) GetCurrentURL() string {
+	for _, a := range e.Platforms {
+		if a.Arch == runtime.GOARCH && a.OS == runtime.GOOS {
+			return a.URL
+		}
+	}
+	return ""
 }
 
 func NewFile() *File {
 	return &File{
-		Generated:    time.Now(),
-		Repositories: []*Entry{},
+		Generated: time.Now(),
+		Plugins:   []*Plugin{},
 	}
 }
 
