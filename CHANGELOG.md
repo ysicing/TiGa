@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.1.0 (2023-05-29)
+
+ * [5ce5761](https://github.com/ysicing/tiga/commit/5ce5761b1934e59f49eee56fae92201c7d209b05) feat(update): update mod
+ * [a6389f3](https://github.com/ysicing/tiga/commit/a6389f3aa2669cfc41942d0f0a1296bb944b9a5c) feat(update): update code
+ * [072de44](https://github.com/ysicing/tiga/commit/072de4426c3a789e75aa402e2d578ac44c48436a) build(deps): bump github.com/mattn/go-isatty from 0.0.18 to 0.0.19 (#24)
+ * [4444389](https://github.com/ysicing/tiga/commit/4444389bb40e68f3698071cd820fb2be9f1b5a4b) feat(app): update app
+ * [85f9f0e](https://github.com/ysicing/tiga/commit/85f9f0e133c2ea64836fd0f3493a8666af5ccfbd) build(deps): bump github.com/containerd/continuity from 0.3.0 to 0.4.1 (#23)
+ * [5e85705](https://github.com/ysicing/tiga/commit/5e857055b83dda6a3ad4ad84e5e77ff0f2374616) feat(system): add system
+ * [df9d60f](https://github.com/ysicing/tiga/commit/df9d60f33d5ca8c3e4c6a8a78f648805cca2282d) build(deps): bump github.com/ergoapi/util from 0.4.1 to 0.4.2 (#22)
+ * [2a993be](https://github.com/ysicing/tiga/commit/2a993bee0df711e2eb2e814eece5b0b102e3cad8) build(deps): bump github.com/shirou/gopsutil/v3 from 3.23.1 to 3.23.4 (#21)
+ * [b43a36c](https://github.com/ysicing/tiga/commit/b43a36c8012e602d6d94b8e31710b82ba8230bbc) feat(debug): add mmdb
+ * [52708c6](https://github.com/ysicing/tiga/commit/52708c646405210290f51e91964b0a8a45834b12) build(deps): bump github.com/sirupsen/logrus from 1.9.0 to 1.9.2 (#20)
+ * [6760a13](https://github.com/ysicing/tiga/commit/6760a1329fb64c017cf5daba388cdeaa900b0a20) build(deps): bump github.com/ergoapi/util from 0.4.0 to 0.4.1 (#18)
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.0.14 (2023-05-17)
 
  * [111acd1](https://github.com/ysicing/tiga/commit/111acd1b9b3e4d0bef988e49fbf2d39784d8b9cb) feat(repo): add repo
