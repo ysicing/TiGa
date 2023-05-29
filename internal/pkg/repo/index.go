@@ -235,12 +235,12 @@ func UpdateIndex(name, url string, force bool) error {
 	}
 	if file.CheckFileExists(path) {
 		fileInfo, _ := os.Stat(path)
-		threshold := time.Now().Add(-5 * time.Minute)
+		threshold := time.Now().Add(-1 * time.Hour)
 		if fileInfo.ModTime().Before(threshold) {
-			logpkg.Debugf("cache file exists and expired 5 minute, will download: %s", path)
+			logpkg.Debugf("cache file exists and expired 60 minute, will download: %s", path)
 			os.Remove(path)
 		} else {
-			logpkg.Debugf("cache file exists and not expired 5 minute, skip")
+			logpkg.Debugf("cache file exists and not expired 60 minute, skip")
 			return nil
 		}
 	}

@@ -7,8 +7,16 @@
 package cmd
 
 import (
+	"fmt"
+	"os"
+	"strings"
+
+	"github.com/ergoapi/util/output"
+	"github.com/gosuri/uitable"
 	"github.com/spf13/cobra"
 	"github.com/ysicing/tiga/cmd/plugin"
+	"github.com/ysicing/tiga/common"
+	"github.com/ysicing/tiga/pkg/log"
 	cmdutil "k8s.io/kubectl/pkg/cmd/util"
 	"k8s.io/kubectl/pkg/util/templates"
 )
@@ -31,13 +39,13 @@ func NewCmdPlugin() *cobra.Command {
 		DisableFlagsInUseLine: true,
 		Short:                 "provides utilities for interacting with plugins",
 	}
-	cmd.AddCommand(NewCmdPluginList())
-	cmd.AddCommand(NewPluginInstall())
-	cmd.AddCommand(NewPluginSearch())
+	cmd.AddCommand(pluginListCmd())
+	cmd.AddCommand(pluginInstallCmd())
+	cmd.AddCommand(pluginSearchCmd())
 	return cmd
 }
 
-func NewCmdPluginList() *cobra.Command {
+func pluginListCmd() *cobra.Command {
 	o := plugin.ListOptions{}
 	cmd := &cobra.Command{
 		Use:                   "list [flags]",
@@ -54,7 +62,7 @@ func NewCmdPluginList() *cobra.Command {
 	return cmd
 }
 
-func NewPluginInstall() *cobra.Command {
+func pluginInstallCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "install [flags]",
 		Aliases: []string{"i"},
@@ -67,14 +75,44 @@ func NewPluginInstall() *cobra.Command {
 	return cmd
 }
 
-func NewPluginSearch() *cobra.Command {
+func pluginSearchCmd() *cobra.Command {
+	o := plugin.SearchOptions{
+		Log: log.GetInstance(),
+	}
 	cmd := &cobra.Command{
 		Use:     "search [flags]",
+		Aliases: []string{"ls-remote"},
 		Short:   "search plugin from repository",
 		Example: pluginSearchExample,
-		Run: func(cmd *cobra.Command, args []string) {
-
+		RunE: func(cmd *cobra.Command, args []string) error {
+			name := ""
+			if len(args) > 0 {
+				name = args[0]
+			}
+			plugins, err := o.Search(name)
+			if err != nil {
+				o.Log.Warnf("search plugin error: %v", err)
+				return nil
+			}
+			o.Log.Infof("search plugin result count: %v", len(plugins))
+			// spew.Dump(plugins)
+			switch strings.ToLower(common.ListOutput) {
+			case "json":
+				return output.EncodeJSON(os.Stdout, plugins)
+			case "yaml":
+				return output.EncodeYAML(os.Stdout, plugins)
+			default:
+				table := uitable.New()
+				table.AddRow("name", "version", "desc")
+				for _, p := range plugins {
+					for _, v := range p.Plugins {
+						table.AddRow(fmt.Sprintf("%s/%s", p.Index, v.Name), v.Version, v.Desc)
+					}
+				}
+				return output.EncodeTable(os.Stdout, table)
+			}
 		},
 	}
+	cmd.Flags().StringVarP(&common.ListOutput, "output", "o", "", "prints the output in the specified format. Allowed values: table, json, yaml (default table)")
 	return cmd
 }

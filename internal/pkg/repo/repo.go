@@ -16,7 +16,7 @@ import (
 	"sigs.k8s.io/yaml"
 )
 
-type File struct {
+type PluginFile struct {
 	Generated time.Time `json:"generated" yaml:"generated"`
 	Plugins   []*Plugin `json:"plugins" yaml:"plugins"`
 }
@@ -64,19 +64,35 @@ func (e *Plugin) GetCurrentURL() string {
 	return ""
 }
 
-func NewFile() *File {
-	return &File{
+func NewPlugin() *PluginFile {
+	return &PluginFile{
 		Generated: time.Now(),
 		Plugins:   []*Plugin{},
 	}
 }
 
-func LoadFile(path string) (*File, error) {
-	f := new(File)
+func LoadPlugin(path string) (*PluginFile, error) {
+	f := new(PluginFile)
 	b, err := os.ReadFile(path)
 	if err != nil {
 		return f, errors.Newf("failed to read file(%s):%v", path, err)
 	}
 	err = yaml.Unmarshal(b, f)
 	return f, err
+}
+
+// Has returns true if the given name is already a repository name.
+func (r *PluginFile) Has(name string) bool {
+	entry := r.Get(name)
+	return entry != nil
+}
+
+// Get returns an entry with the given name if it exists, otherwise returns nil
+func (r *PluginFile) Get(name string) *Plugin {
+	for _, plugin := range r.Plugins {
+		if plugin.Name == name {
+			return plugin
+		}
+	}
+	return nil
 }

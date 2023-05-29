@@ -1,5 +1,5 @@
 generated: "2023-05-17T23:11:56.367519+08:00"
 index:
 - name: ysicing
-  url: https://github.com/ysicing/ergo-index/releases/latest/download/default.yaml
+  url: https://raw.githubusercontent.com/ysicing/tiga/master/plugin.yaml
   desc: default index
