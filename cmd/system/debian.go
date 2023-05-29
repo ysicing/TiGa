@@ -26,5 +26,6 @@ func DebianCommand(f factory.Factory) *cobra.Command {
 			return nil
 		},
 	}
+	debianCmd.AddCommand(swapCommand(f))
 	return debianCmd
 }

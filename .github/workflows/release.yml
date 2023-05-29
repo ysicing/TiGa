@@ -79,7 +79,7 @@ jobs:
     - name: fetch current version
       id: get-current-tag
       uses: actions-ecosystem/action-get-latest-tag@v1.6.0
-    - run: ./hack/scripts/gentap.sh ${{steps.get-current-tag.outputs.tag }}
+    - run: ./hack/scripts/gentap.sh ${{steps.get-current-tag.outputs.tag}}
     - name: Build docs
       run: |
         task godoc
@@ -93,11 +93,11 @@ jobs:
     - run: ./hack/scripts/changelog.sh > CHANGELOG.md
     - uses: peter-evans/create-pull-request@v5
       with:
-        title: 'docs: updated CHANGELOG.md & docs for ${{steps.get-current-tag.outputs.tag }}'
+        title: 'docs: updated CHANGELOG.md & docs for ${{steps.get-current-tag.outputs.tag}}'
         commit-message: |
           docs: updated CHANGELOG.md & docs
           🤖 add release changelog using rebot.
-        branch: create-pull-request/changelog-${{steps.get-current-tag.outputs.tag }}
+        branch: create-pull-request/changelog-${{steps.get-current-tag.outputs.tag}}
         signoff: true
         delete-branch: true
         # assignees: ysicing

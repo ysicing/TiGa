@@ -15,7 +15,7 @@ import (
 	"github.com/ysicing/tiga/pkg/factory"
 )
 
-func SwapCommand(f factory.Factory) *cobra.Command {
+func swapCommand(f factory.Factory) *cobra.Command {
 	debianCmd := &cobra.Command{
 		Use:   "swap",
 		Short: "swap op",
