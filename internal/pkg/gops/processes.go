@@ -9,7 +9,6 @@ package gops
 import (
 	"bytes"
 	"fmt"
-	"log"
 	"math"
 	"os"
 	"regexp"
@@ -18,6 +17,7 @@ import (
 	"time"
 
 	"github.com/shirou/gopsutil/v3/process"
+	"github.com/ysicing/tiga/pkg/log"
 
 	"github.com/google/gops/goprocess"
 )
@@ -101,12 +101,13 @@ func ProcessInfo(args []string) {
 }
 
 func processInfo(pid int, period time.Duration) {
+	logpkg := log.GetInstance()
 	if period < 0 {
-		log.Fatalf("Cannot determine CPU usage for negative duration %v", period)
+		logpkg.Fatalf("Cannot determine CPU usage for negative duration %v", period)
 	}
 	p, err := process.NewProcess(int32(pid))
 	if err != nil {
-		log.Fatalf("Cannot read process info: %v", err)
+		logpkg.Fatalf("Cannot read process info: %v", err)
 	}
 	if v, err := p.Parent(); err == nil {
 		fmt.Printf("parent PID:\t%v\n", v.Pid)

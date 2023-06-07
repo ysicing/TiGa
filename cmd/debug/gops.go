@@ -13,6 +13,16 @@ import (
 	"github.com/spf13/cobra"
 	tops "github.com/ysicing/tiga/internal/pkg/gops"
 	"github.com/ysicing/tiga/pkg/factory"
+	"k8s.io/kubectl/pkg/util/templates"
+)
+
+var (
+	processExample = templates.Examples(`
+  # simple process info
+  tiga debug gops process <pid>
+  # simple process info with period time(seconds)
+  tiga debug gops process <pid> <time>
+  `)
 )
 
 func GOpsCommand(f factory.Factory) *cobra.Command {
@@ -54,6 +64,8 @@ func processCommand() *cobra.Command {
 		Use:     "process",
 		Aliases: []string{"pid", "proc"},
 		Short:   "Prints information about a Go process.",
+		Example: processExample,
+		Args:    cobra.RangeArgs(1, 2),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			tops.ProcessInfo(args)
 			return nil
