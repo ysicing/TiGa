@@ -275,8 +275,8 @@ github.com/labstack/echo/v4 v4.5.0/go.mod h1:czIriw4a0C1dFun+ObrXp7ok03xON0N1awS
 github.com/labstack/gommon v0.3.0/go.mod h1:MULnywXg0yavhxWKc+lOruYdAhDwPK9wf0OL7NoOu+k=
 github.com/liggitt/tabwriter v0.0.0-20181228230101-89fcab3d43de h1:9TO3cAIGXtEhnIaL+V+BEER86oLrvS+kWobKpbJuye0=
 github.com/liggitt/tabwriter v0.0.0-20181228230101-89fcab3d43de/go.mod h1:zAbeS9B/r2mtpb6U+EI2rYA5OAXxsYw6wTamcNW+zcE=
-github.com/loft-sh/utils v0.0.20 h1:7J63Vp8rO0Yvyo3Nzu2wBWnqBW8qmscNP++zfSeLKBI=
-github.com/loft-sh/utils v0.0.20/go.mod h1:0lw0bzifz03np3AJvwVLCTAfWK8AE2dNwfEAq/YxoyY=
+github.com/loft-sh/utils v0.0.21 h1:GSmg/PL90rfR3RzVlNIu1kK5xWWECiSsxxPHwzG5rgo=
+github.com/loft-sh/utils v0.0.21/go.mod h1:0lw0bzifz03np3AJvwVLCTAfWK8AE2dNwfEAq/YxoyY=
 github.com/lufia/plan9stats v0.0.0-20211012122336-39d0f177ccd0/go.mod h1:zJYVVT2jmtg6P3p1VtQj7WsuWi/y4VnjVBn7F8KPB3I=
 github.com/lufia/plan9stats v0.0.0-20230326075908-cb1d2100619a h1:N9zuLhTvBSRt0gWSiJswwQ2HqDmtX/ZCDJURnKUt1Ik=
 github.com/lufia/plan9stats v0.0.0-20230326075908-cb1d2100619a/go.mod h1:JKx41uQRwqlTZabZc+kILPrO/3jlKnQ2Z8b7YiVw5cE=
