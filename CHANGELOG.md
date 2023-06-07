@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.1.2 (2023-06-07)
+
+ * [ead32ee](https://github.com/ysicing/tiga/commit/ead32eebe6c498df3e36f3a90e1404df9d8364d6) fix(gops typo): fix #30
+ * [7a29309](https://github.com/ysicing/tiga/commit/7a29309fb65eb282a1a08cf6e857c1dfadbd1360) build(deps): bump github.com/sirupsen/logrus from 1.9.2 to 1.9.3 (#29)
+ * [ecc8e56](https://github.com/ysicing/tiga/commit/ecc8e56a04388d7f1c35bb7a02a3362b2857b5a1) build(deps): bump github.com/shirou/gopsutil/v3 from 3.23.4 to 3.23.5 (#28)
+ * [4598c32](https://github.com/ysicing/tiga/commit/4598c3265e5b07c71bfab52fc46b8a477c3d29dd) build(deps): bump github.com/loft-sh/utils from 0.0.18 to 0.0.20 (#27)
+ * [380b659](https://github.com/ysicing/tiga/commit/380b65947cea45da27a86296e814705a8f0a8132) feat(update): update
+ * [94c91a2](https://github.com/ysicing/tiga/commit/94c91a20715336e697a4420e5afc3c432bb6b1fa) fix(typo): fix version typo
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.1.1 (2023-05-29)
 
  * [af8764b](https://github.com/ysicing/tiga/commit/af8764be80bb9e07f00a5f314a0bb732329e1b32) chore(ci): fix typo
