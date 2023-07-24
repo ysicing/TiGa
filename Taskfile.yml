@@ -74,10 +74,16 @@ tasks:
       - task: gofmt
       - task: golint
 
+  generate:
+    desc: generate code
+    cmds:
+      - go generate ./...
+
   linux:
     desc: build linux for remote test
     deps:
-      - task: gomod
+      - gomod
+      - generate
     vars:
       GOOS: linux
       GOARCH: amd64
@@ -90,7 +96,8 @@ tasks:
   local:
     desc: build local for test
     deps:
-      - task: gomod
+      - gomod
+      - generate
     cmds:
       - go install github.com/mitchellh/gox@latest
       - gox -os={{.GOOS}} -arch={{.GOARCH}} -output="{{.BUILD_DIR}}/tiga_{{.GOOS}}_{{.GOARCH}}" -ldflags "{{.LDFLAGS}}"
@@ -109,7 +116,6 @@ tasks:
       - task: clean
       - go install github.com/goreleaser/goreleaser@latest
       - goreleaser release --snapshot --clean --skip-publish
-
   default:
     cmds:
       - task: clean

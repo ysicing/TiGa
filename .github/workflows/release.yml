@@ -92,6 +92,7 @@ jobs:
     - run: git tag -l 'v*'
     - run: ./hack/scripts/changelog.sh > CHANGELOG.md
     - uses: peter-evans/create-pull-request@v5
+      id: cpr
       with:
         title: 'docs: updated CHANGELOG.md & docs for ${{steps.get-current-tag.outputs.tag}}'
         commit-message: |
@@ -105,3 +106,9 @@ jobs:
         labels: |
           kind/doc
           kind/bot
+    - name: Pull Request Automerge
+      if: steps.cpr.outputs.pull-request-operation == 'created'
+      uses: peter-evans/enable-pull-request-automerge@v3
+      with:
+        pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+        merge-method: rebase

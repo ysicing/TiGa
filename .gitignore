@@ -3,3 +3,4 @@ _output/
 bin/
 completions/
 manpages/
+internal/static/*/zz_generated_bindata*

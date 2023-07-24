@@ -4,17 +4,17 @@
 // (2) Affero General Public License 3.0 (AGPL 3.0)
 // License that can be found in the LICENSE file.
 
-//go:generate go run internal/pkg/cli/codegen/codegen.go
-package main
+package static
 
 import (
-	"github.com/ysicing/tiga/cmd"
-	"github.com/ysicing/tiga/cmd/boot"
+	"github.com/ysicing/tiga/common"
+	"github.com/ysicing/tiga/internal/static/manifests"
 )
 
-func main() {
-	if err := boot.OnBoot(); err != nil {
-		panic(err)
+func StageFiles() error {
+	dataDir := common.GetDefaultDataDir()
+	if err := manifests.Stage(dataDir); err != nil {
+		return err
 	}
-	cmd.Execute()
+	return nil
 }

@@ -4,17 +4,4 @@
 // (2) Affero General Public License 3.0 (AGPL 3.0)
 // License that can be found in the LICENSE file.
 
-//go:generate go run internal/pkg/cli/codegen/codegen.go
-package main
-
-import (
-	"github.com/ysicing/tiga/cmd"
-	"github.com/ysicing/tiga/cmd/boot"
-)
-
-func main() {
-	if err := boot.OnBoot(); err != nil {
-		panic(err)
-	}
-	cmd.Execute()
-}
+package xray
