@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.1.3 (2023-07-24)
+
+ * [3ba98a6](https://github.com/ysicing/tiga/commit/3ba98a640ba2a29fe8a0450b733db628334b971a) feat(action): add auto merge action
+ * [03678bc](https://github.com/ysicing/tiga/commit/03678bcf8090c753c1311ad690a64bbfa0681e43) feat(mod): update mod
+ * [b827728](https://github.com/ysicing/tiga/commit/b8277289ca90ed35583f92da3a3d4402705157cc) build(deps): bump github.com/cheggaaa/pb/v3 from 3.1.2 to 3.1.4 (#34)
+ * [9c67e79](https://github.com/ysicing/tiga/commit/9c67e79e1a4bdee9496518943029ffe2f62e123e) build(deps): bump github.com/cockroachdb/errors from 1.9.1 to 1.10.0 (#33)
+ * [7557532](https://github.com/ysicing/tiga/commit/7557532e57e2e0a91e46bd8b034d975650c86154) build(deps): bump github.com/loft-sh/utils from 0.0.20 to 0.0.21 (#32)
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.1.2 (2023-06-07)
 
  * [ead32ee](https://github.com/ysicing/tiga/commit/ead32eebe6c498df3e36f3a90e1404df9d8364d6) fix(gops typo): fix #30
