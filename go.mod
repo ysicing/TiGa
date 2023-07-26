@@ -3,7 +3,7 @@ module github.com/ysicing/tiga
 go 1.20
 
 require (
-	github.com/AlecAivazis/survey/v2 v2.3.6
+	github.com/AlecAivazis/survey/v2 v2.3.7
 	github.com/BeidouCloudPlatform/go-bindata/v4 v4.1.0
 	github.com/Masterminds/semver/v3 v3.2.1
 	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d
