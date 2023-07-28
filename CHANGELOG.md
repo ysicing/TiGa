@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.2.0 (2023-07-28)
+
+ * [fa44cda](https://github.com/ysicing/tiga/commit/fa44cdad7ba4d4ffd1ea72f426422b620655d9d2) feat(debug): debug add xray support
+ * [02e43ba](https://github.com/ysicing/tiga/commit/02e43bae5a7f570f33e7fb3f04ddc9e6c6374f14) build(deps): bump tailscale.com from 1.42.0 to 1.46.1
+ * [c298932](https://github.com/ysicing/tiga/commit/c2989324f88d6aa46abf74b3475f21ed887c90e5) build(deps): bump github.com/oschwald/geoip2-golang from 1.8.0 to 1.9.0
+ * [e65973f](https://github.com/ysicing/tiga/commit/e65973f0beef9a0ebc2dfbfdce35ff791e0d224c) build(deps): bump github.com/AlecAivazis/survey/v2 from 2.3.6 to 2.3.7
+ * [603fe95](https://github.com/ysicing/tiga/commit/603fe95f634b6f7f7690adadf55ad158adaa1180) build(deps): bump github.com/miekg/dns from 1.1.54 to 1.1.55
+ * [0c0343d](https://github.com/ysicing/tiga/commit/0c0343dbccfb0cd03fa897baee29268c306bbd3b) build(deps): bump github.com/ergoapi/util from 0.4.3 to 0.5.0 (#35)
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.1.3 (2023-07-24)
 
  * [3ba98a6](https://github.com/ysicing/tiga/commit/3ba98a640ba2a29fe8a0450b733db628334b971a) feat(action): add auto merge action
