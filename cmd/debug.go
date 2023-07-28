@@ -12,6 +12,7 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/ysicing/tiga/cmd/debug"
+	"github.com/ysicing/tiga/cmd/xray"
 	"github.com/ysicing/tiga/pkg/factory"
 )
 
@@ -27,5 +28,6 @@ func newCmdDebug(f factory.Factory) *cobra.Command {
 	debugCmd.AddCommand(debug.GOpsCommand(f))
 	debugCmd.AddCommand(debug.NetCheckCommand(f))
 	debugCmd.AddCommand(debug.IPMMDBCommand(f))
+	debugCmd.AddCommand(xray.NewCmdXray(f))
 	return debugCmd
 }
