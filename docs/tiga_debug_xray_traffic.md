@@ -9,7 +9,8 @@ tiga debug xray traffic [flags]
 ### Options
 
 ```
-  -h, --help   help for traffic
+  -h, --help            help for traffic
+  -o, --output string   prints the output in the specified format. Allowed values: table, json, yaml (default table)
 ```
 
 ### Options inherited from parent commands
