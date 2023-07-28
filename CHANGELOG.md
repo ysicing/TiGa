@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.1 (2023-07-28)
+
+ * [e1c216d](https://github.com/ysicing/tiga/commit/e1c216d160de6933c7d2b36fcbc882e99296675b) fix(xray): fix xray traffic show
+
+### Contributors
+
+ * ysicing
+
 ## v0.2.0 (2023-07-28)
 
  * [fa44cda](https://github.com/ysicing/tiga/commit/fa44cdad7ba4d4ffd1ea72f426422b620655d9d2) feat(debug): debug add xray support
