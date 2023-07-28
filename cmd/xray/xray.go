@@ -8,8 +8,13 @@ package xray
 
 import (
 	"fmt"
+	"os"
+	"strings"
 
+	"github.com/ergoapi/util/output"
+	"github.com/gosuri/uitable"
 	"github.com/spf13/cobra"
+	"github.com/ysicing/tiga/common"
 	"github.com/ysicing/tiga/internal/pkg/xray"
 	"github.com/ysicing/tiga/pkg/factory"
 )
@@ -33,15 +38,34 @@ func trafficXray(f factory.Factory) *cobra.Command {
 	t := &cobra.Command{
 		Use:     "traffic",
 		Short:   "traffic",
-		Version: "0.2.0",
+		Version: "0.2.1",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			if err := xrayCtl.Init(api); err != nil {
 				return fmt.Errorf("init xray controller failed: %v", err)
 			}
 			defer xrayCtl.CmdConn.Close()
-			log.Info("xray exporter start")
-			return xrayCtl.QueryTraffic(false)
+			ts, err := xrayCtl.QueryTraffic(false)
+			if err != nil {
+				return err
+			}
+			switch strings.ToLower(common.ListOutput) {
+			case "json":
+				return output.EncodeJSON(os.Stdout, ts)
+			case "yaml":
+				return output.EncodeYAML(os.Stdout, ts)
+			default:
+				log.Info("xray watch traffic")
+				table := uitable.New()
+				table.AddRow("Type", "Name", "DataType", "Up", "Down")
+				for _, t := range ts {
+					table.AddRow(t.Type, t.Name, t.DataType, t.Up, t.Down)
+				}
+				return output.EncodeTable(os.Stdout, table)
+			}
 		},
 	}
+	t.Flags().StringVarP(&common.ListOutput, "output", "o", "",
+		"prints the output in the specified format. Allowed values: table, json, yaml (default table)")
+
 	return t
 }
