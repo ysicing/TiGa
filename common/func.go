@@ -87,3 +87,13 @@ func GetDefaultCustomIndex(name string) string {
 func GetDefaultMMDB() string {
 	return fmt.Sprintf("%s/ipdb.mmdb", GetDefaultDataDir())
 }
+
+// GetDefaultLogFile 获取log
+func GetDefaultLogFile(log string) string {
+	return fmt.Sprintf("%s/%s", GetDefaultLogDir(), log)
+}
+
+// GetDefaultScriptFile 获取脚本路径
+func GetCustomScriptFile(path string) string {
+	return fmt.Sprintf("%s/%s", GetDefaultDataDir(), path)
+}

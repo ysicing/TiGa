@@ -12,14 +12,18 @@ import (
 
 	"github.com/shirou/gopsutil/v3/mem"
 	"github.com/spf13/cobra"
+	"github.com/ysicing/tiga/common"
+	"github.com/ysicing/tiga/pkg/exec"
 	"github.com/ysicing/tiga/pkg/factory"
 )
 
 func swapCommand(f factory.Factory) *cobra.Command {
+	var swapSize int64
 	debianCmd := &cobra.Command{
-		Use:   "swap",
-		Short: "swap op",
-		Long:  "add swap to linux",
+		Use:     "swap",
+		Short:   "swap op",
+		Long:    "add swap to linux",
+		Version: "0.2.2",
 		PreRunE: func(cmd *cobra.Command, args []string) error {
 			swap, err := mem.SwapMemory()
 			if err != nil {
@@ -29,12 +33,16 @@ func swapCommand(f factory.Factory) *cobra.Command {
 				f.GetLog().Info("swap already exists")
 				os.Exit(0)
 			}
-			f.GetLog().Info("not found swap, will create swap")
+			if swapSize < 0 {
+				swapSize = 1
+			}
 			return nil
 		},
-		Run: func(cmd *cobra.Command, args []string) {
-
+		RunE: func(cmd *cobra.Command, args []string) error {
+			f.GetLog().Infof("not found swap, will create swap %dG", swapSize)
+			return exec.CommandRun("bash", "-c", common.GetCustomScriptFile("hack/manifests/system/swap.sh"), fmt.Sprintf("%d", swapSize))
 		},
 	}
+	debianCmd.Flags().Int64VarP(&swapSize, "size", "s", 1, "swap size 1GB")
 	return debianCmd
 }

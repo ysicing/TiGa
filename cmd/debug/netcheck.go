@@ -71,10 +71,10 @@ func NetCheckCommand(f factory.Factory) *cobra.Command {
 			}()
 			go func() {
 				defer wg.Done()
-				if err := netutil.CheckNameserverAvailability("1.2.4.8:53"); err != nil {
-					logpkg.Warnf("remote dns %s is unavailable: %s", color.SRed("1.2.4.8"), err)
+				if err := netutil.CheckNameserverAvailability("114.114.114.114:53"); err != nil {
+					logpkg.Warnf("remote dns %s is unavailable: %s", color.SRed("114.114.114.114"), err)
 				} else {
-					logpkg.Donef("remote dns %s is available", color.SGreen("1.2.4.8"))
+					logpkg.Donef("remote dns %s is available", color.SGreen("114.114.114.114"))
 				}
 			}()
 			go func() {

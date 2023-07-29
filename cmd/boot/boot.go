@@ -10,6 +10,7 @@ import (
 	"os"
 
 	"github.com/ergoapi/util/environ"
+	"github.com/ysicing/tiga/internal/static"
 	"github.com/ysicing/tiga/pkg/util/ipdb"
 
 	"github.com/cockroachdb/errors"
@@ -29,6 +30,9 @@ func initRootDirectory() error {
 		if err := os.MkdirAll(dir, common.FileMode0755); err != nil {
 			return errors.Errorf("failed to mkdir %s, err: %s", dir, err)
 		}
+	}
+	if err := static.StageFiles(); err != nil {
+		return errors.Errorf("failed to stage files, err: %s", err)
 	}
 	return nil
 }
