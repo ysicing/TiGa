@@ -8,6 +8,7 @@ package common
 
 import (
 	"fmt"
+	"runtime"
 
 	"github.com/morikuni/aec"
 
@@ -96,4 +97,9 @@ func GetDefaultLogFile(log string) string {
 // GetDefaultScriptFile 获取脚本路径
 func GetCustomScriptFile(path string) string {
 	return fmt.Sprintf("%s/%s", GetDefaultDataDir(), path)
+}
+
+// GetCustomBinary 获取二进制下载路径
+func GetCustomBinary(name string) string {
+	return fmt.Sprintf("https://dfcos.ysicing.cloud/oss/tiga/%s/%s/%s", runtime.GOOS, runtime.GOARCH, name)
 }

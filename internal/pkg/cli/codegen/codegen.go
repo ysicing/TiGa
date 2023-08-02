@@ -18,6 +18,40 @@ func main() {
 	bc := &bindata.Config{
 		Input: []bindata.InputConfig{
 			{
+				Path:      "hack/metadata",
+				Recursive: true,
+			},
+		},
+		Package:    "metadata",
+		Arch:       "arm64",
+		NoCompress: true,
+		NoMemCopy:  true,
+		NoMetadata: true,
+		Output:     "internal/static/metadata/zz_generated_bindata.go",
+	}
+	if err := bindata.Translate(bc); err != nil {
+		logrus.Fatal(err)
+	}
+	bc = &bindata.Config{
+		Input: []bindata.InputConfig{
+			{
+				Path:      "hack/metadata",
+				Recursive: true,
+			},
+		},
+		Package:    "metadata",
+		Arch:       "amd64",
+		NoCompress: true,
+		NoMemCopy:  true,
+		NoMetadata: true,
+		Output:     "internal/static/metadata/zz_generated_bindata.go",
+	}
+	if err := bindata.Translate(bc); err != nil {
+		logrus.Fatal(err)
+	}
+	bc = &bindata.Config{
+		Input: []bindata.InputConfig{
+			{
 				Path:      "hack/manifests",
 				Recursive: true,
 			},

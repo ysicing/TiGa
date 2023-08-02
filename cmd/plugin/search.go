@@ -49,26 +49,27 @@ func (s *SearchOptions) Search(name string) ([]SearchResult, error) {
 	var res []SearchResult
 
 	for _, v := range indexs.Index {
-		s.Log.Debugf("start search plugin form %s", v.Name)
-		ps, err := repo.LoadPlugin(fmt.Sprintf("%s/.%s.index", common.GetDefaultCacheDir(), v.Name))
+		cachefile := fmt.Sprintf("%s/.%s.index", common.GetDefaultCacheDir(), v.Name)
+		s.Log.Debugf("start search %s plugin form %s (cache fiel: %s)", name, v.Name, cachefile)
+		ps, err := repo.LoadPlugin(cachefile)
 		if err != nil {
 			s.Log.Warnf("failed to load %s plugin file: %v", v.Name, err)
 			continue
 		}
-		if name != "" {
-			if ps.Has(name) {
+		if len(ps.Plugins) > 0 {
+			if name != "" {
+				if ps.Has(name) {
+					res = append(res, SearchResult{
+						Index:   v.Name,
+						Plugins: []*repo.Plugin{ps.Get(name)},
+					})
+				}
+			} else {
 				res = append(res, SearchResult{
 					Index:   v.Name,
-					Plugins: []*repo.Plugin{ps.Get(name)},
+					Plugins: ps.Plugins,
 				})
 			}
-			continue
-		}
-		if len(ps.Plugins) > 0 {
-			res = append(res, SearchResult{
-				Index:   v.Name,
-				Plugins: ps.Plugins,
-			})
 		}
 	}
 	return res, nil

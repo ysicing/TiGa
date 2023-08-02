@@ -7,11 +7,11 @@
 package cmd
 
 import (
-	"fmt"
 	"os"
 	"strings"
 
 	"github.com/ergoapi/util/output"
+	"github.com/ergoapi/util/zos"
 	"github.com/gosuri/uitable"
 	"github.com/spf13/cobra"
 	"github.com/ysicing/tiga/cmd/plugin"
@@ -40,8 +40,10 @@ func NewCmdPlugin() *cobra.Command {
 		Short:                 "provides utilities for interacting with plugins",
 	}
 	cmd.AddCommand(pluginListCmd())
-	cmd.AddCommand(pluginInstallCmd())
-	cmd.AddCommand(pluginSearchCmd())
+	if zos.IsLinux() {
+		cmd.AddCommand(pluginInstallCmd())
+		cmd.AddCommand(pluginSearchCmd())
+	}
 	return cmd
 }
 
@@ -66,7 +68,7 @@ func pluginInstallCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "install [flags]",
 		Aliases: []string{"i"},
-		Short:   "install plugin",
+		Short:   "install plugin from repository",
 		Example: pluginInstallExample,
 		Run: func(cmd *cobra.Command, args []string) {
 
@@ -103,10 +105,16 @@ func pluginSearchCmd() *cobra.Command {
 				return output.EncodeYAML(os.Stdout, plugins)
 			default:
 				table := uitable.New()
-				table.AddRow("name", "version", "desc")
+				table.AddRow("index", "name", "version", "url")
 				for _, p := range plugins {
 					for _, v := range p.Plugins {
-						table.AddRow(fmt.Sprintf("%s/%s", p.Index, v.Name), v.Version, v.Desc)
+						if len(v.Url) == 0 {
+							if p.Index != "ysicing" {
+								continue
+							}
+							v.Url = common.GetCustomBinary(v.Name)
+						}
+						table.AddRow(p.Index, v.Name, v.Version, v.Url)
 					}
 				}
 				return output.EncodeTable(os.Stdout, table)

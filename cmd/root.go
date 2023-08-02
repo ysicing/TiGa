@@ -12,6 +12,7 @@ import (
 	"strings"
 
 	"github.com/ergoapi/util/excmd"
+	"github.com/ergoapi/util/zos"
 	mcobra "github.com/muesli/mango-cobra"
 	"github.com/muesli/roff"
 	"github.com/sirupsen/logrus"
@@ -58,10 +59,13 @@ func BuildRoot(f factory.Factory) *cobra.Command {
 	rootCmd.AddCommand(newCmdVersion(f))
 	rootCmd.AddCommand(newCmdUpgrade(f))
 	rootCmd.AddCommand(NewCmdPlugin())
-	rootCmd.AddCommand(newCmdApp(f))
-	rootCmd.AddCommand(newCmdRepo(f))
 	rootCmd.AddCommand(newCmdDebug(f))
 	rootCmd.AddCommand(newCmdSystem(f))
+
+	if zos.IsLinux() {
+		rootCmd.AddCommand(newCmdApp(f))
+		rootCmd.AddCommand(newCmdRepo(f))
+	}
 
 	rootCmd.AddCommand(newManCmd())
 

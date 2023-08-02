@@ -8,8 +8,10 @@ package repo
 
 import (
 	"context"
+	"fmt"
 	"os"
 	"path/filepath"
+	"runtime"
 	"time"
 
 	"github.com/ysicing/tiga/internal/pkg/download"
@@ -228,6 +230,9 @@ func UpdateIndexs(force bool) error {
 }
 
 func UpdateIndex(name, url string, force bool) error {
+	if name == "ysicing" && url == "" {
+		url = fmt.Sprintf("%s/hack/metadata/plugin.%s.yaml", common.GetDefaultDataDir(), runtime.GOARCH)
+	}
 	logpkg := log.GetInstance()
 	path := common.GetDefaultCustomIndex(name)
 	if force {
@@ -235,12 +240,12 @@ func UpdateIndex(name, url string, force bool) error {
 	}
 	if file.CheckFileExists(path) {
 		fileInfo, _ := os.Stat(path)
-		threshold := time.Now().Add(-1 * time.Hour)
+		threshold := time.Now().Add(-5 * time.Minute)
 		if fileInfo.ModTime().Before(threshold) {
-			logpkg.Debugf("cache file exists and expired 60 minute, will download: %s", path)
+			logpkg.Debugf("cache file exists and expired 5 minute, will download: %s", path)
 			os.Remove(path)
 		} else {
-			logpkg.Debugf("cache file exists and not expired 60 minute, skip")
+			logpkg.Debugf("cache file exists and not expired 5 minute, skip")
 			return nil
 		}
 	}

@@ -41,7 +41,7 @@ func (o *ListOptions) Run() error {
 	plugins := o.ListPlugins()
 
 	if len(plugins) == 0 {
-		return fmt.Errorf("error: unable to find any kubectl plugins in your PATH")
+		return fmt.Errorf("error: unable to find any tiga plugins in your PATH")
 	}
 
 	log.Info("The following compatible plugins are available:")

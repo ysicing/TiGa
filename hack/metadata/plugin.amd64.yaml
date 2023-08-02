@@ -1,0 +1,5 @@
+generated: "2021-10-20T14:00:00Z"
+plugins:
+- name: "helm"
+  type: binary
+  version: 3.12.2

@@ -9,12 +9,10 @@ package debug
 import (
 	"net/url"
 	"path/filepath"
-	"runtime"
 
 	"github.com/cockroachdb/errors"
 	"github.com/spf13/cobra"
 	"github.com/ysicing/tiga/common"
-	"github.com/ysicing/tiga/internal/pkg/repo"
 	"github.com/ysicing/tiga/pkg/factory"
 	"github.com/ysicing/tiga/pkg/util/fileutil"
 )
@@ -35,25 +33,14 @@ func DownloadCommand(f factory.Factory) *cobra.Command {
 			u, _ := url.Parse(dlUrl)
 			filename := filepath.Base(u.Path)
 			dlPath := common.GetDefaultCacheDir() + "/" + filename
-			e := repo.Plugin{
-				Name: "tiga",
-				Desc: "test download",
-				Platforms: []repo.Platform{
-					{
-						OS:   runtime.GOOS,
-						Arch: runtime.GOARCH,
-						URL:  dlUrl,
-					},
-				},
-			}
-			cacheFile, err := fileutil.DownloadFile(&e, dlPath)
+			cacheFile, err := fileutil.DownloadFile(dlUrl, dlPath)
 			if err != nil {
 				return err
 			}
 			if len(cacheFile) == 0 {
 				f.GetLog().Donef("skip downloaded, found %s", dlPath)
 			} else {
-				f.GetLog().Donef("downloaded success to %s(%s)", dlPath, cacheFile)
+				f.GetLog().Donef("downloaded success to %s", dlPath)
 			}
 			return nil
 		},

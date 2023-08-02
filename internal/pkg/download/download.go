@@ -464,7 +464,7 @@ func downloadHTTP(localPath, url string, description string, expectedDigest dige
 		if description == "" {
 			description = url
 		}
-		log.GetInstance().Infof("downloading %s\n", description)
+		log.GetInstance().Infof("downloading %s", description)
 	}
 	bar.Start()
 	if _, err := io.Copy(multiWriter, bar.NewProxyReader(resp.Body)); err != nil {
