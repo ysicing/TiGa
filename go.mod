@@ -38,7 +38,7 @@ require (
 	github.com/xlab/treeprint v1.2.0
 	github.com/xtls/xray-core v1.8.3
 	go.etcd.io/bbolt v1.3.7
-	google.golang.org/grpc v1.56.0
+	google.golang.org/grpc v1.57.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	k8s.io/apimachinery v0.27.3
 	k8s.io/kubectl v0.27.1
@@ -148,7 +148,7 @@ require (
 	golang.org/x/tools v0.10.0 // indirect
 	golang.zx2c4.com/wireguard/windows v0.5.3 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/genproto v0.0.0-20230410155749-daa745c078e1 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20230530153820-e85fd2cbaebc // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
