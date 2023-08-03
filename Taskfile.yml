@@ -41,6 +41,9 @@ tasks:
 
   godoc:
     desc: update docs
+    deps:
+      - gomod
+      - generate
     cmds:
       - rm -rf ./docs/*.md
       - go run ./docs/docs.go
