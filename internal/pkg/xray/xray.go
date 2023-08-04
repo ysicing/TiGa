@@ -118,8 +118,17 @@ func (xrayCtl *XrayController) QueryTraffic(reset bool) ([]Traffic, error) {
 		if up < 0.001 && down < 0.001 && t.DataType == GlobalOutBoundDataType {
 			continue
 		}
-		t.Up = fmt.Sprintf("%vMB", up)
-		t.Down = fmt.Sprintf("%vMB", down)
+		tunit := "MB"
+		if up >= 1024.0 {
+			up = up / 1024.0
+			tunit = "GB"
+		}
+		if down >= 1024.0 {
+			down = down / 1024.0
+			tunit = "GB"
+		}
+		t.Up = fmt.Sprintf("%v%s", up, tunit)
+		t.Down = fmt.Sprintf("%v%s", down, tunit)
 		ts = append(ts, t)
 	}
 	return ts, nil
