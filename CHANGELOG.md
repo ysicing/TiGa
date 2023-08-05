@@ -1,5 +1,32 @@
 # Changelog
 
+## v0.2.3 (2023-08-05)
+
+ * [54eb48c](https://github.com/ysicing/tiga/commit/54eb48ceb3128f44bccedf8688834bf91beea8a4) fix(mod): fix go mod
+ * [3523e26](https://github.com/ysicing/tiga/commit/3523e268fdba1cacba877d6bcb7df7879a1c26b9) feat(xray): fix xray show
+ * [b36a0a0](https://github.com/ysicing/tiga/commit/b36a0a08b659f02529a5b4b7c19754335aa8ab90) build(deps): bump github.com/ergoapi/util from 0.5.0 to 0.5.1
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
+## v0.2.2 (2023-08-03)
+
+ * [28143c9](https://github.com/ysicing/tiga/commit/28143c949c413ddac2c0bdb5ef050c771d206657) fix(action): fix github action
+ * [48c2a42](https://github.com/ysicing/tiga/commit/48c2a42291ff880be6b9d1d23e1c807fa3db11dc) fix(action): fix github action
+ * [089898d](https://github.com/ysicing/tiga/commit/089898de041ee8237b8468668a47c5c0057968a5) build(deps): bump google.golang.org/grpc from 1.56.0 to 1.57.0
+ * [2fd112f](https://github.com/ysicing/tiga/commit/2fd112f7aca66c5e0f8a590a394dce7e9c05f3a8) feat(repo): update
+ * [ae6d8b1](https://github.com/ysicing/tiga/commit/ae6d8b1dc9b075bb55ccf4bd9977815ff6d60b94) build(deps): bump github.com/shirou/gopsutil/v3 from 3.23.6 to 3.23.7
+ * [9a63b40](https://github.com/ysicing/tiga/commit/9a63b407a03e225984c05eab9c7b8b0c94c45d6c) build(deps): bump github.com/shirou/gopsutil/v3 from 3.23.5 to 3.23.6
+ * [4188e3a](https://github.com/ysicing/tiga/commit/4188e3ae08c3fbf2dd20a3d0f556e9dfcc3cee22) feat(system): add debian swap
+ * [8f5f5ec](https://github.com/ysicing/tiga/commit/8f5f5ec4cbaa0c0aed7f80a222872714e1ab2bf3) chore(lint): fix ci lint
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.2.1 (2023-07-28)
 
  * [e1c216d](https://github.com/ysicing/tiga/commit/e1c216d160de6933c7d2b36fcbc882e99296675b) fix(xray): fix xray traffic show
