@@ -10,7 +10,7 @@ require (
 	github.com/cheggaaa/pb/v3 v3.1.4
 	github.com/cockroachdb/errors v1.10.0
 	github.com/containerd/continuity v0.4.1
-	github.com/ergoapi/util v0.5.1
+	github.com/ergoapi/util v0.3.23
 	github.com/go-ping/ping v1.1.0
 	github.com/gofrs/flock v0.8.1
 	github.com/google/gops v0.3.27
@@ -41,7 +41,7 @@ require (
 	google.golang.org/grpc v1.57.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	k8s.io/apimachinery v0.27.4
-	k8s.io/kubectl v0.27.1
+	k8s.io/kubectl v0.27.4
 	sigs.k8s.io/yaml v1.3.0
 	tailscale.com v1.46.1
 )
@@ -52,7 +52,7 @@ require (
 	github.com/Azure/go-ansiterm v0.0.0-20230124172434-306776ec8161 // indirect
 	github.com/MakeNowJust/heredoc v1.0.0 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
-	github.com/ProtonMail/go-crypto v0.0.0-20230426101702-58e86b294756 // indirect
+	github.com/ProtonMail/go-crypto v0.0.0-20230626094100-7e9e0395ebec // indirect
 	github.com/VividCortex/ewma v1.2.0 // indirect
 	github.com/akutz/memconn v0.1.0 // indirect
 	github.com/alexbrainman/sspi v0.0.0-20210105120005-909beea2cc74 // indirect
@@ -89,7 +89,7 @@ require (
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/gregjones/httpcache v0.0.0-20180305231024-9cad4c3443a7 // indirect
 	github.com/hdevalence/ed25519consensus v0.1.0 // indirect
-	github.com/imdario/mergo v0.3.15 // indirect
+	github.com/imdario/mergo v0.3.16 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/josharian/native v1.1.1-0.20230202152459-5c7d0dd6ab86 // indirect
@@ -133,7 +133,7 @@ require (
 	github.com/yusufpapurcu/wmi v1.2.3 // indirect
 	go.starlark.net v0.0.0-20230731234521-9b46791399bf // indirect
 	go4.org/mem v0.0.0-20220726221520-4f986261bf13 // indirect
-	go4.org/netipx v0.0.0-20230303233057-f1b76eb4bb35 // indirect
+	go4.org/netipx v0.0.0-20230728184502-ec4c8b891b28 // indirect
 	golang.org/x/crypto v0.11.0 // indirect
 	golang.org/x/exp v0.0.0-20230801115018-d63ba01acd4b // indirect
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
@@ -145,7 +145,7 @@ require (
 	golang.org/x/term v0.10.0 // indirect
 	golang.org/x/text v0.11.0 // indirect
 	golang.org/x/time v0.3.0 // indirect
-	golang.org/x/tools v0.11.0 // indirect
+	golang.org/x/tools v0.11.1 // indirect
 	golang.zx2c4.com/wireguard/windows v0.5.3 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20230530153820-e85fd2cbaebc // indirect
@@ -154,9 +154,9 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	k8s.io/api v0.27.4 // indirect
-	k8s.io/cli-runtime v0.27.1 // indirect
+	k8s.io/cli-runtime v0.27.4 // indirect
 	k8s.io/client-go v0.27.4 // indirect
-	k8s.io/component-base v0.27.2 // indirect
+	k8s.io/component-base v0.27.4 // indirect
 	k8s.io/klog/v2 v2.100.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20230515203736-54b630e78af5 // indirect
 	k8s.io/utils v0.0.0-20230505201702-9f6742963106 // indirect
@@ -167,4 +167,8 @@ require (
 	sigs.k8s.io/structured-merge-diff/v4 v4.2.3 // indirect
 )
 
-replace github.com/loft-sh/utils => github.com/loft-sh/utils v0.0.21
+replace (
+	github.com/ergoapi/util => github.com/ergoapi/util v0.5.1
+	github.com/loft-sh/utils => github.com/loft-sh/utils v0.0.21
+	tailscale.com => tailscale.com v1.1.1-0.20230804232944-a17c45fd6e89
+)
