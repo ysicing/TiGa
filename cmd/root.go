@@ -61,6 +61,7 @@ func BuildRoot(f factory.Factory) *cobra.Command {
 	rootCmd.AddCommand(NewCmdPlugin())
 	rootCmd.AddCommand(newCmdDebug(f))
 	rootCmd.AddCommand(newCmdSystem(f))
+	rootCmd.AddCommand(newCmdCloud(f))
 
 	if zos.IsLinux() {
 		rootCmd.AddCommand(newCmdApp(f))

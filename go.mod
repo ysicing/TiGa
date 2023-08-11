@@ -34,6 +34,9 @@ require (
 	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/cobra v1.7.0
 	github.com/spf13/pflag v1.0.5
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.721
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.721
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc v1.0.721
 	github.com/ulikunitz/xz v0.5.11
 	github.com/xlab/treeprint v1.2.0
 	github.com/xtls/xray-core v1.8.3
@@ -127,6 +130,7 @@ require (
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/sagernet/sing v0.2.5 // indirect
 	github.com/shoenig/go-m1cpu v0.1.6 // indirect
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.721 // indirect
 	github.com/tklauser/go-sysconf v0.3.11 // indirect
 	github.com/tklauser/numcpus v0.6.1 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
