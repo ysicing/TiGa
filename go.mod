@@ -13,7 +13,7 @@ require (
 	github.com/ergoapi/util v0.3.23
 	github.com/go-ping/ping v1.1.0
 	github.com/gofrs/flock v0.8.1
-	github.com/google/gops v0.3.27
+	github.com/google/gops v0.3.28
 	github.com/gosuri/uitable v0.0.4
 	github.com/inconshreveable/go-update v0.0.0-20160112193335-8152e7eb6ccf
 	github.com/jackpal/gateway v1.0.10
@@ -145,7 +145,7 @@ require (
 	golang.org/x/net v0.13.0 // indirect
 	golang.org/x/oauth2 v0.8.0 // indirect
 	golang.org/x/sync v0.3.0 // indirect
-	golang.org/x/sys v0.10.0 // indirect
+	golang.org/x/sys v0.11.0 // indirect
 	golang.org/x/term v0.10.0 // indirect
 	golang.org/x/text v0.11.0 // indirect
 	golang.org/x/time v0.3.0 // indirect
