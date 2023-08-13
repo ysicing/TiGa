@@ -8,14 +8,24 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"github.com/ysicing/tiga/internal/pkg/providers"
 	_ "github.com/ysicing/tiga/internal/pkg/providers/tencent"
 	"github.com/ysicing/tiga/pkg/factory"
 )
 
-func newCmdCloud(f factory.Factory) *cobra.Command {
-	var cmd = &cobra.Command{
+var (
+	cloudCmd = &cobra.Command{
 		Use:   "cloud",
 		Short: "cloud",
 	}
-	return cmd
+	cProvider = "tencent"
+	cp        providers.Provider
+)
+
+func init() {
+	cloudCmd.Flags().StringVarP(&cProvider, "provider", "p", cProvider, "Provider is a module which provides an interface for managing cloud resources")
+}
+
+func newCmdCloud(f factory.Factory) *cobra.Command {
+	return cloudCmd
 }
