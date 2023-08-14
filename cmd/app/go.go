@@ -22,6 +22,7 @@ import (
 
 	gv "github.com/ergoapi/util/version"
 	"github.com/spf13/cobra"
+	"github.com/ysicing/tiga/pkg/exec"
 	"github.com/ysicing/tiga/pkg/log"
 )
 
@@ -34,6 +35,7 @@ const (
 
 func InstallGo() *cobra.Command {
 	var version string
+	logpkg := log.GetInstance()
 	cmd := &cobra.Command{
 		Use:     "go",
 		Short:   "Install Go",
@@ -41,7 +43,9 @@ func InstallGo() *cobra.Command {
 		Example: goexmapleInstall,
 		PreRunE: func(cmd *cobra.Command, args []string) error {
 			installV := strings.ReplaceAll(version, "v", "")
+			installV = strings.ReplaceAll(installV, "go", "")
 			if _, err := gv.Parse(installV); err != nil {
+				logpkg.Debugf("installV: %v, err: %v", installV, err)
 				return errors.Newf("invalid go version %s, recommend %s", version, color.SGreen(common.GoDefaultVersion))
 			}
 			defaultV := strings.ReplaceAll(common.GoDefaultVersion, "go", "")
@@ -50,15 +54,16 @@ func InstallGo() *cobra.Command {
 			}
 			return nil
 		},
-		Run: func(cmd *cobra.Command, args []string) {
-			logpkg := log.GetInstance()
+		RunE: func(cmd *cobra.Command, args []string) error {
 			logpkg.Infof("install go: %v", version)
 			dlURL := fmt.Sprintf("https://go.dev/dl/%s.linux-%s.tar.gz", version, runtime.GOARCH)
 			if netutil.ValidChinaNetwork() {
 				dlURL = fmt.Sprintf("https://golang.google.cn/dl/%s.linux-%s.tar.gz", version, runtime.GOARCH)
 			}
 			logpkg.Debugf("download url: %v", dlURL)
-			download.Download("", dlURL, download.WithCache())
+			cachefile := fmt.Sprintf("%s/%s.linux-%s.tar.gz", common.GetDefaultCacheDir(), version, runtime.GOARCH)
+			download.Download(cachefile, dlURL, download.WithCache())
+			return exec.CommandRun(common.GetCustomScriptFile("hack/manifests/system/go.install.sh"), cachefile)
 		},
 	}
 	cmd.Flags().StringVarP(&version, "version", "v", common.GoDefaultVersion, "install go version")

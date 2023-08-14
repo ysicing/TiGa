@@ -315,8 +315,8 @@ github.com/rogpeppe/go-internal v1.11.0 h1:cWPaGQEPrBb5/AsnsZesgZZ9yb1OQ+GOISoDN
 github.com/rogpeppe/go-internal v1.11.0/go.mod h1:ddIwULY96R17DhadqLgMfk9H9tvdUzkipdSkR5nkCZA=
 github.com/russross/blackfriday/v2 v2.1.0 h1:JIOH55/0cWyOuilr9/qlrm0BSXldqnqwMsf35Ld67mk=
 github.com/russross/blackfriday/v2 v2.1.0/go.mod h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQDYRxCVz55jmeOWTM=
-github.com/sagernet/sing v0.2.5 h1:N8sUluR8GZvR9DqUiH3FA3vBb4m/EDdOVTYUrDzJvmY=
-github.com/sagernet/sing v0.2.5/go.mod h1:Ta8nHnDLAwqySzKhGoKk4ZIB+vJ3GTKj7UPrWYvM+4w=
+github.com/sagernet/sing v0.2.9 h1:3wsTz+JG5Wzy65eZnh6AuCrD2QqcRF6Iq6f7ttmJsAo=
+github.com/sagernet/sing v0.2.9/go.mod h1:Ta8nHnDLAwqySzKhGoKk4ZIB+vJ3GTKj7UPrWYvM+4w=
 github.com/sagernet/sing-shadowsocks v0.2.2 h1:ezSdVhrmIcwDXmCZF3bOJVMuVtTQWpda+1Op+Ie2TA4=
 github.com/sagernet/wireguard-go v0.0.0-20221116151939-c99467f53f2c h1:vK2wyt9aWYHHvNLWniwijBu/n4pySypiKRhN32u/JGo=
 github.com/seiflotfy/cuckoofilter v0.0.0-20220411075957-e3b120b3f5fb h1:XfLJSPIOUX+osiMraVgIrMR27uMXnRJWGm1+GL8/63U=
@@ -353,6 +353,8 @@ github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.722 h1:AwOC
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.722/go.mod h1:7sCQWVkxcsR38nffDW057DRGk8mUjK1Ing/EFOK8s8Y=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.721 h1:CkVMIMtVy1FqAr21GaTuRq/xnVe6I9M4SjvONbiFof0=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.721/go.mod h1:4oFlTNN1JJnv0+9ZKF7eVoYquqtIVgN5Wi4LdLz06N0=
+github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.0.722 h1:hHMzBQpFIuXvvcPABK2W9erMtdZDdnF0tCTMhntzK80=
+github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.0.722/go.mod h1:k0ILc/ajzcbhWMCO1uVrPjLsVTgXHQAInVl/sJkss3Y=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.722 h1:MKwEml+24kfrk6lYVAhdb/mq+gcE4QbiMJeHkFcGiFQ=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.722/go.mod h1:Vw/LkzoWTdzxg9hKUEZtlVrEAk5OkIY2wMEROYA1wU4=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc v1.0.721 h1:KCGG3b04EhrhJI5Q6Ewb2/sQi3YseL16fPkI/KiijIE=

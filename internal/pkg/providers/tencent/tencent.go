@@ -7,6 +7,7 @@
 package tencent
 
 import (
+	"github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common"
 	cvm "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm/v20170312"
 	tag "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag/v20180813"
 	vpc "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc/v20170312"
@@ -18,9 +19,12 @@ const providerName = "tencent"
 
 // Tencent provider tencent struct.
 type Tencent struct {
-	cvm *cvm.Client
-	vpc *vpc.Client
-	tag *tag.Client
+	SecretId  string
+	SecretKey string
+	Region    string
+	cvm       *cvm.Client
+	vpc       *vpc.Client
+	tag       *tag.Client
 }
 
 func init() {
@@ -37,4 +41,11 @@ func newProvider() *Tencent {
 // GetProviderName returns provider name.
 func (p *Tencent) GetProviderName() string {
 	return providerName
+}
+
+func (p *Tencent) getCredential() *common.Credential {
+	return common.NewCredential(
+		p.SecretId,
+		p.SecretKey,
+	)
 }
