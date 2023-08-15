@@ -23,7 +23,7 @@ import (
 	gv "github.com/ergoapi/util/version"
 	"github.com/spf13/cobra"
 	"github.com/ysicing/tiga/pkg/exec"
-	"github.com/ysicing/tiga/pkg/log"
+	"github.com/ysicing/tiga/pkg/factory"
 )
 
 const (
@@ -33,9 +33,9 @@ const (
 `
 )
 
-func InstallGo() *cobra.Command {
+func installGo(f factory.Factory) *cobra.Command {
 	var version string
-	logpkg := log.GetInstance()
+	logpkg := f.GetLog()
 	cmd := &cobra.Command{
 		Use:     "go",
 		Short:   "Install Go",

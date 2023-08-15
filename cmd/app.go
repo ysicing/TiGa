@@ -17,6 +17,6 @@ func newCmdApp(f factory.Factory) *cobra.Command {
 		Use:   "app",
 		Short: "app",
 	}
-	cmd.AddCommand(app.InstallApp())
+	cmd.AddCommand(app.InstallApp(f))
 	return cmd
 }

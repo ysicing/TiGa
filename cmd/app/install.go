@@ -7,7 +7,9 @@
 package app
 
 import (
+	"github.com/ergoapi/util/zos"
 	"github.com/spf13/cobra"
+	"github.com/ysicing/tiga/pkg/factory"
 )
 
 const (
@@ -17,15 +19,15 @@ const (
 `
 )
 
-func InstallApp() *cobra.Command {
+func InstallApp(f factory.Factory) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "install",
 		Aliases: []string{"i"},
 		Short:   "Install app",
 		Example: appInstall,
 	}
-	// if zos.IsLinux() {
-	cmd.AddCommand(InstallGo())
-	// }
+	if zos.IsLinux() {
+		cmd.AddCommand(installGo(f))
+	}
 	return cmd
 }
