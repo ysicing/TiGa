@@ -38,7 +38,7 @@ require (
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.725
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.0.727
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.724
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc v1.0.726
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc v1.0.727
 	github.com/ulikunitz/xz v0.5.11
 	github.com/xlab/treeprint v1.2.0
 	github.com/xtls/xray-core v1.8.3
