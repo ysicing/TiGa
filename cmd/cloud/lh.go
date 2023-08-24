@@ -5,4 +5,3 @@
 // License that can be found in the LICENSE file.
 
 package cloud
-
