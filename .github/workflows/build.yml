@@ -2,7 +2,7 @@ name: build local for test
 
 env:
   # Common versions
-  GO_VERSION: '1.20'
+  GO_VERSION: '1.21'
   TZ: Asia/Shanghai
 
 permissions:
@@ -29,6 +29,7 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: ${{ env.GO_VERSION }}
+          check-latest: true
       - name: install gox
         run: |
           echo "install gox"
