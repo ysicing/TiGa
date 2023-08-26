@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.3.0 (2023-08-26)
+
+ * [b50eadc](https://github.com/ysicing/tiga/commit/b50eadcfcb53f0d45b2f3dd0dd06638b54b03ed3) fix(action): upgrade go version 1.21
+ * [111fbca](https://github.com/ysicing/tiga/commit/111fbca8c9fb4bb22478c1144d358b26beaa49e7) feat(clash): add clash filter
+ * [5662ea2](https://github.com/ysicing/tiga/commit/5662ea2514d8e6a82d6fb43abf2d63b21125b8cc) fix(mod): fix go mod build
+ * [ecceeeb](https://github.com/ysicing/tiga/commit/ecceeeb74f4afed3538f4a0508fc94c1f96f7c67) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag
+ * [f015397](https://github.com/ysicing/tiga/commit/f0153974a6d9c4f49330241b6785d4c4385484de) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm
+ * [e8a695a](https://github.com/ysicing/tiga/commit/e8a695aa90b611e5d3619afbfce76fda6165ab71) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc
+ * [07a130b](https://github.com/ysicing/tiga/commit/07a130bd6c14a63b0aba12c81d098210acc54744) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse
+ * [2b44f0f](https://github.com/ysicing/tiga/commit/2b44f0fb505df06bf40f34a69c82d86a7a812b82) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc
+ * [a668ea7](https://github.com/ysicing/tiga/commit/a668ea709e0585f0a5bea3a2da81548db725bb20) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm
+ * [3afa24b](https://github.com/ysicing/tiga/commit/3afa24bc63f7b6a50d6e5978805e20a682c1d43a) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag
+ * [f1fbc91](https://github.com/ysicing/tiga/commit/f1fbc91cb0b369ef2eed31400b032a63881da1fb) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common
+ * [c0c2d50](https://github.com/ysicing/tiga/commit/c0c2d50c2a90e87a773300750649b718c143f8ad) feat(update): update
+ * [e0516ba](https://github.com/ysicing/tiga/commit/e0516bae1f7babdf324340650d74b7d14649c937) feat(update): fix go install
+ * [117c142](https://github.com/ysicing/tiga/commit/117c14273b537395bf63e082652c7da62dadf9b6) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag
+ * [9415030](https://github.com/ysicing/tiga/commit/9415030b7e791430e54cf3a37f6317553b937ec3) feat(update): update
+ * [1af3e0b](https://github.com/ysicing/tiga/commit/1af3e0ba765b36a1d3b852b5884bd63900ea99e7) build(deps): bump github.com/google/gops from 0.3.27 to 0.3.28
+ * [4b0a8e5](https://github.com/ysicing/tiga/commit/4b0a8e5e3f95d1249484e6d3309b5d5d1cc284e2) feat(cloud): add cloud spot vm
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.2.3 (2023-08-05)
 
  * [54eb48c](https://github.com/ysicing/tiga/commit/54eb48ceb3128f44bccedf8688834bf91beea8a4) fix(mod): fix go mod
