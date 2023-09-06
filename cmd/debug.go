@@ -29,7 +29,12 @@ func newCmdDebug(f factory.Factory) *cobra.Command {
 	debugCmd.AddCommand(debug.GOpsCommand(f))
 	debugCmd.AddCommand(debug.NetCheckCommand(f))
 	debugCmd.AddCommand(debug.IPMMDBCommand(f))
-	debugCmd.AddCommand(xray.NewCmdXray(f))
-	debugCmd.AddCommand(clash.NewCmdClash(f))
+	// Deprecated commands
+	xray := xray.NewCmdXray(f)
+	xray.Deprecated = "please use xray"
+	debugCmd.AddCommand(xray)
+	clash := clash.NewCmdClash(f)
+	clash.Deprecated = "please use clash"
+	debugCmd.AddCommand(clash)
 	return debugCmd
 }

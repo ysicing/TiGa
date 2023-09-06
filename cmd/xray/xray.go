@@ -66,6 +66,5 @@ func trafficXray(f factory.Factory) *cobra.Command {
 	}
 	t.Flags().StringVarP(&common.ListOutput, "output", "o", "",
 		"prints the output in the specified format. Allowed values: table, json, yaml (default table)")
-
 	return t
 }

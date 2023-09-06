@@ -34,14 +34,14 @@ require (
 	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/cobra v1.7.0
 	github.com/spf13/pflag v1.0.5
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.729
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.742
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.728
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.0.727
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.729
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc v1.0.727
 	github.com/ulikunitz/xz v0.5.11
 	github.com/xlab/treeprint v1.2.0
-	github.com/xtls/xray-core v1.8.3
+	github.com/xtls/xray-core v1.8.4
 	go.etcd.io/bbolt v1.3.7
 	google.golang.org/grpc v1.57.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
@@ -114,7 +114,7 @@ require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-runewidth v0.0.14 // indirect
 	github.com/mdlayher/netlink v1.7.2 // indirect
-	github.com/mdlayher/socket v0.4.1 // indirect
+	github.com/mdlayher/socket v0.5.0 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/mitchellh/go-ps v1.0.0 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
@@ -145,22 +145,22 @@ require (
 	go.starlark.net v0.0.0-20230731234521-9b46791399bf // indirect
 	go.uber.org/atomic v1.11.0 // indirect
 	go4.org/mem v0.0.0-20220726221520-4f986261bf13 // indirect
-	go4.org/netipx v0.0.0-20230728184502-ec4c8b891b28 // indirect
-	golang.org/x/crypto v0.12.0 // indirect
-	golang.org/x/exp v0.0.0-20230817173708-d852ddb80c63 // indirect
+	go4.org/netipx v0.0.0-20230824141953-6213f710f925 // indirect
+	golang.org/x/crypto v0.13.0 // indirect
+	golang.org/x/exp v0.0.0-20230905200255-921286631fa9 // indirect
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
 	golang.org/x/mod v0.12.0 // indirect
-	golang.org/x/net v0.14.0 // indirect
+	golang.org/x/net v0.15.0 // indirect
 	golang.org/x/oauth2 v0.8.0 // indirect
 	golang.org/x/sync v0.3.0 // indirect
-	golang.org/x/sys v0.11.0 // indirect
-	golang.org/x/term v0.11.0 // indirect
-	golang.org/x/text v0.12.0 // indirect
+	golang.org/x/sys v0.12.0 // indirect
+	golang.org/x/term v0.12.0 // indirect
+	golang.org/x/text v0.13.0 // indirect
 	golang.org/x/time v0.3.0 // indirect
-	golang.org/x/tools v0.12.1-0.20230815132531-74c255bcf846 // indirect
+	golang.org/x/tools v0.13.0 // indirect
 	golang.zx2c4.com/wireguard/windows v0.5.3 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20230530153820-e85fd2cbaebc // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20230822172742-b8732ec3820d // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
