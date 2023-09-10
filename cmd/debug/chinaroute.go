@@ -21,9 +21,10 @@ func ChinaRouteCommand(f factory.Factory) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "test-cn-route",
 		Short: "测试三网回程路由",
+		Long:  `测试三网回程路由,参考https://github.com/zhanghanyun/backtrace`,
 		Run: func(cmd *cobra.Command, args []string) {
 			var (
-				s [12]string
+				s [17]string
 				c = make(chan chinaroute.Result)
 				t = time.After(time.Second * 10)
 			)

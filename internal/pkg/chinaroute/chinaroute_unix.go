@@ -519,6 +519,8 @@ func ChinaTrace(ch chan Result, i int) {
 				as = color.SBlue(as)
 			case "AS4809":
 				as = color.SMagenta(as)
+			case "AS58807":
+				as = color.SGreen(as)
 			default:
 				as = color.SWhite(as)
 			}
@@ -533,6 +535,10 @@ func ChinaTrace(ch chan Result, i int) {
 }
 
 func ipAsn(ip string) string {
+	cmin2 := []string{"223.119.8", "223.119.32", "223.119.34", "223.119.35", "223.119.36", "223.119.37",
+		"223.119.100", "223.120.128", "223.120.134", "223.120.138", "223.120.158", "223.120.164", "223.120.165",
+		"223.120.168", "223.120.172", "223.120.174", "223.120.184", "223.120.188", "223.120.192", "223.120.200",
+		"223.120.210", "223.120.212"}
 	switch {
 	case strings.HasPrefix(ip, "59.43"):
 		return "AS4809"
@@ -543,6 +549,11 @@ func ipAsn(ip string) string {
 	case strings.HasPrefix(ip, "219.158"):
 		return "AS4837"
 	case strings.HasPrefix(ip, "223.118") || strings.HasPrefix(ip, "223.119") || strings.HasPrefix(ip, "223.120") || strings.HasPrefix(ip, "223.121"):
+		for _, prefix := range cmin2 {
+			if strings.HasPrefix(ip, prefix) {
+				return "AS58807"
+			}
+		}
 		return "AS58453"
 	default:
 		return ""
