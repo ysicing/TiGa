@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.3.2 (2023-09-10)
+
+ * [06a0790](https://github.com/ysicing/tiga/commit/06a07907fedaf1684bc5f3e519ac7bd60678b71a) feat(update): update
+
+### Contributors
+
+ * ysicing
+
 ## v0.3.1 (2023-09-10)
 
  * [a2568ac](https://github.com/ysicing/tiga/commit/a2568ac3caee57f849b08cb036e8a44440bbf3c5) fix(update): update

@@ -4,7 +4,7 @@ debug, not a stable interface, contains misc debug facilities
 
 ### Synopsis
 
-"/tmp/go-build3023429997/b001/exe/docs debug" contains misc debug facilities; it is not a stable interface.
+"/tmp/go-build3005326090/b001/exe/docs debug" contains misc debug facilities; it is not a stable interface.
 
 ### Options
 
