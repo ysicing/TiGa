@@ -2,6 +2,10 @@
 
 测试三网回程路由
 
+### Synopsis
+
+测试三网回程路由,参考https://github.com/zhanghanyun/backtrace
+
 ```
 tiga debug test-cn-route [flags]
 ```
