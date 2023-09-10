@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.3.1 (2023-09-10)
+
+ * [a2568ac](https://github.com/ysicing/tiga/commit/a2568ac3caee57f849b08cb036e8a44440bbf3c5) fix(update): update
+ * [fb01c89](https://github.com/ysicing/tiga/commit/fb01c898aef36ebfcbe25b6fbbaf4d06edfc58de) feat(三网回程测试): add 三网回程测试
+ * [1bb7483](https://github.com/ysicing/tiga/commit/1bb74834d04559a88ead786f56b35a53e07b2c3d) feat(update): update
+ * [03c779c](https://github.com/ysicing/tiga/commit/03c779c7a48412e85dbb5e4b67ce769e62eb4086) build(deps): bump actions/checkout from 3 to 4
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.3.0 (2023-08-26)
 
  * [b50eadc](https://github.com/ysicing/tiga/commit/b50eadcfcb53f0d45b2f3dd0dd06638b54b03ed3) fix(action): upgrade go version 1.21
