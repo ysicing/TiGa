@@ -369,12 +369,12 @@ github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXl
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.727/go.mod h1:7sCQWVkxcsR38nffDW057DRGk8mUjK1Ing/EFOK8s8Y=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.728/go.mod h1:7sCQWVkxcsR38nffDW057DRGk8mUjK1Ing/EFOK8s8Y=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.729/go.mod h1:7sCQWVkxcsR38nffDW057DRGk8mUjK1Ing/EFOK8s8Y=
-github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.742 h1:Qno5G08Ppz9nfi0M9yLNnyY+9vsr4TqvWLEp4xnX7yw=
-github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.742/go.mod h1:7sCQWVkxcsR38nffDW057DRGk8mUjK1Ing/EFOK8s8Y=
+github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.751 h1:sHCCpDtSIT2DlFNm0PHmoWuUL9np0u6XReVkyoXWfc8=
+github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.751/go.mod h1:7sCQWVkxcsR38nffDW057DRGk8mUjK1Ing/EFOK8s8Y=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.728 h1:jaMA5N09BSbD2GmAI6ZFSSPBGvCL4tX/9rrRXEo90+4=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.728/go.mod h1:VsGA40y2vGx8wsURfaAkie78jtU2N8JaG5QMWRRWN+4=
-github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.0.727 h1:NvoT4p+RFqbFXzntAzpARly/TrXpClpejsRDJKz21oU=
-github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.0.727/go.mod h1:w0uOzTqB5YM9oZGhPM2PPQU+gYbPVLZPlKq+U+JXpzs=
+github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.0.751 h1:XVtbxR458T4ULSx1g0LAQCEUR6TuRBFvvQE8MIDZmus=
+github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.0.751/go.mod h1:eQRIflpU8ktFhWIjb3sv726zbmYMrbPvnPynF08HfVE=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.729 h1:s3eiYLYzoDwtzxTXcwbmrIxM7GKwAu0DEGWjPkGB+8Q=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.729/go.mod h1:OKlRlIsh00fcnp3PuVkWy7KtpLUG01+RNAmWJdZ2I8A=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc v1.0.727 h1:AlWKGXgdMbb1ZKQ9kSVSC2I/5JX9qIiL+nNK5402XHU=
