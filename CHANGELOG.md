@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.3.3 (2023-09-20)
+
+ * [503ff29](https://github.com/ysicing/tiga/commit/503ff299bc65c377469772a9bf2a088ac26a72d2) fix(typo): fix miss subcmd
+ * [059ebdb](https://github.com/ysicing/tiga/commit/059ebdbc12550e33e9143feed902d10b455ae80b) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse
+ * [6d5c03c](https://github.com/ysicing/tiga/commit/6d5c03ca6d9b712c2e52f12fc35c7076786f284d) build(deps): bump goreleaser/goreleaser-action from 4 to 5
+ * [9622b4c](https://github.com/ysicing/tiga/commit/9622b4cb178ab95a0fe9536a719aa8a6c0c5b9b5) build(deps): bump crazy-max/ghaction-upx from 2 to 3
+ * [e13d088](https://github.com/ysicing/tiga/commit/e13d08886421dc3ff2e59d9926b1bf2ade4488a6) style(update): update show
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.3.2 (2023-09-10)
 
  * [06a0790](https://github.com/ysicing/tiga/commit/06a07907fedaf1684bc5f3e519ac7bd60678b71a) feat(update): update
