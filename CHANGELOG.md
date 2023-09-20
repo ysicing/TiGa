@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.3.4 (2023-09-20)
+
+ * [503e783](https://github.com/ysicing/tiga/commit/503e7833cf698c0300436e4b3e49437ad90d69d3) feat(fix ): typo
+ * [bad7625](https://github.com/ysicing/tiga/commit/bad76253f4eb908aec6d5b8ff7689e5f64bac86c) build(deps): bump github.com/shirou/gopsutil/v3 from 3.23.7 to 3.23.8
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.3.3 (2023-09-20)
 
  * [503ff29](https://github.com/ysicing/tiga/commit/503ff299bc65c377469772a9bf2a088ac26a72d2) fix(typo): fix miss subcmd
