@@ -25,8 +25,8 @@ var config, filterRegexConfig, name string
 func NewCmdClash(f factory.Factory) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "clash",
-		Short:   "clash",
-		Version: "0.3.0",
+		Short:   "clash tools",
+		Version: "2023.9.2015",
 	}
 	cmd.AddCommand(filterProxy(f))
 	cmd.PersistentFlags().StringVar(&config, "config", "/etc/clash/config.yaml", "clash config")

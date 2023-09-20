@@ -24,8 +24,8 @@ var api string
 func NewCmdXray(f factory.Factory) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "xray",
-		Short:   "xray",
-		Version: "0.2.0",
+		Short:   "xray tools",
+		Version: "2023.9.2015",
 	}
 	cmd.AddCommand(trafficXray(f))
 	cmd.PersistentFlags().StringVar(&api, "api", "127.0.0.1:10086", "api")
