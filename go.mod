@@ -45,7 +45,7 @@ require (
 	github.com/xtls/xray-core v1.8.4
 	go.etcd.io/bbolt v1.3.7
 	golang.org/x/net v0.15.0
-	google.golang.org/grpc v1.57.0
+	google.golang.org/grpc v1.58.2
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	gopkg.in/yaml.v2 v2.4.0
 	k8s.io/apimachinery v0.28.0
@@ -164,7 +164,7 @@ require (
 	golang.org/x/exp v0.0.0-20230905200255-921286631fa9 // indirect
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
 	golang.org/x/mod v0.12.0 // indirect
-	golang.org/x/oauth2 v0.8.0 // indirect
+	golang.org/x/oauth2 v0.10.0 // indirect
 	golang.org/x/sync v0.3.0 // indirect
 	golang.org/x/sys v0.12.0 // indirect
 	golang.org/x/term v0.12.0 // indirect
