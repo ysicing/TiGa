@@ -23,7 +23,7 @@ require (
 	github.com/loft-sh/utils v0.0.21
 	github.com/mattn/go-isatty v0.0.19
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
-	github.com/miekg/dns v1.1.55
+	github.com/miekg/dns v1.1.56
 	github.com/moby/term v0.5.0
 	github.com/morikuni/aec v1.0.0
 	github.com/muesli/mango-cobra v1.2.0
