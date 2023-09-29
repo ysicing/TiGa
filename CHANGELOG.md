@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.3.5 (2023-09-29)
+
+ * [6e97b4d](https://github.com/ysicing/tiga/commit/6e97b4d035c7f16463852bb558ba688c99abfbc1) fix(domain): update ysicing.cloud to ysicing.net
+ * [180c2a2](https://github.com/ysicing/tiga/commit/180c2a2bccf1c2a9b2e221fc94cc46b83da9b0d4) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse
+ * [cd54c1e](https://github.com/ysicing/tiga/commit/cd54c1e3f6978ff5858cd5b54becfdcd0c2780bc) build(deps): bump github.com/ergoapi/util from 0.5.3 to 0.5.4
+ * [421098e](https://github.com/ysicing/tiga/commit/421098ea493dd8fcad9c4fbdce2bf9a5662f837c) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc
+ * [1b9eb49](https://github.com/ysicing/tiga/commit/1b9eb499dc74d5c01c42262b15b154f834cff516) build(deps): bump google.golang.org/grpc from 1.57.0 to 1.58.2
+ * [63ef313](https://github.com/ysicing/tiga/commit/63ef3135321cdbea8eda3a6fc8cfb58c411b8d0a) build(deps): bump tailscale.com from 1.48.1 to 1.48.2
+ * [d129a25](https://github.com/ysicing/tiga/commit/d129a25e8efe04cdf1135a33dee6b5dbdd9dc46e) build(deps): bump github.com/imroc/req/v3 from 3.41.12 to 3.42.0
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.3.4 (2023-09-20)
 
  * [503e783](https://github.com/ysicing/tiga/commit/503e7833cf698c0300436e4b3e49437ad90d69d3) feat(fix ): typo
