@@ -23,7 +23,7 @@ brew install ysicing/tap/tiga
 ### Debian/Ubuntu
 
 ```bash
-echo "deb [trusted=yes] https://mirrors.ysicing.cloud/ysicing/apt/ /" | tee /etc/apt/sources.list.d/ysicing.list
+echo "deb [trusted=yes] https://mirrors.ysicing.net/ysicing/apt/ /" | tee /etc/apt/sources.list.d/ysicing.list
 apt update
 apt install tiga
 ```
@@ -34,7 +34,7 @@ apt install tiga
 cat > /etc/yum.repos.d/ysicing.repo << EOF
 [ysicing]
 name=Quickon Repo
-baseurl=https://mirrors.ysicing.cloud/ysicing/yum/
+baseurl=https://mirrors.ysicing.net/ysicing/yum/
 enabled=1
 gpgcheck=0
 EOF

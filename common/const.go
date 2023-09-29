@@ -1,4 +1,4 @@
-// Copyright (c) 2023 ysicing(ysicing.me, ysicing@ysicing.cloud) All rights reserved.
+// Copyright (c) 2023 ysicing(ysicing.me, ysicing@12306.work) All rights reserved.
 // Use of this source code is covered by the following dual licenses:
 // (1) Y PUBLIC LICENSE 1.0 (YPL 1.0)
 // (2) Affero General Public License 3.0 (AGPL 3.0)
@@ -17,7 +17,7 @@ const (
 	DefaultCfgDir         = "tiga/config"
 	DefaultCacheDir       = "tiga/cache"
 	DefaultUserAgent      = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.0.0"
-	DefaultMMDB           = "https://dfcos.ysicing.cloud/oss/clash/open/Country.mmdb"
+	DefaultMMDB           = "https://dfcos.ysicing.net/oss/clash/open/Country.mmdb"
 	DefaultGenerate204URL = "https://connectivitycheck.gstatic.com/generate_204"
 	MiuiGenerate204URL    = "https://connect.rom.miui.com/generate_204"
 	V2exGenerate204URL    = "https://captive.v2ex.co/generate_204"
