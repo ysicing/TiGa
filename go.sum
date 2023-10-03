@@ -368,7 +368,6 @@ github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcU
 github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.728/go.mod h1:7sCQWVkxcsR38nffDW057DRGk8mUjK1Ing/EFOK8s8Y=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.729/go.mod h1:7sCQWVkxcsR38nffDW057DRGk8mUjK1Ing/EFOK8s8Y=
-github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.756/go.mod h1:7sCQWVkxcsR38nffDW057DRGk8mUjK1Ing/EFOK8s8Y=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.759 h1:flWgFybB3MYWFxwRO4yXbdiPT3SNwjSLuXCXsfs6kN4=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.759/go.mod h1:7sCQWVkxcsR38nffDW057DRGk8mUjK1Ing/EFOK8s8Y=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.728 h1:jaMA5N09BSbD2GmAI6ZFSSPBGvCL4tX/9rrRXEo90+4=
@@ -377,8 +376,8 @@ github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.0.759 h1:
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.0.759/go.mod h1:Xl3a0ApcAWqI6JCllLApzwdqy3Q02bv7r1+8ep7Lc9k=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.729 h1:s3eiYLYzoDwtzxTXcwbmrIxM7GKwAu0DEGWjPkGB+8Q=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.729/go.mod h1:OKlRlIsh00fcnp3PuVkWy7KtpLUG01+RNAmWJdZ2I8A=
-github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc v1.0.756 h1:UVyXD/KPZYxr9BeVExrRlo4UXj+tB8WSPH2mKJhQaPo=
-github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc v1.0.756/go.mod h1:D/bcAWpwGpFXJ6ObcdskN/KJnLW5ivq6q7VHmfn5PdA=
+github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc v1.0.759 h1:EIoTcoWLd9kr/2Tng64AzAqZCYDb3ic4KMIpxy6LFkY=
+github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc v1.0.759/go.mod h1:OAGpEUGosy4MJvSWmh/A5NKHeoLPKOtrqznKQXL6jZM=
 github.com/tklauser/go-sysconf v0.3.12 h1:0QaGUFOdQaIVdPgfITYzaTegZvdCjmYO52cSFAEVmqU=
 github.com/tklauser/go-sysconf v0.3.12/go.mod h1:Ho14jnntGE1fpdOqQEEaiKRpvIavV0hSfmBq8nJbHYI=
 github.com/tklauser/numcpus v0.6.1 h1:ng9scYS7az0Bk4OZLvrNXNSAO2Pxr1XXRAPyjhIx+Fk=
