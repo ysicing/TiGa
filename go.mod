@@ -51,7 +51,7 @@ require (
 	k8s.io/apimachinery v0.28.2
 	k8s.io/kubectl v0.28.0
 	sigs.k8s.io/yaml v1.3.0
-	tailscale.com v1.48.2
+	tailscale.com v1.50.1
 )
 
 require (
@@ -73,6 +73,7 @@ require (
 	github.com/cockroachdb/redact v1.1.5 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/dblohm7/wingoes v0.0.0-20230821191801-fc76608aecf0 // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/emicklei/go-restful/v3 v3.10.2 // indirect
 	github.com/evanphx/json-patch v5.6.0+incompatible // indirect
