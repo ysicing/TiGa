@@ -19,6 +19,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/ysicing/tiga/cmd/clash"
 	"github.com/ysicing/tiga/cmd/flags"
+	"github.com/ysicing/tiga/cmd/nnr"
 	"github.com/ysicing/tiga/cmd/xray"
 	"github.com/ysicing/tiga/common"
 	"github.com/ysicing/tiga/pkg/factory"
@@ -68,8 +69,12 @@ func BuildRoot(f factory.Factory) *cobra.Command {
 	if zos.IsLinux() {
 		rootCmd.AddCommand(newCmdApp(f))
 		rootCmd.AddCommand(newCmdRepo(f))
+	}
+
+	if zos.IsUnix() {
 		rootCmd.AddCommand(xray.NewCmdXray(f))
 		rootCmd.AddCommand(clash.NewCmdClash(f))
+		rootCmd.AddCommand(nnr.NewCmdNNR(f))
 	}
 
 	rootCmd.AddCommand(newManCmd())
