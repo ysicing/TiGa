@@ -369,15 +369,14 @@ github.com/stretchr/testify v1.8.1/go.mod h1:w2LPCIKwWwSfY2zedu0+kehJoqGctiVI29o
 github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
 github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.728/go.mod h1:7sCQWVkxcsR38nffDW057DRGk8mUjK1Ing/EFOK8s8Y=
-github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.729/go.mod h1:7sCQWVkxcsR38nffDW057DRGk8mUjK1Ing/EFOK8s8Y=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.759 h1:flWgFybB3MYWFxwRO4yXbdiPT3SNwjSLuXCXsfs6kN4=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.759/go.mod h1:7sCQWVkxcsR38nffDW057DRGk8mUjK1Ing/EFOK8s8Y=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.728 h1:jaMA5N09BSbD2GmAI6ZFSSPBGvCL4tX/9rrRXEo90+4=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.728/go.mod h1:VsGA40y2vGx8wsURfaAkie78jtU2N8JaG5QMWRRWN+4=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.0.759 h1:FAUYpjo+ZbXqehadxOh/Nk+J4MDTy8RHDsCx2kkvgOE=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.0.759/go.mod h1:Xl3a0ApcAWqI6JCllLApzwdqy3Q02bv7r1+8ep7Lc9k=
-github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.729 h1:s3eiYLYzoDwtzxTXcwbmrIxM7GKwAu0DEGWjPkGB+8Q=
-github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.729/go.mod h1:OKlRlIsh00fcnp3PuVkWy7KtpLUG01+RNAmWJdZ2I8A=
+github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.759 h1:F4nEtmKXumckN8MwYF5IIiTZaP4jzGuyyFTMLVUVH6Q=
+github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.759/go.mod h1:wuWRmVM994eLojfsCvaWF/A0fJsQa4NACpDNwbtwBmk=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc v1.0.759 h1:EIoTcoWLd9kr/2Tng64AzAqZCYDb3ic4KMIpxy6LFkY=
 github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc v1.0.759/go.mod h1:OAGpEUGosy4MJvSWmh/A5NKHeoLPKOtrqznKQXL6jZM=
 github.com/tklauser/go-sysconf v0.3.12 h1:0QaGUFOdQaIVdPgfITYzaTegZvdCjmYO52cSFAEVmqU=
