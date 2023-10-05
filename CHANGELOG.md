@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.3.7 (2023-10-05)
+
+ * [17662e3](https://github.com/ysicing/tiga/commit/17662e32e6c4717941be5162ef642d2561914dc1) feat(nnr): add nnr support
+ * [5e6ffd6](https://github.com/ysicing/tiga/commit/5e6ffd6effbd92d2a5b1e7e458667f7751946d2b) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag
+ * [b592cc9](https://github.com/ysicing/tiga/commit/b592cc96f8a72652ffa3da435559f2749018da71) build(deps): bump tailscale.com from 1.48.2 to 1.50.1
+ * [fa5f7de](https://github.com/ysicing/tiga/commit/fa5f7def8f46e25b50ac4d7b2a0b3e9b206b0075) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc
+ * [1dec9e6](https://github.com/ysicing/tiga/commit/1dec9e6555419a133223b3cbd60ab53b0215a57e) build(deps): bump github.com/sagernet/sing from 0.2.9 to 0.2.12
+ * [7081cdd](https://github.com/ysicing/tiga/commit/7081cdd093dfa763aaabca682c197ca0e251cf13) build(deps): bump github.com/shirou/gopsutil/v3 from 3.23.8 to 3.23.9
+ * [f233fb3](https://github.com/ysicing/tiga/commit/f233fb31c2a034e332fa41d76181eae970588700) build(deps): bump github.com/miekg/dns from 1.1.55 to 1.1.56
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.3.5 (2023-09-29)
 
  * [6e97b4d](https://github.com/ysicing/tiga/commit/6e97b4d035c7f16463852bb558ba688c99abfbc1) fix(domain): update ysicing.cloud to ysicing.net
