@@ -40,6 +40,18 @@ func (o *Option) ListServers() ([]Server, error) {
 	return serversResp.Data, nil
 }
 
+func (o *Option) ServersMap() map[string]Server {
+	s, _ := o.ListServers()
+	if len(s) == 0 {
+		return nil
+	}
+	m := make(map[string]Server)
+	for _, j := range s {
+		m[j.Sid] = j
+	}
+	return m
+}
+
 func (o *Option) ListRules() ([]Rule, error) {
 	var rulesResp RulesResp
 	_, err := o.SetSuccessResult(&rulesResp).Post("https://nnr.moe/api/rules")

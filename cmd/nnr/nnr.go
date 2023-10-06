@@ -12,6 +12,7 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/ergoapi/util/color"
 	"github.com/ergoapi/util/output"
 	"github.com/gosuri/uitable"
 	"github.com/spf13/cobra"
@@ -67,12 +68,15 @@ func listServers(f factory.Factory) *cobra.Command {
 	return cmd
 }
 
+var all bool
+
 func listRules(f factory.Factory) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "rules",
 		Short: "list rules",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			api := nnr.New(token)
+			servers := api.ServersMap()
 			s, err := api.ListRules()
 			if err != nil {
 				return err
@@ -86,13 +90,27 @@ func listRules(f factory.Factory) *cobra.Command {
 				return s[i].Traffic >= s[j].Traffic
 			})
 			table := uitable.New()
-			table.AddRow("规则标识", "节点标识", "转发地址", "远程地址", "类型", "流量")
+			table.AddRow("规则", "节点", "转发地址", "远程地址", "类型", "流量")
 			for _, index := range s {
-				table.AddRow(index.Rid, index.Sid, fmt.Sprintf("%v:%v", index.Host, index.Port), fmt.Sprintf("%v:%v", index.Remote, index.RPort), index.Type, util.Traffic(index.Traffic))
+				rulename := index.Name
+				sname := index.Sid
+				value, exist := servers[index.Sid]
+				if exist {
+					if all {
+						sname = fmt.Sprintf("%s(%s)", value.Name, color.SGreen(index.Sid))
+					} else {
+						sname = value.Name
+					}
+				}
+				if all {
+					rulename = fmt.Sprintf("%s(%s)", index.Name, color.SGreen(index.Rid))
+				}
+				table.AddRow(rulename, sname, fmt.Sprintf("%v:%v", index.Host, index.Port), fmt.Sprintf("%v:%v", index.Remote, index.RPort), index.Type, util.Traffic(index.Traffic))
 			}
 			return output.EncodeTable(os.Stdout, table)
 		},
 	}
+	cmd.Flags().BoolVar(&all, "all", false, "all output")
 	return cmd
 }
 

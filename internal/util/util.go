@@ -22,5 +22,5 @@ func Traffic(k int64) string {
 		t = t / 1024.0
 		tunit = "TB"
 	}
-	return fmt.Sprintf("%v%v", t, tunit)
+	return fmt.Sprintf("%.2f%v", t, tunit)
 }
