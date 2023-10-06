@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.3.8 (2023-10-06)
+
+ * [ca4cf7e](https://github.com/ysicing/tiga/commit/ca4cf7e209c0cec4ba47c0539cff87dae8c8ea50) feat(nnr): update nnr show
+ * [33a622a](https://github.com/ysicing/tiga/commit/33a622abe7fd53b4b963950b8057fc4b68cb1c83) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.3.7 (2023-10-05)
 
  * [17662e3](https://github.com/ysicing/tiga/commit/17662e32e6c4717941be5162ef642d2561914dc1) feat(nnr): add nnr support

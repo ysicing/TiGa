@@ -1,12 +1,12 @@
 class Tiga < Formula
     desc "Simple and powerful tool for senior restart engineer"
     homepage "https://github.com/ysicing/tiga"
-    version "0.3.7"
+    version "0.3.8"
 
     on_macos do
       if Hardware::CPU.arm?
         url "https://github.com/ysicing/tiga/releases/download/v#{version}/tiga_darwin_arm64"
-        sha256 "ed9a3d10c102430cc865e78fabb1785d268e5a7191b7aec821c61511dfc84d47"
+        sha256 "9bdfa89f98e6f40a95c4db7db610fa779b32637c1bb970ee21a17ee98d6ab493"
 
         def install
             bin.install "tiga_darwin_arm64" => "tiga"
@@ -15,7 +15,7 @@ class Tiga < Formula
 
       if Hardware::CPU.intel?
         url "https://github.com/ysicing/tiga/releases/download/v#{version}/tiga_darwin_amd64"
-        sha256 "b445170886797c2a0385075494931fc960c4bab4ae850f24f31770ef33c7b13f"
+        sha256 "69d5294395db664218035a4d6b3796b3222f02d327e9755f8bfcaba90338eb1f"
 
         def install
             bin.install "tiga_darwin_amd64" => "tiga"
@@ -26,7 +26,7 @@ class Tiga < Formula
     on_linux do
       if Hardware::CPU.intel?
         url "https://github.com/ysicing/tiga/releases/download/v#{version}/tiga_linux_amd64"
-        sha256 "515e73927cb0443394529fab5e5a8e3d17fd1c69ec87223129a95a8e571310f0"
+        sha256 "a07d32eab51feb1e83e5334e6d54681a78b9453d1c986c2349ed8fb4cad5afdc"
 
         def install
             bin.install "tiga_linux_amd64" => "tiga"
@@ -35,7 +35,7 @@ class Tiga < Formula
 
       if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
         url "https://github.com/ysicing/tiga/releases/download/v#{version}/tiga_linux_arm64"
-        sha256 "5115d1dbeb42a7b5cc5eb85c90739f6afc98dbd8315b61b7bd28a50ccb3b6747"
+        sha256 "03bcfd407d705d21b473d8978673ab8ec873954453d1fb29d84e820767dc7fc3"
 
         def install
             bin.install "tiga_linux_arm64" => "tiga"
