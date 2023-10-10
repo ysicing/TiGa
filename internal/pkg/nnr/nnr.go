@@ -8,8 +8,10 @@ package nnr
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/cockroachdb/errors"
+	"github.com/ergoapi/util/exstr"
 	"github.com/imroc/req/v3"
 	"github.com/ysicing/tiga/common"
 )
@@ -101,4 +103,25 @@ func (o *Option) SortRemoteNode() ([]Node, error) {
 		nodes = append(nodes, node)
 	}
 	return nodes, nil
+}
+
+func (o *Option) AddRule(sid, remote, t string) (*Rule, error) {
+	var ruleResp RuleResp
+	if t == "" {
+		t = "tcp"
+	}
+	s := strings.Split(remote, ":")
+	_, err := o.SetBody(&Rule{
+		Sid:    sid,
+		Remote: s[0],
+		RPort:  exstr.Str2Int(s[1]),
+		Type:   t,
+	}).SetSuccessResult(&ruleResp).Post("https://nnr.moe/api/rules/add")
+	if err != nil {
+		return nil, err
+	}
+	if ruleResp.Status != 1 {
+		return nil, errors.New("add rule failed")
+	}
+	return &ruleResp.Data, nil
 }

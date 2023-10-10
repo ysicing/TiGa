@@ -15,6 +15,7 @@ import (
 	"github.com/ergoapi/util/color"
 	"github.com/ergoapi/util/output"
 	"github.com/gosuri/uitable"
+	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
 	"github.com/ysicing/tiga/internal/pkg/nnr"
 	"github.com/ysicing/tiga/internal/util"
@@ -28,11 +29,17 @@ func NewCmdNNR(f factory.Factory) *cobra.Command {
 		Use:     "nnr",
 		Short:   "nnr tools",
 		Version: "2023.10.0519",
+		PreRunE: func(cmd *cobra.Command, args []string) error {
+			if len(token) == 0 {
+				return fmt.Errorf("token is empty")
+			}
+			return nil
+		},
 	}
 	cmd.AddCommand(listServers(f))
 	cmd.AddCommand(listRules(f))
 	cmd.AddCommand(listRemoteNode(f))
-	// cmd.AddCommand(addRule(f))
+	cmd.AddCommand(addRule(f))
 	// cmd.AddCommand(delRule(f))
 	// cmd.AddCommand(updateRule(f))
 	cmd.PersistentFlags().StringVarP(&token, "token", "t", os.Getenv("NNR_TOKEN"), "token")
@@ -74,12 +81,6 @@ func listRules(f factory.Factory) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "rules",
 		Short: "list rules",
-		PreRunE: func(cmd *cobra.Command, args []string) error {
-			if len(token) == 0 {
-				return fmt.Errorf("token is empty")
-			}
-			return nil
-		},
 		RunE: func(cmd *cobra.Command, args []string) error {
 			api := nnr.New(token)
 			servers := api.ServersMap()
@@ -125,12 +126,6 @@ func listRemoteNode(f factory.Factory) *cobra.Command {
 		Use:     "nodes",
 		Aliases: []string{"remotes"},
 		Short:   "list remote nodes",
-		PreRunE: func(cmd *cobra.Command, args []string) error {
-			if len(token) == 0 {
-				return fmt.Errorf("token is empty")
-			}
-			return nil
-		},
 		RunE: func(cmd *cobra.Command, args []string) error {
 			api := nnr.New(token)
 			s, err := api.SortRemoteNode()
@@ -160,6 +155,64 @@ func addRule(f factory.Factory) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "add",
 		Short: "add rule",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			api := nnr.New(token)
+			s, err := api.ListServers()
+			if err != nil {
+				return err
+			}
+			if len(s) == 0 {
+				f.GetLog().Infof("no servers found")
+				return nil
+			}
+			searcher := func(input string, index int) bool {
+				pepper := s[index]
+				name := strings.Replace(strings.ToLower(pepper.Name), " ", "", -1)
+				input = strings.Replace(strings.ToLower(input), " ", "", -1)
+				return strings.Contains(name, input)
+			}
+			selectApp := promptui.Select{
+				Label: "select app",
+				Items: s,
+				Templates: &promptui.SelectTemplates{
+					Label:    "{{ . }}?",
+					Active:   "\U0001F449 {{ .Name | cyan }} ({{ .Mf }}倍率)",
+					Inactive: "  {{ .Name | cyan }}",
+					Selected: "\U0001F389 {{ .Name | green | cyan }} ({{ .Mf }}倍率)",
+					Details: `
+{{ "Detail:" | faint }} {{ .Name | green }} {{ .Detail }}
+`,
+				},
+				Size:     10,
+				Searcher: searcher,
+			}
+			it, _, _ := selectApp.Run()
+			f.GetLog().Debugf("select server: %s", s[it].Name)
+			prompt := promptui.Prompt{
+				Label: "remote",
+				Validate: func(input string) error {
+					s := strings.Split(input, ":")
+					if len(s) != 2 {
+						return fmt.Errorf("invalid remote")
+					}
+					return nil
+				},
+			}
+			result, err := prompt.Run()
+			if err != nil {
+				return err
+			}
+			t := "tcp"
+			if strings.Contains(s[it].Detail, "udp") || strings.Contains(s[it].Detail, "UDP") || strings.Contains(s[it].Name, "IEPL") {
+				t = "tcp+udp"
+			}
+			r, err := api.AddRule(s[it].Sid, result, t)
+			if err != nil {
+				return err
+			}
+			f.GetLog().Infof("add rule success, rule: %s %s:%v -> %s:%v", r.Rid, r.Host, r.Port, r.Remote, r.RPort)
+			return nil
+		},
 	}
 	return cmd
 }

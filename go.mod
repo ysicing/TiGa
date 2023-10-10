@@ -21,6 +21,7 @@ require (
 	github.com/jackpal/gateway v1.0.10
 	github.com/k0kubun/go-ansi v0.0.0-20180517002512-3bf9e2903213
 	github.com/loft-sh/utils v0.0.21
+	github.com/manifoldco/promptui v0.9.0
 	github.com/mattn/go-isatty v0.0.19
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
 	github.com/miekg/dns v1.1.56
@@ -68,6 +69,7 @@ require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
 	github.com/blang/semver/v4 v4.0.0 // indirect
 	github.com/chai2010/gettext-go v1.0.2 // indirect
+	github.com/chzyer/readline v1.5.1 // indirect
 	github.com/cloudflare/circl v1.3.3 // indirect
 	github.com/cockroachdb/logtags v0.0.0-20230118201751-21c54148d20b // indirect
 	github.com/cockroachdb/redact v1.1.5 // indirect

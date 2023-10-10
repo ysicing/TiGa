@@ -38,6 +38,11 @@ type Rule struct {
 	Date    int64  `json:"date,omitempty"`
 }
 
+type RuleResp struct {
+	Status int  `json:"status,omitempty"`
+	Data   Rule `json:"data,omitempty"`
+}
+
 type RulesResp struct {
 	Status int    `json:"status,omitempty"`
 	Data   []Rule `json:"data,omitempty"`
