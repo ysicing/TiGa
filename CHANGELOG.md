@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.3.9 (2023-10-10)
+
+ * [4bab98e](https://github.com/ysicing/tiga/commit/4bab98e15207050a918f05e43f67ac752236cf9c) feat(nnr): update support
+ * [da13ace](https://github.com/ysicing/tiga/commit/da13aced2bcca3fc54b4da16d3f15068d2517ccb) build(deps): bump golang.org/x/net from 0.15.0 to 0.16.0
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.3.8 (2023-10-06)
 
  * [ca4cf7e](https://github.com/ysicing/tiga/commit/ca4cf7e209c0cec4ba47c0539cff87dae8c8ea50) feat(nnr): update nnr show
