@@ -7,6 +7,8 @@
 package nnr
 
 import (
+	"fmt"
+
 	"github.com/cockroachdb/errors"
 	"github.com/imroc/req/v3"
 	"github.com/ysicing/tiga/common"
@@ -62,4 +64,41 @@ func (o *Option) ListRules() ([]Rule, error) {
 		return nil, errors.New("list rules failed")
 	}
 	return rulesResp.Data, nil
+}
+
+func (o *Option) ListRemoteNode() (map[string]Node, error) {
+	var rulesResp RulesResp
+	_, err := o.SetSuccessResult(&rulesResp).Post("https://nnr.moe/api/rules")
+	if err != nil {
+		return nil, err
+	}
+	if rulesResp.Status != 1 {
+		return nil, errors.New("list rules failed")
+	}
+	mapNodes := make(map[string]Node, 60)
+	for _, rule := range rulesResp.Data {
+		key := fmt.Sprintf("%s:%v", rule.Remote, rule.RPort)
+		if _, ok := mapNodes[key]; ok {
+			node := mapNodes[key]
+			node.Traffic = node.Traffic + rule.Traffic
+			mapNodes[key] = node
+		} else {
+			mapNodes[key] = Node{
+				Remote: key,
+			}
+		}
+	}
+	return mapNodes, nil
+}
+
+func (o *Option) SortRemoteNode() ([]Node, error) {
+	rNodes, err := o.ListRemoteNode()
+	if err != nil {
+		return nil, err
+	}
+	var nodes []Node
+	for _, node := range rNodes {
+		nodes = append(nodes, node)
+	}
+	return nodes, nil
 }

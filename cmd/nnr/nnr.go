@@ -31,18 +31,18 @@ func NewCmdNNR(f factory.Factory) *cobra.Command {
 	}
 	cmd.AddCommand(listServers(f))
 	cmd.AddCommand(listRules(f))
-	cmd.AddCommand(addRule(f))
-	cmd.AddCommand(delRule(f))
-	cmd.AddCommand(updateRule(f))
+	cmd.AddCommand(listRemoteNode(f))
+	// cmd.AddCommand(addRule(f))
+	// cmd.AddCommand(delRule(f))
+	// cmd.AddCommand(updateRule(f))
 	cmd.PersistentFlags().StringVarP(&token, "token", "t", os.Getenv("NNR_TOKEN"), "token")
 	return cmd
 }
 
 func listServers(f factory.Factory) *cobra.Command {
 	cmd := &cobra.Command{
-		Use:     "nodes",
-		Aliases: []string{"servers"},
-		Short:   "list servers",
+		Use:   "servers",
+		Short: "list servers",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			api := nnr.New(token)
 			s, err := api.ListServers()
@@ -74,6 +74,12 @@ func listRules(f factory.Factory) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "rules",
 		Short: "list rules",
+		PreRunE: func(cmd *cobra.Command, args []string) error {
+			if len(token) == 0 {
+				return fmt.Errorf("token is empty")
+			}
+			return nil
+		},
 		RunE: func(cmd *cobra.Command, args []string) error {
 			api := nnr.New(token)
 			servers := api.ServersMap()
@@ -111,6 +117,42 @@ func listRules(f factory.Factory) *cobra.Command {
 		},
 	}
 	cmd.Flags().BoolVar(&all, "all", false, "all output")
+	return cmd
+}
+
+func listRemoteNode(f factory.Factory) *cobra.Command {
+	cmd := &cobra.Command{
+		Use:     "nodes",
+		Aliases: []string{"remotes"},
+		Short:   "list remote nodes",
+		PreRunE: func(cmd *cobra.Command, args []string) error {
+			if len(token) == 0 {
+				return fmt.Errorf("token is empty")
+			}
+			return nil
+		},
+		RunE: func(cmd *cobra.Command, args []string) error {
+			api := nnr.New(token)
+			s, err := api.SortRemoteNode()
+			if err != nil {
+				return err
+			}
+			if len(s) == 0 {
+				f.GetLog().Infof("no nodes found")
+				return nil
+			}
+			f.GetLog().Infof("found %d node", len(s))
+			sort.Slice(s, func(i, j int) bool {
+				return s[i].Traffic >= s[j].Traffic
+			})
+			table := uitable.New()
+			table.AddRow("远程地址", "流量")
+			for _, index := range s {
+				table.AddRow(index.Remote, util.Traffic(index.Traffic))
+			}
+			return output.EncodeTable(os.Stdout, table)
+		},
+	}
 	return cmd
 }
 

@@ -42,3 +42,28 @@ type RulesResp struct {
 	Status int    `json:"status,omitempty"`
 	Data   []Rule `json:"data,omitempty"`
 }
+
+type Node struct {
+	Traffic int64  `json:"traffic,omitempty"`
+	Remote  string `json:"remote,omitempty"`
+}
+
+type AddRule struct {
+	Sid    string `json:"sid"`
+	Remote string `json:"remote"`
+	RPort  int    `json:"rport"`
+	Type   string `json:"type"`
+	Name   string `json:"name,omitempty"`
+}
+
+type UpdateRule struct {
+	Rid    string `json:"rid"`
+	Remote string `json:"remote"`
+	RPort  int    `json:"rport"`
+	Type   string `json:"type"`
+	Name   string `json:"name,omitempty"`
+}
+
+type GetOrDeleteRule struct {
+	Rid string `json:"rid"`
+}
