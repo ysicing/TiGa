@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.3.10 (2023-10-20)
+
+ * [e0a7a9f](https://github.com/ysicing/tiga/commit/e0a7a9f18bf61f95a15a00d000fb556433b5149b) fix(nnr): fix nnr traefik show
+ * [29b9a50](https://github.com/ysicing/tiga/commit/29b9a50c9f23d672054be7a4ec863e4d5c33f131) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag
+ * [e183e12](https://github.com/ysicing/tiga/commit/e183e12525260f42e3ed204021978e8406b46774) build(deps): bump github.com/containerd/continuity from 0.4.1 to 0.4.3
+ * [cb0eb1f](https://github.com/ysicing/tiga/commit/cb0eb1f3f84644ccdb47e328a4a41064e1aae7fe) build(deps): bump google.golang.org/grpc from 1.58.3 to 1.59.0
+ * [0f49d85](https://github.com/ysicing/tiga/commit/0f49d852b6037fe5077dd7b8eb46a6d465e24ecd) build(deps): bump github.com/ergoapi/util from 0.5.4 to 0.5.5
+ * [b87aa6b](https://github.com/ysicing/tiga/commit/b87aa6b7dbdf5b454d81207a87c27c109676bac3) build(deps): bump google.golang.org/grpc from 1.58.2 to 1.58.3
+ * [5f8ffc2](https://github.com/ysicing/tiga/commit/5f8ffc21a96263e9eb1faf48d837129231c0d679) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc
+ * [58b7321](https://github.com/ysicing/tiga/commit/58b7321e5554645171a70642973a4c7f2b62dc37) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag
+ * [1cf231c](https://github.com/ysicing/tiga/commit/1cf231ca53fbdd24667e7b44bd8a1c98c9369d1e) build(deps): bump golang.org/x/net from 0.16.0 to 0.17.0
+ * [6937d95](https://github.com/ysicing/tiga/commit/6937d95801e243fa881ee3efaf05a1b72817b3de) feat(nnr): add nnr add rule
+ * [1b40510](https://github.com/ysicing/tiga/commit/1b40510411b6659205e35bee3bdffd67c979f48a) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.3.9 (2023-10-10)
 
  * [4bab98e](https://github.com/ysicing/tiga/commit/4bab98e15207050a918f05e43f67ac752236cf9c) feat(nnr): update support
