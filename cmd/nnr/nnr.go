@@ -112,7 +112,7 @@ func listRules(f factory.Factory) *cobra.Command {
 				if all {
 					rulename = fmt.Sprintf("%s(%s)", index.Name, color.SGreen(index.Rid))
 				}
-				table.AddRow(rulename, sname, fmt.Sprintf("%v:%v", index.Host, index.Port), fmt.Sprintf("%v:%v", index.Remote, index.RPort), index.Type, util.Traffic(index.Traffic))
+				table.AddRow(rulename, sname, fmt.Sprintf("%v:%v", index.Host, index.Port), fmt.Sprintf("%v:%v", index.Remote, index.RPort), index.Type, util.Traffic(index.Traffic, 1000.0))
 			}
 			return output.EncodeTable(os.Stdout, table)
 		},
@@ -143,7 +143,7 @@ func listRemoteNode(f factory.Factory) *cobra.Command {
 			table := uitable.New()
 			table.AddRow("远程地址", "流量")
 			for _, index := range s {
-				table.AddRow(index.Remote, util.Traffic(index.Traffic))
+				table.AddRow(index.Remote, util.Traffic(index.Traffic, 1000.0))
 			}
 			return output.EncodeTable(os.Stdout, table)
 		},

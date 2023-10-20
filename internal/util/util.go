@@ -11,15 +11,19 @@ import (
 	"math"
 )
 
-func Traffic(k int64) string {
-	t := math.Round(float64(k)/1024.0/1024.0*100) / 100
+func Traffic(k int64, f ...float64) string {
+	value := 1024.0
+	if len(f) > 0 {
+		value = f[0]
+	}
+	t := math.Round(float64(k)/value/value*100) / 100
 	tunit := "MB"
-	if t >= 1024.0 {
-		t = t / 1024.0
+	if t >= value {
+		t = t / value
 		tunit = "GB"
 	}
-	if t >= 1024.0 {
-		t = t / 1024.0
+	if t >= value {
+		t = t / value
 		tunit = "TB"
 	}
 	return fmt.Sprintf("%.2f%v", t, tunit)
