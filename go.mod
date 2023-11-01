@@ -36,7 +36,7 @@ require (
 	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/cobra v1.7.0
 	github.com/spf13/pflag v1.0.5
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.776
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.779
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.771
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse v1.0.775
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag v1.0.774
