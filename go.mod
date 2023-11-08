@@ -34,7 +34,7 @@ require (
 	github.com/oschwald/geoip2-golang v1.9.0
 	github.com/shirou/gopsutil/v3 v3.23.9
 	github.com/sirupsen/logrus v1.9.3
-	github.com/spf13/cobra v1.7.0
+	github.com/spf13/cobra v1.8.0
 	github.com/spf13/pflag v1.0.5
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.783
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.780
@@ -73,7 +73,7 @@ require (
 	github.com/cloudflare/circl v1.3.3 // indirect
 	github.com/cockroachdb/logtags v0.0.0-20230118201751-21c54148d20b // indirect
 	github.com/cockroachdb/redact v1.1.5 // indirect
-	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
+	github.com/cpuguy83/go-md2man/v2 v2.0.3 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dblohm7/wingoes v0.0.0-20230821191801-fc76608aecf0 // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
