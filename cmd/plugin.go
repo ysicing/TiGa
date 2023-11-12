@@ -11,7 +11,6 @@ import (
 	"strings"
 
 	"github.com/ergoapi/util/output"
-	"github.com/ergoapi/util/zos"
 	"github.com/gosuri/uitable"
 	"github.com/spf13/cobra"
 	"github.com/ysicing/tiga/cmd/plugin"
@@ -40,10 +39,8 @@ func NewCmdPlugin() *cobra.Command {
 		Short:                 "provides utilities for interacting with plugins",
 	}
 	cmd.AddCommand(pluginListCmd())
-	if zos.IsLinux() {
-		cmd.AddCommand(pluginInstallCmd())
-		cmd.AddCommand(pluginSearchCmd())
-	}
+	cmd.AddCommand(pluginInstallCmd())
+	cmd.AddCommand(pluginSearchCmd())
 	return cmd
 }
 
