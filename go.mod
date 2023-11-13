@@ -22,7 +22,7 @@ require (
 	github.com/k0kubun/go-ansi v0.0.0-20180517002512-3bf9e2903213
 	github.com/loft-sh/utils v0.0.21
 	github.com/manifoldco/promptui v0.9.0
-	github.com/mattn/go-isatty v0.0.19
+	github.com/mattn/go-isatty v0.0.20
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
 	github.com/miekg/dns v1.1.56
 	github.com/moby/term v0.5.0
@@ -36,8 +36,6 @@ require (
 	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/cobra v1.8.0
 	github.com/spf13/pflag v1.0.5
-
-
 	github.com/ulikunitz/xz v0.5.11
 	github.com/xlab/treeprint v1.2.0
 	github.com/xtls/xray-core v1.8.4
