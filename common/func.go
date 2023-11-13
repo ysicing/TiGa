@@ -101,5 +101,5 @@ func GetCustomScriptFile(path string) string {
 
 // GetCustomBinary 获取二进制下载路径
 func GetCustomBinary(name string) string {
-	return fmt.Sprintf("https://dfcos.ysicing.net/oss/tiga/%s/%s/%s", runtime.GOOS, runtime.GOARCH, name)
+	return fmt.Sprintf("%s/tiga/%s/%s/%s", DefaultCOS, runtime.GOOS, runtime.GOARCH, name)
 }

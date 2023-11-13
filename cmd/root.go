@@ -17,7 +17,6 @@ import (
 	"github.com/muesli/roff"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
-	"github.com/ysicing/tiga/cmd/clash"
 	"github.com/ysicing/tiga/cmd/flags"
 	"github.com/ysicing/tiga/cmd/nnr"
 	"github.com/ysicing/tiga/cmd/xray"
@@ -64,7 +63,6 @@ func BuildRoot(f factory.Factory) *cobra.Command {
 	rootCmd.AddCommand(NewCmdPlugin())
 	rootCmd.AddCommand(newCmdDebug(f))
 	rootCmd.AddCommand(newCmdSystem(f))
-	rootCmd.AddCommand(newCmdCloud(f))
 
 	if zos.IsLinux() {
 		rootCmd.AddCommand(newCmdApp(f))
@@ -73,7 +71,6 @@ func BuildRoot(f factory.Factory) *cobra.Command {
 
 	if zos.IsUnix() {
 		rootCmd.AddCommand(xray.NewCmdXray(f))
-		rootCmd.AddCommand(clash.NewCmdClash(f))
 		rootCmd.AddCommand(nnr.NewCmdNNR(f))
 	}
 

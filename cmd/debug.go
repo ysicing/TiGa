@@ -12,7 +12,6 @@ import (
 
 	"github.com/ergoapi/util/zos"
 	"github.com/spf13/cobra"
-	"github.com/ysicing/tiga/cmd/clash"
 	"github.com/ysicing/tiga/cmd/debug"
 	"github.com/ysicing/tiga/cmd/xray"
 	"github.com/ysicing/tiga/pkg/factory"
@@ -37,8 +36,5 @@ func newCmdDebug(f factory.Factory) *cobra.Command {
 	xray := xray.NewCmdXray(f)
 	xray.Deprecated = "please use xray"
 	debugCmd.AddCommand(xray)
-	clash := clash.NewCmdClash(f)
-	clash.Deprecated = "please use clash"
-	debugCmd.AddCommand(clash)
 	return debugCmd
 }
