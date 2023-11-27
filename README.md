@@ -57,7 +57,11 @@ task -v
 ## Contributors
 
 <!-- readme: collaborators,contributors -start -->
-<!-- readme: collaborators,contributors -end -->
-<a href="https://github.com/easysoft/quickon_cli/graphs/contributors">
+<a href="https://github.com/ysicing/tiga/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ysicing/tiga" />
 </a>
+<!-- readme: collaborators,contributors -end -->
+
+## Sponsor
+
+[![jetbrains](docs/jetbrains.svg)](https://www.jetbrains.com/?from=tiga)
