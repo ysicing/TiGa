@@ -72,8 +72,8 @@ github.com/docker/go-connections v0.4.0 h1:El9xVISelRB7BuFusrZozjnkIM5YnzCViNKoh
 github.com/docker/go-connections v0.4.0/go.mod h1:Gbd7IOopHjR8Iph03tsViu4nIes5XhDvyHbTtUxmeec=
 github.com/emicklei/go-restful/v3 v3.11.0 h1:rAQeMHw1c7zTmncogyy8VvRZwtkmkZ4FxERmMY4rD+g=
 github.com/emicklei/go-restful/v3 v3.11.0/go.mod h1:6n3XBCmQQb25CM2LCACGz8ukIrRry+4bhvbpWn3mrbc=
-github.com/ergoapi/util v0.5.6 h1:MfDYEZoK5A7FS62syjYDA4/kGzy4AfLx8JRKS9CKQfo=
-github.com/ergoapi/util v0.5.6/go.mod h1:nH/KT9xKlEFOXXe1jCzjyUTx6VkFk+4gkAEr6YiA2go=
+github.com/ergoapi/util v0.5.7 h1:vd1Lq3sgoZvTnXJsIubuDpZmUAN40vXT4CoXlULJ/ws=
+github.com/ergoapi/util v0.5.7/go.mod h1:V7GR6AgxtdLs3n23syfuTpj0ovmVCIaSP3im7/rUn6M=
 github.com/evanphx/json-patch v5.6.0+incompatible h1:jBYDEEiFBPxA0v50tFdvOzQQTCvpL6mnFh5mB2/l16U=
 github.com/evanphx/json-patch v5.6.0+incompatible/go.mod h1:50XU6AFN0ol/bzJsmQLiYLvXMP4fmwYFNcr97nuDLSk=
 github.com/exponent-io/jsonpath v0.0.0-20151013193312-d6023ce2651d h1:105gxyaGwCFad8crR9dcMQWvV9Hvulu6hwUh4tWPJnM=
