@@ -10,7 +10,7 @@ require (
 	github.com/cheggaaa/pb/v3 v3.1.4
 	github.com/cockroachdb/errors v1.11.1
 	github.com/containerd/continuity v0.4.3
-	github.com/ergoapi/util v0.5.12
+	github.com/ergoapi/util v0.5.13
 	github.com/go-ping/ping v1.1.0
 	github.com/gofrs/flock v0.8.1
 	github.com/google/gops v0.3.28
