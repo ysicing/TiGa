@@ -53,7 +53,7 @@ jobs:
           curl -F package=@$filename https://${FURY_TOKEN}@push.fury.io/ysicing/
         done
     - name: "Upload checksums.txt"
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with: { name: checksums.txt, path: dist/checksums.txt }
 
   Changelog:
