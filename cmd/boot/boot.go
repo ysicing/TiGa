@@ -39,9 +39,7 @@ func initRootDirectory() error {
 
 func OnBoot() error {
 	if environ.GetEnv("TIGA_SKIP_IPDB", "false") == "false" {
-		if err := ipdb.InitMMDB(); err != nil {
-			return err
-		}
+		ipdb.InitMMDB()
 	}
 	return initRootDirectory()
 }
