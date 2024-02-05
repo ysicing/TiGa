@@ -10,7 +10,7 @@ require (
 	github.com/cheggaaa/pb/v3 v3.1.5
 	github.com/cockroachdb/errors v1.11.1
 	github.com/containerd/continuity v0.4.3
-	github.com/ergoapi/util v0.6.2
+	github.com/ergoapi/util v0.6.3
 	github.com/go-ping/ping v1.1.0
 	github.com/gofrs/flock v0.8.1
 	github.com/google/gops v0.3.28
@@ -42,7 +42,7 @@ require (
 	golang.org/x/net v0.20.0
 	google.golang.org/grpc v1.61.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
-	k8s.io/apimachinery v0.29.0
+	k8s.io/apimachinery v0.29.1
 	k8s.io/kubectl v0.28.4
 	sigs.k8s.io/yaml v1.4.0
 	tailscale.com v1.58.2
@@ -50,7 +50,7 @@ require (
 
 require (
 	filippo.io/edwards25519 v1.0.0 // indirect
-	github.com/6tail/lunar-go v1.3.7 // indirect
+	github.com/6tail/lunar-go v1.3.9 // indirect
 	github.com/Azure/go-ansiterm v0.0.0-20230124172434-306776ec8161 // indirect
 	github.com/MakeNowJust/heredoc v1.0.0 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
@@ -67,7 +67,7 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.3 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dblohm7/wingoes v0.0.0-20230929194252-e994401fc077 // indirect
-	github.com/docker/go-connections v0.4.0 // indirect
+	github.com/docker/go-connections v0.5.0 // indirect
 	github.com/emicklei/go-restful/v3 v3.11.0 // indirect
 	github.com/evanphx/json-patch v5.6.0+incompatible // indirect
 	github.com/exponent-io/jsonpath v0.0.0-20151013193312-d6023ce2651d // indirect
@@ -82,7 +82,7 @@ require (
 	github.com/go-openapi/swag v0.22.4 // indirect
 	github.com/go-task/slim-sprig v0.0.0-20230315185526-52ccab3ef572 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
-	github.com/golang-module/carbon/v2 v2.2.14 // indirect
+	github.com/golang-module/carbon/v2 v2.3.8 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/btree v1.1.2 // indirect
 	github.com/google/gnostic-models v0.6.9-0.20230804172637-c7be7c783f49 // indirect
@@ -92,7 +92,7 @@ require (
 	github.com/google/gofuzz v1.2.0 // indirect
 	github.com/google/pprof v0.0.0-20231229205709-960ae82b1e42 // indirect
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510 // indirect
-	github.com/google/uuid v1.5.0 // indirect
+	github.com/google/uuid v1.6.0 // indirect
 	github.com/gorilla/websocket v1.5.1 // indirect
 	github.com/gregjones/httpcache v0.0.0-20180305231024-9cad4c3443a7 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
@@ -175,9 +175,9 @@ require (
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	k8s.io/api v0.29.0 // indirect
+	k8s.io/api v0.29.1 // indirect
 	k8s.io/cli-runtime v0.28.4 // indirect
-	k8s.io/client-go v0.29.0 // indirect
+	k8s.io/client-go v0.29.1 // indirect
 	k8s.io/component-base v0.28.4 // indirect
 	k8s.io/klog/v2 v2.110.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20231010175941-2dd684a91f00 // indirect
