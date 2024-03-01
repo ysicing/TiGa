@@ -30,7 +30,7 @@ require (
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/opencontainers/go-digest v1.0.0
 	github.com/oschwald/geoip2-golang v1.9.0
-	github.com/shirou/gopsutil/v3 v3.24.1
+	github.com/shirou/gopsutil/v3 v3.24.2
 	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/cobra v1.8.0
 	github.com/spf13/pflag v1.0.5
@@ -150,7 +150,7 @@ require (
 	github.com/vishvananda/netlink v1.2.1-beta.2.0.20230420174744-55c8b9515a01 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
 	github.com/xtls/reality v0.0.0-20231112171332-de1173cf2b19 // indirect
-	github.com/yusufpapurcu/wmi v1.2.3 // indirect
+	github.com/yusufpapurcu/wmi v1.2.4 // indirect
 	go.starlark.net v0.0.0-20231101134539-556fd59b42f6 // indirect
 	go.uber.org/mock v0.4.0 // indirect
 	go4.org/mem v0.0.0-20220726221520-4f986261bf13 // indirect
