@@ -16,7 +16,7 @@ require (
 	github.com/gofrs/flock v0.8.1
 	github.com/google/gops v0.3.28
 	github.com/gosuri/uitable v0.0.4
-	github.com/imroc/req/v3 v3.43.0
+	github.com/imroc/req/v3 v3.43.1
 	github.com/inconshreveable/go-update v0.0.0-20160112193335-8152e7eb6ccf
 	github.com/jackpal/gateway v1.0.14
 	github.com/k0kubun/go-ansi v0.0.0-20180517002512-3bf9e2903213
