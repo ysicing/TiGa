@@ -12,7 +12,7 @@ require (
 	github.com/cheggaaa/pb/v3 v3.1.5
 	github.com/cockroachdb/errors v1.11.1
 	github.com/containerd/continuity v0.4.3
-	github.com/ergoapi/util v0.6.4
+	github.com/ergoapi/util v0.6.5
 	github.com/go-ping/ping v1.1.0
 	github.com/gofrs/flock v0.8.1
 	github.com/google/gops v0.3.28
@@ -44,7 +44,7 @@ require (
 	golang.org/x/net v0.24.0
 	google.golang.org/grpc v1.63.2
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
-	k8s.io/apimachinery v0.29.2
+	k8s.io/apimachinery v0.29.3
 	k8s.io/kubectl v0.28.4
 	sigs.k8s.io/yaml v1.4.0
 	tailscale.com v1.64.1
@@ -52,7 +52,7 @@ require (
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
-	github.com/6tail/lunar-go v1.3.9 // indirect
+	github.com/6tail/lunar-go v1.3.11 // indirect
 	github.com/Azure/go-ansiterm v0.0.0-20230124172434-306776ec8161 // indirect
 	github.com/MakeNowJust/heredoc v1.0.0 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
@@ -84,7 +84,7 @@ require (
 	github.com/go-openapi/swag v0.22.7 // indirect
 	github.com/go-task/slim-sprig v0.0.0-20230315185526-52ccab3ef572 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
-	github.com/golang-module/carbon/v2 v2.3.9 // indirect
+	github.com/golang-module/carbon/v2 v2.3.10 // indirect
 	github.com/golang/protobuf v1.5.4 // indirect
 	github.com/google/btree v1.1.2 // indirect
 	github.com/google/gnostic-models v0.6.9-0.20230804172637-c7be7c783f49 // indirect
@@ -176,9 +176,9 @@ require (
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	k8s.io/api v0.29.2 // indirect
+	k8s.io/api v0.29.3 // indirect
 	k8s.io/cli-runtime v0.28.4 // indirect
-	k8s.io/client-go v0.29.2 // indirect
+	k8s.io/client-go v0.29.3 // indirect
 	k8s.io/component-base v0.29.1 // indirect
 	k8s.io/klog/v2 v2.120.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20240117194847-208609032b15 // indirect
