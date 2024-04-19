@@ -1,5 +1,108 @@
 # Changelog
 
+## v0.3.12 (2024-04-19)
+
+ * [d2a1214](https://github.com/ysicing/tiga/commit/d2a1214cc9f6e00982c43f4c7cf7afb79908466b) build(deps): bump github.com/miekg/dns from 1.1.58 to 1.1.59
+ * [421139b](https://github.com/ysicing/tiga/commit/421139bdd694e30b2c1c73165f52a6960d1eafe9) build(deps): bump github.com/ergoapi/util from 0.6.4 to 0.6.5
+ * [0c599cb](https://github.com/ysicing/tiga/commit/0c599cb4f39b839aa52246f4b06c6c4b35bbcac1) build(deps): bump tailscale.com from 1.64.0 to 1.64.1
+ * [b34ddc5](https://github.com/ysicing/tiga/commit/b34ddc5eaff7add9b89957cfc2d30c2afccb22c3) build(deps): bump github.com/imroc/req/v3 from 3.43.2 to 3.43.3
+ * [c97a6e5](https://github.com/ysicing/tiga/commit/c97a6e52cbb9c030096233560c26f7ce4b22bba3) build(deps): bump tailscale.com from 1.62.1 to 1.64.0
+ * [62b4ae8](https://github.com/ysicing/tiga/commit/62b4ae848dd3af69d668e9965519b71e03a36ee3) build(deps): bump google.golang.org/grpc from 1.63.0 to 1.63.2
+ * [2bb4118](https://github.com/ysicing/tiga/commit/2bb411858b92f8d0d1f580a7350349d6bb0c6621) build(deps): bump golang.org/x/net from 0.22.0 to 0.24.0
+ * [c05c8fa](https://github.com/ysicing/tiga/commit/c05c8fa41cb63e737b1cd913e22fff9219238754) build(deps): bump peaceiris/actions-gh-pages from 3 to 4
+ * [4c98232](https://github.com/ysicing/tiga/commit/4c9823239b22f14b8b82b624413505846db69ea2) build(deps): bump github.com/imroc/req/v3 from 3.43.1 to 3.43.2
+ * [9248d46](https://github.com/ysicing/tiga/commit/9248d46cfeca47f31865a999ad29494242ea3c02) build(deps): bump google.golang.org/grpc from 1.62.1 to 1.63.0
+ * [30921c2](https://github.com/ysicing/tiga/commit/30921c2197bd95e1ce2603139931a3c51237ff96) build(deps): bump github.com/ulikunitz/xz from 0.5.11 to 0.5.12
+ * [8d07684](https://github.com/ysicing/tiga/commit/8d07684ee8171f2d28ce8b8164e43ca3de40de98) build(deps): bump github.com/xtls/xray-core from 1.8.9 to 1.8.10
+ * [b93c4d1](https://github.com/ysicing/tiga/commit/b93c4d1f827d166024c4fed13365e989d63919ec) build(deps): bump github.com/shirou/gopsutil/v3 from 3.24.2 to 3.24.3
+ * [2fd8aac](https://github.com/ysicing/tiga/commit/2fd8aac03b69d1f0e8773533ac089f726fda47fd) build(deps): bump tailscale.com from 1.62.0 to 1.62.1
+ * [d3bdb0a](https://github.com/ysicing/tiga/commit/d3bdb0a74d82fd3d6f23b3576e98b00d96a1dbb0) build(deps): bump tailscale.com from 1.60.1 to 1.62.0
+ * [b4183c1](https://github.com/ysicing/tiga/commit/b4183c12b8307aa9e9561a6ea4e7d84225c8c3e1) build(deps): bump github.com/imroc/req/v3 from 3.43.0 to 3.43.1
+ * [ce36c08](https://github.com/ysicing/tiga/commit/ce36c08a8073a2a0413008a656b356f0bfa47f7c) build(deps): bump github.com/xtls/xray-core from 1.8.8 to 1.8.9
+ * [72c19f8](https://github.com/ysicing/tiga/commit/72c19f8be22ae15538fb758e528cd452cfe9510f) build(deps): bump github.com/jackpal/gateway from 1.0.13 to 1.0.14
+ * [9cf770f](https://github.com/ysicing/tiga/commit/9cf770fc0a46aea063b2cdaf0d99d26309f7dc88) build(deps): bump github.com/imroc/req/v3 from 3.42.3 to 3.43.0
+ * [2bd47bc](https://github.com/ysicing/tiga/commit/2bd47bcc2942d5fed6b47a7ce3291ad5fd8d7fa6) build(deps): bump google.golang.org/grpc from 1.62.0 to 1.62.1
+ * [741e5e1](https://github.com/ysicing/tiga/commit/741e5e1a2f271667b2ba00d7ba47ee4e29c5042f) build(deps): bump golang.org/x/net from 0.21.0 to 0.22.0
+ * [87a71ee](https://github.com/ysicing/tiga/commit/87a71eea53a499af4a073042425df8aabbd7f63d) build(deps): bump tailscale.com from 1.60.0 to 1.60.1
+ * [0f02893](https://github.com/ysicing/tiga/commit/0f02893d6a5ad6dc8f927dab391be4546668b451) build(deps): bump github.com/shirou/gopsutil/v3 from 3.24.1 to 3.24.2
+ * [69b9eac](https://github.com/ysicing/tiga/commit/69b9eaca0a9fc3846ab0b6a64b6e80a3a9b231d2) build(deps): bump github.com/ergoapi/util from 0.6.3 to 0.6.4
+ * [739aeeb](https://github.com/ysicing/tiga/commit/739aeeb88ec1d27d1831f3924030d2e19aefdb3e) build(deps): bump github.com/xtls/xray-core from 1.8.7 to 1.8.8
+ * [09aaf68](https://github.com/ysicing/tiga/commit/09aaf68f7fd068d446293ad10837fd528dc84de0) build(deps): bump go.etcd.io/bbolt from 1.3.8 to 1.3.9
+ * [8bc9e18](https://github.com/ysicing/tiga/commit/8bc9e18cebf2da5d5883c33f8fcfdde1d43fc20a) build(deps): bump google.golang.org/grpc from 1.61.1 to 1.62.0
+ * [6ffad8a](https://github.com/ysicing/tiga/commit/6ffad8a2c564f1761c9cbbff740f4c3b870b56e7) build(deps): bump tailscale.com from 1.58.2 to 1.60.0
+ * [fb1f1e3](https://github.com/ysicing/tiga/commit/fb1f1e3ec1882fb37629b64fead59182e8593329) build(deps): bump google.golang.org/grpc from 1.61.0 to 1.61.1
+ * [5456723](https://github.com/ysicing/tiga/commit/5456723710b84cdf94df3d9897c6423b886d4955) build(deps): bump golang.org/x/net from 0.20.0 to 0.21.0
+ * [08e4ff6](https://github.com/ysicing/tiga/commit/08e4ff64fc1921c8c74755b8c0aa3db2479049ff) build(deps): bump github.com/ergoapi/util from 0.6.2 to 0.6.3
+ * [01cb585](https://github.com/ysicing/tiga/commit/01cb585c481d022914435df74faafd83f627f46b) build(deps): bump peter-evans/create-pull-request from 5 to 6
+ * [8ac3234](https://github.com/ysicing/tiga/commit/8ac323462de08bef77f55040fb783669cc5fce58) build(deps): bump github.com/shirou/gopsutil/v3 from 3.23.12 to 3.24.1
+ * [2a6e8bc](https://github.com/ysicing/tiga/commit/2a6e8bc1e8f25630800efa2f7cdcc56c4f9d5832) build(deps): bump github.com/cheggaaa/pb/v3 from 3.1.4 to 3.1.5
+ * [c9af21e](https://github.com/ysicing/tiga/commit/c9af21ed9581c52a56ec84b19f31a319c9345da1) build(deps): bump google.golang.org/grpc from 1.60.1 to 1.61.0
+ * [d3a6e02](https://github.com/ysicing/tiga/commit/d3a6e02347836cec4e8439ebaa6342e40dcdec80) build(deps): bump tailscale.com from 1.58.0 to 1.58.2
+ * [bee34e1](https://github.com/ysicing/tiga/commit/bee34e18d12a966855e17bf5d33fbb15f42547c2) build(deps): bump github.com/miekg/dns from 1.1.57 to 1.1.58
+ * [b508d9a](https://github.com/ysicing/tiga/commit/b508d9a8a9724b20b510f7a61373c8d7914b33ff) build(deps): bump tailscale.com from 1.56.1 to 1.58.0
+ * [b13c5d0](https://github.com/ysicing/tiga/commit/b13c5d04fbdf0aecd57f5be57713c0a26bbc337c) build(deps): bump golang.org/x/net from 0.19.0 to 0.20.0
+ * [2575fa9](https://github.com/ysicing/tiga/commit/2575fa9924295c4b3db299f7692bb07bb51715ad) build(deps): bump github.com/xtls/xray-core from 1.8.6 to 1.8.7
+
+### Contributors
+
+ * dependabot[bot]
+
+## v0.3.11 (2024-01-08)
+
+ * [99db421](https://github.com/ysicing/tiga/commit/99db42155c75d91d7e4cc294d2ca93510fed4566) fix(mmdb): skip dl failed
+ * [cfb64fa](https://github.com/ysicing/tiga/commit/cfb64fab289f9ceabefccbd7334cc4b7665ab807) build(deps): bump github.com/imroc/req/v3 from 3.42.2 to 3.42.3
+ * [ae8f69a](https://github.com/ysicing/tiga/commit/ae8f69a6db7b70f295f4224e2ce1b04bf8828ffa) build(deps): bump github.com/shirou/gopsutil/v3 from 3.23.11 to 3.23.12
+ * [020ad59](https://github.com/ysicing/tiga/commit/020ad597226a1b9eb3628b16c0193bd863827de1) build(deps): bump github.com/ergoapi/util from 0.6.1 to 0.6.2
+ * [5b55fea](https://github.com/ysicing/tiga/commit/5b55fea43f5118e6f55f7756a5f1e2a834bf62cb) build(deps): bump google.golang.org/grpc from 1.60.0 to 1.60.1
+ * [8e1eb35](https://github.com/ysicing/tiga/commit/8e1eb35ed4f93f4478ea6a15d2a91e2d3a305903) build(deps): bump tailscale.com from 1.56.0 to 1.56.1
+ * [f957967](https://github.com/ysicing/tiga/commit/f957967fb02996ee42b2f4e57ced3c8dc18d46dd) build(deps): bump golang.org/x/crypto from 0.16.0 to 0.17.0
+ * [fa8ca48](https://github.com/ysicing/tiga/commit/fa8ca480f217fc4a92340631bff679580b2203f8) build(deps): bump actions/upload-artifact from 3 to 4
+ * [91589f3](https://github.com/ysicing/tiga/commit/91589f3852c8d081db4e4052658d2c22e58b89e3) build(deps): bump github.com/ergoapi/util from 0.5.13 to 0.6.1
+ * [68781c4](https://github.com/ysicing/tiga/commit/68781c4ef0b08a33fdefcd85a25d3f488d0f835d) build(deps): bump actions/download-artifact from 3 to 4
+ * [f633aa4](https://github.com/ysicing/tiga/commit/f633aa4f145915ec9de8f59184bd4371cbcd7936) build(deps): bump tailscale.com from 1.54.1 to 1.56.0
+ * [da30dce](https://github.com/ysicing/tiga/commit/da30dce4ee1ba0173cac79520c80b8ee6ca0d998) build(deps): bump google.golang.org/grpc from 1.59.0 to 1.60.0
+ * [2704ec4](https://github.com/ysicing/tiga/commit/2704ec44c6f93ea3ee5d52fbf16a789aa8fa1ca3) build(deps): bump github.com/ergoapi/util from 0.5.12 to 0.5.13
+ * [cdce2f5](https://github.com/ysicing/tiga/commit/cdce2f5c5ed532ff8b1e62abed6ac2038163c5d7) build(deps): bump github.com/ergoapi/util from 0.5.11 to 0.5.12
+ * [9d0feec](https://github.com/ysicing/tiga/commit/9d0feecb74eb55b72fc39fdac5abda13ff56d197) build(deps): bump github.com/ergoapi/util from 0.5.10 to 0.5.11
+ * [1ed9a24](https://github.com/ysicing/tiga/commit/1ed9a24f5dabe0748313dc14e3209be2be1328d9) build(deps): bump actions/setup-go from 4 to 5
+ * [6977dac](https://github.com/ysicing/tiga/commit/6977dac00ca5f36700cae0d9938d46ef25227861) build(deps): bump github.com/ergoapi/util from 0.5.7 to 0.5.10
+ * [ed1063a](https://github.com/ysicing/tiga/commit/ed1063a0e7b63cd9749a9952397b11fa920f9179) build(deps): bump github.com/shirou/gopsutil/v3 from 3.23.10 to 3.23.11
+ * [3b4bea3](https://github.com/ysicing/tiga/commit/3b4bea30e10ea4f238e2e9ad13447170818c2308) build(deps): bump github.com/ergoapi/util from 0.5.6 to 0.5.7
+ * [176c258](https://github.com/ysicing/tiga/commit/176c2583138cc0210eb124db26e9c28a3bc45f82) build(deps): bump tailscale.com from 1.54.0 to 1.54.1
+ * [0323f7e](https://github.com/ysicing/tiga/commit/0323f7e6d15fcad260babcf6b948ec464d9eb8cd) build(deps): bump github.com/ergoapi/util from 0.5.5 to 0.5.6
+ * [166199c](https://github.com/ysicing/tiga/commit/166199c90129e9a182c1463147bea7c05798f7d8) build(deps): bump golang.org/x/net from 0.18.0 to 0.19.0
+ * [52b967f](https://github.com/ysicing/tiga/commit/52b967fa8b9614c93b9615a3b94ff8f2caaabcd4) docs(update): update readme
+ * [8db3fde](https://github.com/ysicing/tiga/commit/8db3fdeb452c6791ec1b0dca01a259baf350fa95) chore(other): update dev container base image, delete unused file
+ * [af7df91](https://github.com/ysicing/tiga/commit/af7df91cfbf29ea4791bc421668c2dde8e5a0786) feat(update): update
+ * [e8afc2a](https://github.com/ysicing/tiga/commit/e8afc2a7541c582f055205d93b8d73f80aa6a86f) build(deps): bump github.com/imroc/req/v3 from 3.42.1 to 3.42.2
+ * [81e2d56](https://github.com/ysicing/tiga/commit/81e2d56d5adea5137f7b4312a6ecfe02a6536e13) build(deps): bump github.com/miekg/dns from 1.1.56 to 1.1.57
+ * [c4a1131](https://github.com/ysicing/tiga/commit/c4a1131eb7c0a34bf54c72c2d8d0708930430287) build(deps): bump github.com/xtls/xray-core from 1.8.4 to 1.8.5
+ * [5d52efb](https://github.com/ysicing/tiga/commit/5d52efbda8121e75d8d1bd0344804b99f4490609) build(deps): bump go.etcd.io/bbolt from 1.3.7 to 1.3.8
+ * [31221d5](https://github.com/ysicing/tiga/commit/31221d5e835ab831041ef25a4284a2d0b52c5b65) build(deps): bump github.com/jackpal/gateway from 1.0.10 to 1.0.13
+ * [90280c7](https://github.com/ysicing/tiga/commit/90280c7c629ee33c226c5dcfa85336463731b8ad) build(deps): bump github.com/mattn/go-isatty from 0.0.19 to 0.0.20
+ * [e6c1fe7](https://github.com/ysicing/tiga/commit/e6c1fe75d2426bef001c9843a2b8d1053bb3f11e) feat(update): update
+ * [e0a4233](https://github.com/ysicing/tiga/commit/e0a42339ac75367afcd837d7f14a2b5fff1c7cd4) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common
+ * [2641221](https://github.com/ysicing/tiga/commit/264122109d710b38aa804bb87f2c9ca431c2e9e6) feat(update): rm clash dep
+ * [582ec7b](https://github.com/ysicing/tiga/commit/582ec7bcb6cbe15283ea0799ffe91514e67b976d) build(deps): bump tailscale.com from 1.50.1 to 1.52.1
+ * [878b778](https://github.com/ysicing/tiga/commit/878b778eb1eca0eca2ff9d92b4f549b135c4b203) build(deps): bump github.com/spf13/cobra from 1.7.0 to 1.8.0
+ * [c2e893c](https://github.com/ysicing/tiga/commit/c2e893cc1a19629a7c0195d4e7fbc12c1ae69572) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag
+ * [c7e4563](https://github.com/ysicing/tiga/commit/c7e456385f0ebca8834799c4e03f24d9596fb07a) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common
+ * [88fc946](https://github.com/ysicing/tiga/commit/88fc9464ab48aa600bcb3a0b9030391330fb58c5) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common
+ * [e736e0b](https://github.com/ysicing/tiga/commit/e736e0b1a3220e561d28f5b18efd4b9d8081d3d6) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm
+ * [fb931d0](https://github.com/ysicing/tiga/commit/fb931d0164f60631ec8e9d57c86821a0c882fa74) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common
+ * [abea331](https://github.com/ysicing/tiga/commit/abea33146bf7e9d2b9105341355f2e6284544aca) build(deps): bump sigs.k8s.io/yaml from 1.3.0 to 1.4.0
+ * [2f44250](https://github.com/ysicing/tiga/commit/2f44250718e1831d0805c04e41393898993ed444) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common
+ * [b84d6c6](https://github.com/ysicing/tiga/commit/b84d6c6c80d53c2ccfeb614c5714ce3d48b4eb98) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse
+ * [971cc34](https://github.com/ysicing/tiga/commit/971cc3484234bec00a6d5b70eb5bd244c0e09b4d) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tag
+ * [5533b1b](https://github.com/ysicing/tiga/commit/5533b1b42d94f06abe9a7d3c886a03f18f9c6916) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse
+ * [0f5136b](https://github.com/ysicing/tiga/commit/0f5136b7d457e4a32d66c20378a5b2ec5e0dbb36) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/lighthouse
+ * [0c0e819](https://github.com/ysicing/tiga/commit/0c0e819cfb1a5b2d8108a066de40b7743ba2cdde) build(deps): bump github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.3.10 (2023-10-20)
 
  * [e0a7a9f](https://github.com/ysicing/tiga/commit/e0a7a9f18bf61f95a15a00d000fb556433b5149b) fix(nnr): fix nnr traefik show
