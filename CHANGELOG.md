@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.3.14 (2024-04-27)
+
+ * [4068529](https://github.com/ysicing/tiga/commit/406852983df0e1e1c094aa7ebffe368b884f176a) build(deps): bump github.com/xtls/xray-core from 1.8.10 to 1.8.11
+
+### Contributors
+
+ * dependabot[bot]
+
 ## v0.3.13 (2024-04-26)
 
  * [17e853b](https://github.com/ysicing/tiga/commit/17e853bc1cdf02f2d2a45999a7f1580ae824cef2) feat: add TcpingCommand and flags for IPv4, IPv6, count, and timeout
