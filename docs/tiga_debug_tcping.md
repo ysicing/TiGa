@@ -1,15 +1,26 @@
-## tiga debug netcheck
+## tiga debug tcping
 
-netcheck
+tcping
 
 ```
-tiga debug netcheck [flags]
+tiga debug tcping [flags]
+```
+
+### Examples
+
+```
+  # simple tcping
+  tiga debug tcping [-4] [-6] [-n count] [-t timeout] address port
 ```
 
 ### Options
 
 ```
-  -h, --help   help for netcheck
+  -c, --count int     number of pings (default 3)
+  -h, --help          help for tcping
+  -4, --ipv4          ipv4
+  -6, --ipv6          ipv6
+  -t, --timeout int   time interval between pings in seconds  (default 3)
 ```
 
 ### Options inherited from parent commands
