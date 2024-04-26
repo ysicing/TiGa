@@ -31,7 +31,7 @@ func ChinaRouteCommand(f factory.Factory) *cobra.Command {
 			t1 := time.Now()
 			f.GetLog().Info("正在测试三网回程路由")
 			ipinfo := myip.NewIPInfoIO().IP()
-			f.GetLog().Infof("国家: %s 城市: %s 服务商: %s", color.SGreen(ipinfo.Country), color.SGreen(ipinfo.City), color.SGreen(ipinfo.Org))
+			f.GetLog().Infof("国家或地区: %s 城市: %s 服务商: %s", color.SGreen(ipinfo.Country), color.SGreen(ipinfo.City), color.SGreen(ipinfo.Org))
 
 			for i := range chinaroute.ChinaIPS {
 				go chinaroute.ChinaTrace(c, i)
