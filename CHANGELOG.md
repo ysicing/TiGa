@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.3.13 (2024-04-26)
+
+ * [17e853b](https://github.com/ysicing/tiga/commit/17e853bc1cdf02f2d2a45999a7f1580ae824cef2) feat: add TcpingCommand and flags for IPv4, IPv6, count, and timeout
+ * [9a29626](https://github.com/ysicing/tiga/commit/9a29626ac9a9fcbc1161012a5be904c2ea6314e3) build(deps): bump tailscale.com from 1.64.1 to 1.64.2
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.3.12 (2024-04-19)
 
  * [d2a1214](https://github.com/ysicing/tiga/commit/d2a1214cc9f6e00982c43f4c7cf7afb79908466b) build(deps): bump github.com/miekg/dns from 1.1.58 to 1.1.59
