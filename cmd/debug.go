@@ -10,7 +10,6 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ergoapi/util/zos"
 	"github.com/spf13/cobra"
 	"github.com/ysicing/tiga/cmd/debug"
 	"github.com/ysicing/tiga/cmd/xray"
@@ -29,9 +28,9 @@ func newCmdDebug(f factory.Factory) *cobra.Command {
 	debugCmd.AddCommand(debug.GOpsCommand(f))
 	debugCmd.AddCommand(debug.NetCheckCommand(f))
 	debugCmd.AddCommand(debug.IPMMDBCommand(f))
-	if zos.IsLinux() {
-		debugCmd.AddCommand(debug.ChinaRouteCommand(f))
-	}
+	debugCmd.AddCommand(debug.TcpingCommand(f))
+	debugCmd.AddCommand(debug.ChinaRouteCommand(f))
+
 	// Deprecated commands
 	xray := xray.NewCmdXray(f)
 	xray.Deprecated = "please use xray"
