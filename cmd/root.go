@@ -108,7 +108,7 @@ func NewRootCmd(f factory.Factory) *cobra.Command {
 		Use:           "tiga",
 		SilenceUsage:  true,
 		SilenceErrors: true,
-		Short:         "Tiga is a cli tool for senior restart engineer",
+		Short:         "Personal devops assistant",
 		PersistentPreRunE: func(cobraCmd *cobra.Command, args []string) error {
 			if cobraCmd.Annotations != nil {
 				return nil
@@ -124,7 +124,8 @@ func NewRootCmd(f factory.Factory) *cobra.Command {
 			return nil
 		},
 		Run: func(cmd *cobra.Command, args []string) {
-			common.ShowLogo()
+			// TODO: 暂时隐藏, 后续有更好的选择，再加上
+			// common.ShowLogo()
 			cmd.Help()
 		},
 	}

@@ -98,6 +98,8 @@ tasks:
 
   local:
     desc: build local for test
+    aliases:
+      - build
     deps:
       - gomod
       - generate
