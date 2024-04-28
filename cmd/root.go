@@ -12,14 +12,11 @@ import (
 	"strings"
 
 	"github.com/ergoapi/util/excmd"
-	"github.com/ergoapi/util/zos"
 	mcobra "github.com/muesli/mango-cobra"
 	"github.com/muesli/roff"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/ysicing/tiga/cmd/flags"
-	"github.com/ysicing/tiga/cmd/nnr"
-	"github.com/ysicing/tiga/cmd/xray"
 	"github.com/ysicing/tiga/common"
 	"github.com/ysicing/tiga/pkg/factory"
 	"github.com/ysicing/tiga/pkg/log"
@@ -63,16 +60,8 @@ func BuildRoot(f factory.Factory) *cobra.Command {
 	rootCmd.AddCommand(NewCmdPlugin())
 	rootCmd.AddCommand(newCmdDebug(f))
 	rootCmd.AddCommand(newCmdSystem(f))
-
-	if zos.IsLinux() {
-		rootCmd.AddCommand(newCmdApp(f))
-		rootCmd.AddCommand(newCmdRepo(f))
-	}
-
-	if zos.IsUnix() {
-		rootCmd.AddCommand(xray.NewCmdXray(f))
-		rootCmd.AddCommand(nnr.NewCmdNNR(f))
-	}
+	rootCmd.AddCommand(newCmdRepo(f))
+	rootCmd.AddCommand(newCmdFake(f))
 
 	rootCmd.AddCommand(newManCmd())
 

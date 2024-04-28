@@ -12,7 +12,6 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/ysicing/tiga/cmd/debug"
-	"github.com/ysicing/tiga/cmd/xray"
 	"github.com/ysicing/tiga/pkg/factory"
 )
 
@@ -30,10 +29,5 @@ func newCmdDebug(f factory.Factory) *cobra.Command {
 	debugCmd.AddCommand(debug.IPMMDBCommand(f))
 	debugCmd.AddCommand(debug.TcpingCommand(f))
 	debugCmd.AddCommand(debug.ChinaRouteCommand(f))
-
-	// Deprecated commands
-	xray := xray.NewCmdXray(f)
-	xray.Deprecated = "please use xray"
-	debugCmd.AddCommand(xray)
 	return debugCmd
 }
