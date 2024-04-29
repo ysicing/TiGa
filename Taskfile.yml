@@ -35,6 +35,7 @@ vars:
 
 tasks:
   gencopyright:
+    desc: generate copyright
     cmds:
       - go install github.com/google/addlicense@latest
       - hack/scripts/gencopyright.sh
@@ -55,27 +56,33 @@ tasks:
       - go mod tidy
 
   gofmt:
+    desc: gofmt code
     cmds:
       - go install golang.org/x/tools/cmd/goimports@latest
       - gofmt -s -w .
       - goimports -w .
 
   golint:
+    desc: golint code
     cmds:
       - go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
       - golangci-lint run -v ./...
 
   lint:
+    desc: lint code
+    deps:
+      - generate
     cmds:
-      - task: gofmt
       - task: golint
+      - task: gofmt
+
 
   fmt:
+    desc: full fmt code
     cmds:
       - task: gomod
       - task: gencopyright
-      - task: gofmt
-      - task: golint
+      - task: lint
 
   generate:
     desc: generate code
@@ -110,17 +117,20 @@ tasks:
     #   - test -f {{.BUILD_DIR}}/tiga_{{.GOOS}}_{{.GOARCH}}
 
   clean:
-    desc: Clean Up Build Cache Files
+    desc: clean up build cache files
     cmds:
       - rm -rf _output
       - rm -rf dist
 
   snapshot:
-    desc: Build Snapshot
+    desc: build snapshot
+    aliases:
+      - release
     cmds:
       - task: clean
       - go install github.com/goreleaser/goreleaser@latest
       - goreleaser release --snapshot --clean --skip-publish
+
   default:
     cmds:
       - task: clean
