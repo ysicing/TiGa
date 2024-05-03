@@ -12,7 +12,7 @@ require (
 	github.com/cheggaaa/pb/v3 v3.1.5
 	github.com/cockroachdb/errors v1.11.1
 	github.com/containerd/continuity v0.4.3
-	github.com/ergoapi/util v0.6.5
+	github.com/ergoapi/util v0.7.0
 	github.com/go-ping/ping v1.1.0
 	github.com/gofrs/flock v0.8.1
 	github.com/google/gops v0.3.28
@@ -84,7 +84,7 @@ require (
 	github.com/go-openapi/swag v0.22.7 // indirect
 	github.com/go-task/slim-sprig v0.0.0-20230315185526-52ccab3ef572 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
-	github.com/golang-module/carbon/v2 v2.3.10 // indirect
+	github.com/golang-module/carbon/v2 v2.3.12 // indirect
 	github.com/golang/protobuf v1.5.4 // indirect
 	github.com/google/btree v1.1.2 // indirect
 	github.com/google/gnostic-models v0.6.9-0.20230804172637-c7be7c783f49 // indirect
