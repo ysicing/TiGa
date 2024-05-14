@@ -19,7 +19,7 @@ require (
 	github.com/gosuri/uitable v0.0.4
 	github.com/imroc/req/v3 v3.43.4
 	github.com/inconshreveable/go-update v0.0.0-20160112193335-8152e7eb6ccf
-	github.com/jackpal/gateway v1.0.14
+	github.com/jackpal/gateway v1.0.15
 	github.com/k0kubun/go-ansi v0.0.0-20180517002512-3bf9e2903213
 	github.com/loft-sh/utils v0.0.21
 	github.com/manifoldco/promptui v0.9.0
