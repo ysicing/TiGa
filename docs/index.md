@@ -9,7 +9,7 @@
 
 ## Introduction
 
-TiGA is a devops toolset, including a set of tools for daily development and operation and maintenance.
+TiGA is a devops assistant, including a set of tools for daily development and operation and maintenance.
 
 ## Install
 

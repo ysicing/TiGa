@@ -1,5 +1,26 @@
 # Changelog
 
+## v0.3.15 (2024-05-19)
+
+ * [3dfaaba](https://github.com/ysicing/tiga/commit/3dfaaba00ca421eac6195c1eb3406cd0a01b761e) feat: update dependencies and fix bug in mmdb.go
+ * [6b13dca](https://github.com/ysicing/tiga/commit/6b13dca374af4a73d3bb3fa5b4a0c66983e32b45) build(deps): bump github.com/imroc/req/v3 from 3.43.4 to 3.43.5
+ * [24a1cb6](https://github.com/ysicing/tiga/commit/24a1cb6ca0f11ee8978b5d9dafa5db8765de330e) build(deps): bump google.golang.org/grpc from 1.63.2 to 1.64.0
+ * [1a5420c](https://github.com/ysicing/tiga/commit/1a5420c0d3c742c6f58feda005d16a383940864f) build(deps): bump github.com/ergoapi/util from 0.7.0 to 0.7.4
+ * [241d2b5](https://github.com/ysicing/tiga/commit/241d2b5551fca5234101894c0cbd83bc65a46356) build(deps): bump github.com/jackpal/gateway from 1.0.14 to 1.0.15
+ * [3f165c2](https://github.com/ysicing/tiga/commit/3f165c2e0e5537b43309daf9e2ac6aa5bc578227) build(deps): bump tailscale.com from 1.66.0 to 1.66.1
+ * [26a780b](https://github.com/ysicing/tiga/commit/26a780bb847474bc1eda1b92ee92d7f8b8364167) build(deps): bump github.com/imroc/req/v3 from 3.43.3 to 3.43.4
+ * [c1a6c5e](https://github.com/ysicing/tiga/commit/c1a6c5e611b03b42a3d7bc2e560b9b3fdcd24dc8) build(deps): bump tailscale.com from 1.64.2 to 1.66.0
+ * [2bfc1eb](https://github.com/ysicing/tiga/commit/2bfc1ebbe16440ff07967d507b112ea92508da81) build(deps): bump golang.org/x/net from 0.24.0 to 0.25.0
+ * [4949195](https://github.com/ysicing/tiga/commit/49491957ccb1e9d509f570d8089671f72187db70) build(deps): bump go.etcd.io/bbolt from 1.3.9 to 1.3.10
+ * [b3f8eca](https://github.com/ysicing/tiga/commit/b3f8ecae049bd1e6a69a25f150488bb4b489c853) build(deps): bump github.com/ergoapi/util from 0.6.5 to 0.7.0
+ * [62e579e](https://github.com/ysicing/tiga/commit/62e579ecadfe62169cb2e8e2eea3cee14390e3e8) build(deps): bump github.com/shirou/gopsutil/v3 from 3.24.3 to 3.24.4
+ * [30493ee](https://github.com/ysicing/tiga/commit/30493ee4106b00ea9dd68bd7c845656a3ed62495) feat: remove deprecated xray command and add fake tools
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.3.14 (2024-04-27)
 
  * [4068529](https://github.com/ysicing/tiga/commit/406852983df0e1e1c094aa7ebffe368b884f176a) build(deps): bump github.com/xtls/xray-core from 1.8.10 to 1.8.11
