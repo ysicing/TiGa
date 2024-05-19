@@ -24,8 +24,13 @@ func IPMMDBCommand(f factory.Factory) *cobra.Command {
 			return ipdb.InitMMDB()
 		},
 		Run: func(cmd *cobra.Command, args []string) {
+			var err error
 			if len(ip) == 0 {
-				ip, _ = exnet.OutboundIPv2()
+				ip, err = exnet.OutboundIPv2()
+				if err != nil {
+					logpkg.Warnf("get outbound ip failed: %s", err.Error())
+					return
+				}
 				if len(ip) == 0 {
 					logpkg.Warnf("ip is empty")
 					return
@@ -35,7 +40,7 @@ func IPMMDBCommand(f factory.Factory) *cobra.Command {
 				logpkg.Infof("China ip %s", color.SGreen(ip))
 				return
 			}
-			logpkg.Infof("Global ip %s", color.SBlue(ip))
+			logpkg.Infof("Global ip %s, Code %s", color.SBlue(ip), color.SBlue(ipdb.MatchGlobal(ip)))
 		},
 	}
 	cmd.Flags().StringVar(&ip, "ip", "", "ip")

@@ -37,18 +37,22 @@ func downLoadMMDB(path string) error {
 func InitMMDB() error {
 	logpkg := log.GetInstance()
 	dbfile := common.GetDefaultMMDB()
-	if file, err := os.Stat(dbfile); os.IsNotExist(err) {
-		logpkg.Debugf("mmdb file not exist, downloading...")
-		if err := downLoadMMDB(dbfile); err != nil {
-			return err
-		}
-		logpkg.Info("mmdb file download success")
-	} else {
-		if time.Since(file.ModTime()) > 7*24*time.Hour {
-			logpkg.Debugf("mmdb file expired 7d, downloading...")
-			_ = os.Remove(dbfile)
+	file, err := os.Stat(dbfile)
+	if err != nil {
+		if os.IsNotExist(err) {
+			logpkg.Debugf("mmdb file not exist, downloading...")
+			if err := downLoadMMDB(dbfile); err != nil {
+				return err
+			}
+			logpkg.Info("mmdb file download success")
 			return InitMMDB()
 		}
+		return err
+	}
+	if time.Since(file.ModTime()) > 24*time.Hour {
+		logpkg.Debugf("mmdb file expired 1d, downloading...")
+		_ = os.Remove(dbfile)
+		return InitMMDB()
 	}
 	if !Verify() {
 		logpkg.Warn("mmdb invalid, remove and download")
@@ -105,6 +109,18 @@ func MatchCN(src string) bool {
 	}
 	record, _ := Instance().Country(ip)
 	return strings.EqualFold(record.Country.IsoCode, "CN")
+}
+
+func MatchGlobal(src string) string {
+	ip := net.ParseIP(src)
+	if ip == nil {
+		return "unknown"
+	}
+	if ip.IsPrivate() || ip.IsLoopback() {
+		return "private"
+	}
+	record, _ := Instance().Country(ip)
+	return record.Country.IsoCode
 }
 
 // ValidateIP 验证IP
