@@ -10,7 +10,7 @@ require (
 	github.com/Masterminds/semver/v3 v3.2.1
 	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d
 	github.com/cheggaaa/pb/v3 v3.1.5
-	github.com/cockroachdb/errors v1.11.2
+	github.com/cockroachdb/errors v1.11.3
 	github.com/containerd/continuity v0.4.3
 	github.com/ergoapi/util v0.7.5
 	github.com/go-ping/ping v1.1.0
@@ -75,7 +75,7 @@ require (
 	github.com/exponent-io/jsonpath v0.0.0-20151013193312-d6023ce2651d // indirect
 	github.com/fatih/color v1.16.0 // indirect
 	github.com/fxamacker/cbor/v2 v2.6.0 // indirect
-	github.com/getsentry/sentry-go v0.25.0 // indirect
+	github.com/getsentry/sentry-go v0.27.0 // indirect
 	github.com/go-errors/errors v1.4.2 // indirect
 	github.com/go-logr/logr v1.4.1 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
