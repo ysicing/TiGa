@@ -48,7 +48,7 @@ jobs:
           task linux
           ./_output/tiga_linux_amd64 version
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v5
+        uses: goreleaser/goreleaser-action@v6
         with:
           version: latest
           args: release --snapshot --clean --skip-publish
