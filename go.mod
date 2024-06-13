@@ -47,7 +47,7 @@ require (
 	k8s.io/apimachinery v0.30.1
 	k8s.io/kubectl v0.30.0
 	sigs.k8s.io/yaml v1.4.0
-	tailscale.com v1.66.4
+	tailscale.com v1.68.0
 )
 
 require (
@@ -67,7 +67,7 @@ require (
 	github.com/cockroachdb/logtags v0.0.0-20230118201751-21c54148d20b // indirect
 	github.com/cockroachdb/redact v1.1.5 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.3 // indirect
-	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/dblohm7/wingoes v0.0.0-20240119213807-a09d6be7affa // indirect
 	github.com/docker/go-connections v0.5.0 // indirect
 	github.com/emicklei/go-restful/v3 v3.11.2 // indirect
@@ -135,7 +135,7 @@ require (
 	github.com/peterbourgon/diskv v2.0.1+incompatible // indirect
 	github.com/pires/go-proxyproto v0.7.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
-	github.com/pmezard/go-difflib v1.0.0 // indirect
+	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/power-devops/perfstat v0.0.0-20240221224432-82ca36839d55 // indirect
 	github.com/quic-go/qpack v0.4.0 // indirect
 	github.com/quic-go/quic-go v0.44.0 // indirect
