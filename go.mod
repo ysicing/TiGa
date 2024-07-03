@@ -14,7 +14,7 @@ require (
 	github.com/containerd/continuity v0.4.3
 	github.com/ergoapi/util v0.7.5
 	github.com/go-ping/ping v1.1.0
-	github.com/gofrs/flock v0.11.0
+	github.com/gofrs/flock v0.12.0
 	github.com/google/gops v0.3.28
 	github.com/gosuri/uitable v0.0.4
 	github.com/imroc/req/v3 v3.43.7
