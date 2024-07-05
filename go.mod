@@ -12,7 +12,7 @@ require (
 	github.com/cheggaaa/pb/v3 v3.1.5
 	github.com/cockroachdb/errors v1.11.3
 	github.com/containerd/continuity v0.4.3
-	github.com/ergoapi/util v0.7.5
+	github.com/ergoapi/util v0.7.6
 	github.com/go-ping/ping v1.1.0
 	github.com/gofrs/flock v0.12.0
 	github.com/google/gops v0.3.28
@@ -44,15 +44,15 @@ require (
 	golang.org/x/net v0.26.0
 	google.golang.org/grpc v1.65.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
-	k8s.io/apimachinery v0.30.1
+	k8s.io/apimachinery v0.30.2
 	k8s.io/kubectl v0.30.0
 	sigs.k8s.io/yaml v1.4.0
-	tailscale.com v1.68.1
+	tailscale.com v1.68.2
 )
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
-	github.com/6tail/lunar-go v1.3.11 // indirect
+	github.com/6tail/lunar-go v1.3.13 // indirect
 	github.com/Azure/go-ansiterm v0.0.0-20230124172434-306776ec8161 // indirect
 	github.com/MakeNowJust/heredoc v1.0.0 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
@@ -175,9 +175,9 @@ require (
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	k8s.io/api v0.30.1 // indirect
+	k8s.io/api v0.30.2 // indirect
 	k8s.io/cli-runtime v0.30.0 // indirect
-	k8s.io/client-go v0.30.1 // indirect
+	k8s.io/client-go v0.30.2 // indirect
 	k8s.io/component-base v0.30.0 // indirect
 	k8s.io/klog/v2 v2.120.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20240228011516-70dd3763d340 // indirect
