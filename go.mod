@@ -47,7 +47,7 @@ require (
 	k8s.io/apimachinery v0.30.2
 	k8s.io/kubectl v0.30.0
 	sigs.k8s.io/yaml v1.4.0
-	tailscale.com v1.68.2
+	tailscale.com v1.70.0
 )
 
 require (
@@ -77,6 +77,7 @@ require (
 	github.com/fxamacker/cbor/v2 v2.6.0 // indirect
 	github.com/getsentry/sentry-go v0.27.0 // indirect
 	github.com/go-errors/errors v1.4.2 // indirect
+	github.com/go-json-experiment/json v0.0.0-20231102232822-2e55bd4e08b0 // indirect
 	github.com/go-logr/logr v1.4.1 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
 	github.com/go-openapi/jsonpointer v0.20.2 // indirect
