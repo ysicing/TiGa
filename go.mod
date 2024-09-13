@@ -1,8 +1,7 @@
 module github.com/ysicing/tiga
 
 go 1.22.0
-
-toolchain go1.22.1
+toolchain go1.23.1
 
 require (
 	github.com/AlecAivazis/survey/v2 v2.3.7
@@ -47,7 +46,7 @@ require (
 	k8s.io/apimachinery v0.31.0
 	k8s.io/kubectl v0.30.0
 	sigs.k8s.io/yaml v1.4.0
-	tailscale.com v1.72.1
+	tailscale.com v1.74.0
 )
 
 require (
