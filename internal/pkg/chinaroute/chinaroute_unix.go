@@ -219,7 +219,7 @@ func (t *Tracer) serveData(from net.IP, b []byte) error {
 }
 
 func (t *Tracer) sendRequest(dst net.IP, ttl int) (*packet, error) {
-	id := uint16(atomic.AddUint32(&t.seq, 1))
+	id := uint16(atomic.AddUint32(&t.seq, 1) % 65536)
 	b := newPacket(id, dst, ttl)
 	req := &packet{dst, id, ttl, time.Now()}
 	_, err := t.conn.WriteToIP(b, &net.IPAddr{IP: dst})

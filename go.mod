@@ -96,7 +96,6 @@ require (
 	github.com/google/pprof v0.0.0-20240910150728-a0b0bb1d4134 // indirect
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510 // indirect
 	github.com/google/uuid v1.6.0 // indirect
-	github.com/gorilla/websocket v1.5.3 // indirect
 	github.com/gregjones/httpcache v0.0.0-20180305231024-9cad4c3443a7 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
@@ -129,7 +128,6 @@ require (
 	github.com/muesli/mango v0.1.0 // indirect
 	github.com/muesli/mango-pflag v0.1.0 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
-	github.com/mxk/go-flowrate v0.0.0-20140419014527-cca7078d478f // indirect
 	github.com/onsi/ginkgo/v2 v2.20.2 // indirect
 	github.com/oschwald/maxminddb-golang v1.13.0 // indirect
 	github.com/otiai10/copy v1.14.0 // indirect
@@ -190,4 +188,11 @@ require (
 )
 
 // github.com/ergoapi/util => github.com/ergoapi/util v0.5.3
-replace github.com/loft-sh/utils => github.com/loft-sh/utils v0.0.21
+replace (
+	github.com/loft-sh/utils => github.com/loft-sh/utils v0.0.21
+	k8s.io/api => k8s.io/api v0.28.14
+	k8s.io/apimachinery => k8s.io/apimachinery v0.28.14
+	k8s.io/cli-runtime => k8s.io/cli-runtime v0.28.14
+	k8s.io/client-go => k8s.io/client-go v0.28.14
+	k8s.io/kubectl => k8s.io/kubectl v0.28.14
+)

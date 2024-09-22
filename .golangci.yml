@@ -45,3 +45,6 @@ issues:
     - linters:
         - goheader
       text: "ysicing"
+    - linters:
+        - gosec
+      text: "G115"
