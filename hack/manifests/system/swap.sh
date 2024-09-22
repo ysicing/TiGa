@@ -3,18 +3,19 @@
 set -e
 
 swapsize=${1:-"1G"}
+swappath=${2:-"/swapfile"}
 
 # apt install util-linux
-fallocate -l $swapsize /swapfile
+fallocate -l "$swapsize" "$swappath"
 
-chmod 600 /swapfile
+chmod 600 "$swappath"
 
-mkswap /swapfile
+mkswap "$swappath"
 
-swapon /swapfile
+swapon "$swappath"
 
 cp -a /etc/fstab /etc/fstab.bak
 
-echo "/swapfile swap swap defaults 0 0" >> /etc/fstab
+echo "$swappath swap swap defaults 0 0" >> /etc/fstab
 
 free -m

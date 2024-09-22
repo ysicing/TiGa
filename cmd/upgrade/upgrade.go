@@ -56,7 +56,7 @@ func (up option) DoTiGA() {
 		return
 	}
 	up.log.Infof("downloading version %s...", lastVersion)
-	assetURL := fmt.Sprintf("https://github.com/ysicing/tiga/releases/download/%s/tiga_%s_%s", lastVersion, runtime.GOOS, runtime.GOARCH)
+	assetURL := fmt.Sprintf("https://gh.dev.438250.xyz/https://github.com/ysicing/tiga/releases/download/%s/tiga_%s_%s", lastVersion, runtime.GOOS, runtime.GOARCH)
 
 	if lastType == "api" {
 		// TODO 暂不支持

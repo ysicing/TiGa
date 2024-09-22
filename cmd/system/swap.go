@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/ergoapi/util/file"
 	"github.com/shirou/gopsutil/v3/mem"
 	"github.com/spf13/cobra"
 	"github.com/ysicing/tiga/common"
@@ -19,6 +20,7 @@ import (
 
 func swapCommand(f factory.Factory) *cobra.Command {
 	var swapSize int64
+	var swapPath string
 	debianCmd := &cobra.Command{
 		Use:     "swap",
 		Short:   "swap op",
@@ -36,13 +38,18 @@ func swapCommand(f factory.Factory) *cobra.Command {
 			if swapSize < 0 {
 				swapSize = 1
 			}
+			if len(swapPath) > 0 && file.CheckFileExists(swapPath) {
+				f.GetLog().Infof("swap file %s already exists", swapPath)
+				os.Exit(0)
+			}
 			return nil
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
 			f.GetLog().Infof("not found swap, will create swap %dG", swapSize)
-			return exec.CommandRun("bash", "-c", common.GetCustomScriptFile("hack/manifests/system/swap.sh"), fmt.Sprintf("%d", swapSize))
+			return exec.CommandRun("bash", "-c", common.GetCustomScriptFile("hack/manifests/system/swap.sh"), fmt.Sprintf("%d", swapSize), swapPath)
 		},
 	}
-	debianCmd.Flags().Int64VarP(&swapSize, "size", "s", 1, "swap size 1GB")
+	debianCmd.Flags().Int64VarP(&swapSize, "size", "s", 1, "swap size")
+	debianCmd.Flags().StringVarP(&swapPath, "path", "p", "/swapfile", "swap path")
 	return debianCmd
 }

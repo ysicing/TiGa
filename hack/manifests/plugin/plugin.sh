@@ -10,6 +10,6 @@ binurl=$3
 )
 
 # download binary
-wget -O $home/.qc/bin/tiga-$name $binurl
+wget -O $home/.tiga/bin/tiga-$name $binurl
 
-chmod +x $home/.qc/bin/tiga-$name
+chmod +x $home/.tiga/bin/tiga-$name
