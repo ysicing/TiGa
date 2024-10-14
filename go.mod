@@ -1,9 +1,6 @@
 module github.com/ysicing/tiga
 
 go 1.23
-
-toolchain go1.23.1
-
 require (
 	github.com/AlecAivazis/survey/v2 v2.3.7
 	github.com/BeidouCloudPlatform/go-bindata/v4 v4.1.0
@@ -47,7 +44,7 @@ require (
 	k8s.io/apimachinery v0.31.1
 	k8s.io/kubectl v0.30.0
 	sigs.k8s.io/yaml v1.4.0
-	tailscale.com v1.74.1
+	tailscale.com v1.76.0
 )
 
 require (
@@ -107,7 +104,7 @@ require (
 	github.com/jsimonetti/rtnetlink v1.4.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
-	github.com/kisielk/errcheck v1.6.3 // indirect
+	github.com/kisielk/errcheck v1.7.0 // indirect
 	github.com/klauspost/compress v1.17.9 // indirect
 	github.com/kr/pretty v0.3.1 // indirect
 	github.com/kr/text v0.2.0 // indirect
