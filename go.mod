@@ -1,6 +1,8 @@
 module github.com/ysicing/tiga
 
 go 1.23
+toolchain go1.23.2
+
 require (
 	github.com/AlecAivazis/survey/v2 v2.3.7
 	github.com/BeidouCloudPlatform/go-bindata/v4 v4.1.0
@@ -14,7 +16,7 @@ require (
 	github.com/gofrs/flock v0.12.1
 	github.com/google/gops v0.3.28
 	github.com/gosuri/uitable v0.0.4
-	github.com/imroc/req/v3 v3.47.0
+	github.com/imroc/req/v3 v3.48.0
 	github.com/inconshreveable/go-update v0.0.0-20160112193335-8152e7eb6ccf
 	github.com/jackpal/gateway v1.0.15
 	github.com/k0kubun/go-ansi v0.0.0-20180517002512-3bf9e2903213
