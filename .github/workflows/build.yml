@@ -2,7 +2,7 @@ name: build local for test
 
 env:
   # Common versions
-  GO_VERSION: '1.21'
+  GO_VERSION: '1.23'
   TZ: Asia/Shanghai
 
 permissions:
@@ -51,4 +51,4 @@ jobs:
         uses: goreleaser/goreleaser-action@v6
         with:
           version: latest
-          args: release --snapshot --clean --skip-publish
+          args: release --snapshot --clean
