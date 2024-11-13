@@ -17,6 +17,7 @@ var (
 var (
 	ValidPrefixes = []string{"tiga", "ergo", "ysicing"}
 	ListOutput    string
+	ListSort      string
 	SavePath      string
 )
 

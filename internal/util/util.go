@@ -9,6 +9,7 @@ package util
 import (
 	"fmt"
 	"math"
+	"time"
 )
 
 func Traffic(k int64, f ...float64) string {
@@ -27,4 +28,11 @@ func Traffic(k int64, f ...float64) string {
 		tunit = "TB"
 	}
 	return fmt.Sprintf("%.2f%v", t, tunit)
+}
+
+func PtrFormatTime(t *time.Time, layout string) string {
+	if t == nil {
+		return ""
+	}
+	return t.Format(layout)
 }

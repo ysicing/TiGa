@@ -1,6 +1,7 @@
 module github.com/ysicing/tiga
 
-go 1.23
+go 1.23.1
+
 toolchain go1.23.2
 
 require (
@@ -9,6 +10,7 @@ require (
 	github.com/Masterminds/semver/v3 v3.3.0
 	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d
 	github.com/cheggaaa/pb/v3 v3.1.5
+	github.com/cloudflare/cloudflare-go v0.109.0
 	github.com/cockroachdb/errors v1.11.3
 	github.com/containerd/continuity v0.4.4
 	github.com/ergoapi/util v0.7.8
@@ -66,7 +68,7 @@ require (
 	github.com/cockroachdb/logtags v0.0.0-20230118201751-21c54148d20b // indirect
 	github.com/cockroachdb/redact v1.1.5 // indirect
 	github.com/containerd/log v0.1.0 // indirect
-	github.com/cpuguy83/go-md2man/v2 v2.0.4 // indirect
+	github.com/cpuguy83/go-md2man/v2 v2.0.5 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/dblohm7/wingoes v0.0.0-20240119213807-a09d6be7affa // indirect
 	github.com/docker/go-connections v0.5.0 // indirect
@@ -84,6 +86,7 @@ require (
 	github.com/go-openapi/jsonreference v0.20.4 // indirect
 	github.com/go-openapi/swag v0.22.7 // indirect
 	github.com/go-task/slim-sprig/v3 v3.0.0 // indirect
+	github.com/goccy/go-json v0.10.3 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang-module/carbon/v2 v2.3.12 // indirect
 	github.com/golang/protobuf v1.5.4 // indirect
@@ -165,7 +168,7 @@ require (
 	golang.org/x/sys v0.27.0 // indirect
 	golang.org/x/term v0.26.0 // indirect
 	golang.org/x/text v0.20.0 // indirect
-	golang.org/x/time v0.6.0 // indirect
+	golang.org/x/time v0.8.0 // indirect
 	golang.org/x/tools v0.25.0 // indirect
 	golang.zx2c4.com/wireguard/windows v0.5.3 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240903143218-8af14fe29dc1 // indirect

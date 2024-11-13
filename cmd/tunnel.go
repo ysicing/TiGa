@@ -14,7 +14,7 @@ import (
 
 func newCmdCfdTunnel(f factory.Factory) *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "tunnel",
+		Use:   "cft",
 		Short: "manage cfd tunnel",
 		Args:  cobra.NoArgs,
 	}
