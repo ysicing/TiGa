@@ -1,5 +1,79 @@
 # Changelog
 
+## v0.3.16 (2024-11-13)
+
+ * [460326d](https://github.com/ysicing/tiga/commit/460326d3b5b15ae7941663f241928a7d0a839924) feat: add cft list
+ * [ba4fc9b](https://github.com/ysicing/tiga/commit/ba4fc9b03742a7a627ff77d2157d90bf00eb38af) chore(deps): bump golang.org/x/net from 0.30.0 to 0.31.0
+ * [d3c3554](https://github.com/ysicing/tiga/commit/d3c35548671362f3bf1b357c8bc32396d6fc861c) chore(deps): bump google.golang.org/grpc from 1.67.1 to 1.68.0
+ * [2742a84](https://github.com/ysicing/tiga/commit/2742a8490d0bd90dbfe3a1cf9a1b72d2f666fa44) chore(deps): bump tailscale.com from 1.76.3 to 1.76.6
+ * [bdc8e87](https://github.com/ysicing/tiga/commit/bdc8e876ab4daacb2f14a0cfe4d0de0917c7413f) chore(deps): bump github.com/containerd/continuity from 0.4.3 to 0.4.4
+ * [1f2ece8](https://github.com/ysicing/tiga/commit/1f2ece804074381b08f818a6ad6e5bfddb1b2051) chore(deps): bump tailscale.com from 1.76.1 to 1.76.3
+ * [201d2a1](https://github.com/ysicing/tiga/commit/201d2a1508de991c1499f9a443a0bf25d00039e9) chore(deps): bump tailscale.com from 1.76.0 to 1.76.1
+ * [35065aa](https://github.com/ysicing/tiga/commit/35065aa164153f243decc777f34342da109f8026) chore(deps): bump github.com/imroc/req/v3 from 3.47.0 to 3.48.0
+ * [232c861](https://github.com/ysicing/tiga/commit/232c8611d8e68647875ec6bdd921e6a252de6a26) chore(deps): bump tailscale.com from 1.74.1 to 1.76.0
+ * [8e51b1a](https://github.com/ysicing/tiga/commit/8e51b1ada886b126cbde579110f240871f0f9da0) chore(deps): bump github.com/imroc/req/v3 from 3.46.1 to 3.47.0
+ * [3ea2eba](https://github.com/ysicing/tiga/commit/3ea2eba1a90f25cb68e00a0666ab2850851f6b9b) chore(deps): bump golang.org/x/net from 0.29.0 to 0.30.0
+ * [15872a7](https://github.com/ysicing/tiga/commit/15872a7551b7eeca8a0803fc37191d3785b45ca7) chore(deps): bump google.golang.org/grpc from 1.67.0 to 1.67.1
+ * [899e065](https://github.com/ysicing/tiga/commit/899e0650e194d4b8a22f04808aaf2a96643f5b72) chore(deps): bump github.com/imroc/req/v3 from 3.46.0 to 3.46.1
+ * [7fc22c7](https://github.com/ysicing/tiga/commit/7fc22c7a078897b6d61985a6d78b26ccdec33953) * [fix] fix build
+ * [ad784fe](https://github.com/ysicing/tiga/commit/ad784fe7d1bed54bfeddff846a94c14e5de0887b) + feat: add r3m install
+ * [c4cf1e5](https://github.com/ysicing/tiga/commit/c4cf1e5d63814e24d8c716e46fa5cca99deadaf4) chore(deps): bump google.golang.org/grpc from 1.66.2 to 1.67.0
+ * [23e4e43](https://github.com/ysicing/tiga/commit/23e4e432d4abf97af81783b0972cd65d29d51279) chore(deps): bump tailscale.com from 1.74.0 to 1.74.1
+ * [b18118a](https://github.com/ysicing/tiga/commit/b18118a49c592b7d6d920862d707a55d4280a4db) chore(deps): bump github.com/ergoapi/util from 0.7.7 to 0.7.8
+ * [ef7556c](https://github.com/ysicing/tiga/commit/ef7556c78824780e4b7e3dedab3cd23718a4d573) chore(deps): bump google.golang.org/grpc from 1.66.1 to 1.66.2
+ * [a46e951](https://github.com/ysicing/tiga/commit/a46e95191f426ea889799bb8ffb852d5a26e2344) chore(deps): bump tailscale.com from 1.72.1 to 1.74.0
+ * [1fd7773](https://github.com/ysicing/tiga/commit/1fd777303b7a90ecd868302d4d2061f58797eeba) chore(deps): bump github.com/imroc/req/v3 from 3.45.0 to 3.46.0
+ * [9c14a5e](https://github.com/ysicing/tiga/commit/9c14a5e26c8f12dbdae95785824278765089622f) chore(deps): bump github.com/imroc/req/v3 from 3.44.0 to 3.45.0
+ * [88a7097](https://github.com/ysicing/tiga/commit/88a7097802970bf81d6c161dd1fbf831e8359adf) chore(deps): bump google.golang.org/grpc from 1.66.0 to 1.66.1
+ * [003ba26](https://github.com/ysicing/tiga/commit/003ba263969fb4423366d6f031d91fba4db7617b) chore(deps): bump github.com/imroc/req/v3 from 3.43.7 to 3.44.0
+ * [5c53c79](https://github.com/ysicing/tiga/commit/5c53c79bc60debbef11cf3f46c5a9f3310f8ba9f) chore(deps): bump golang.org/x/net from 0.28.0 to 0.29.0
+ * [7804161](https://github.com/ysicing/tiga/commit/7804161c910cfee9ca3d23bc6154408d255331ee) feat(cfd): add cfd tunnels
+ * [85bbe99](https://github.com/ysicing/tiga/commit/85bbe99ad27b8b0899ad826efd833d50473df5d2) chore(deps): bump peter-evans/create-pull-request from 6 to 7
+ * [3dc5e63](https://github.com/ysicing/tiga/commit/3dc5e633e50814e91aadf0b5b5db14c06b3ee9fb) chore(deps): bump github.com/xtls/xray-core from 1.8.23 to 1.8.24
+ * [529443f](https://github.com/ysicing/tiga/commit/529443f31fbd4e3d4e26432d0b0a354669228897) chore(deps): bump google.golang.org/grpc from 1.65.0 to 1.66.0
+ * [a7ebc51](https://github.com/ysicing/tiga/commit/a7ebc51a052545887d6e5662f11f1d8dbb66f02b) chore(deps): bump github.com/Masterminds/semver/v3 from 3.2.1 to 3.3.0
+ * [d2cff94](https://github.com/ysicing/tiga/commit/d2cff9496d4e8a6fdc1ca2bb9788b94f3136c75d) chore(deps): bump tailscale.com from 1.72.0 to 1.72.1
+ * [db9f802](https://github.com/ysicing/tiga/commit/db9f802464f2788ce6367563e8615df35c8dd43b) chore(deps): bump go.etcd.io/bbolt from 1.3.10 to 1.3.11
+ * [e840862](https://github.com/ysicing/tiga/commit/e840862746b8729b9155b8aa79fdd4d3c91f4cab) chore(deps): bump tailscale.com from 1.70.0 to 1.72.0
+ * [49f9bc4](https://github.com/ysicing/tiga/commit/49f9bc4dd83de3543ce70afb91f8269b86a4473e) chore(deps): bump github.com/ergoapi/util from 0.7.6 to 0.7.7
+ * [420a539](https://github.com/ysicing/tiga/commit/420a53903ba61edf8c220793c8dabb8f3cf2ad48) chore(deps): bump github.com/miekg/dns from 1.1.61 to 1.1.62
+ * [42211cb](https://github.com/ysicing/tiga/commit/42211cb6d89f3e9cd054c3e03f8fbd831486fd22) chore(deps): bump golang.org/x/net from 0.27.0 to 0.28.0
+ * [7f1e2e9](https://github.com/ysicing/tiga/commit/7f1e2e9d9ce4f229337e4ce53239fcfce899b389) chore(deps): bump github.com/xtls/xray-core from 1.8.21 to 1.8.23
+ * [3414ae4](https://github.com/ysicing/tiga/commit/3414ae4abbd0be3a85ce99b061228e550285ffbd) chore(deps): bump github.com/gofrs/flock from 0.12.0 to 0.12.1
+ * [b03d893](https://github.com/ysicing/tiga/commit/b03d8931ba7a3779ef4b381b6549fbf97f781672) chore(deps): bump github.com/xtls/xray-core from 1.8.19 to 1.8.21
+ * [86cea8f](https://github.com/ysicing/tiga/commit/86cea8f7650a899eda7f5389d12ccc0bd0477aaa) chore(deps): bump tailscale.com from 1.68.2 to 1.70.0
+ * [0bf47cf](https://github.com/ysicing/tiga/commit/0bf47cf892f120b15b8be7e84edd182aa75e6a55) chore(deps): bump github.com/xtls/xray-core from 1.8.18 to 1.8.19
+ * [d351ac4](https://github.com/ysicing/tiga/commit/d351ac403ac04032a6f9a19d3e040d807e0e3b1f) chore(deps): bump github.com/xtls/xray-core from 1.8.17 to 1.8.18
+ * [aec8e09](https://github.com/ysicing/tiga/commit/aec8e097e0d75cb31afd266290ea7a4a55cda168) chore(deps): bump github.com/xtls/xray-core from 1.8.16 to 1.8.17
+ * [eb369d4](https://github.com/ysicing/tiga/commit/eb369d4863df3b55405a4629bc91f75c85143869) chore(deps): bump golang.org/x/net from 0.26.0 to 0.27.0
+ * [05f70f0](https://github.com/ysicing/tiga/commit/05f70f055947990e967cb4f09107a3332b18094d) chore(deps): bump github.com/ergoapi/util from 0.7.5 to 0.7.6
+ * [4fb497f](https://github.com/ysicing/tiga/commit/4fb497f464bf8e1a5fd63c0ed29ebdce3d4a901c) chore(deps): bump google.golang.org/grpc from 1.64.0 to 1.65.0
+ * [3dd7ff8](https://github.com/ysicing/tiga/commit/3dd7ff86f21a0304de96b229a26a32da0740ec78) chore(deps): bump github.com/gofrs/flock from 0.11.0 to 0.12.0
+ * [8a18961](https://github.com/ysicing/tiga/commit/8a189615342f17473113800d3885d1e5a539b0f2) chore(deps): bump github.com/gofrs/flock from 0.9.0 to 0.11.0
+ * [a953ecd](https://github.com/ysicing/tiga/commit/a953ecd04b9209fa33d23ba71c3ce671c0d83c5f) chore(deps): bump github.com/gofrs/flock from 0.8.1 to 0.9.0
+ * [f4b5ed5](https://github.com/ysicing/tiga/commit/f4b5ed5912d689691e9625d3e6926f6128769da9) chore(deps): bump github.com/xtls/xray-core from 1.8.15 to 1.8.16
+ * [d7f8ed7](https://github.com/ysicing/tiga/commit/d7f8ed70b18d3e578d9654503cdc0e2711edb752) chore(deps): bump tailscale.com from 1.68.0 to 1.68.1
+ * [11e3443](https://github.com/ysicing/tiga/commit/11e3443a35e86445b88fba044fb2b95076bd2c63) chore(deps): bump github.com/xtls/xray-core from 1.8.13 to 1.8.15
+ * [03f547f](https://github.com/ysicing/tiga/commit/03f547ff96675360a1b060dfcf6d5050d8322b1b) chore(deps): bump github.com/spf13/cobra from 1.8.0 to 1.8.1
+ * [d18f2df](https://github.com/ysicing/tiga/commit/d18f2df7dec9043d15f5f910a6bb7b979084016b) chore(deps): bump github.com/miekg/dns from 1.1.59 to 1.1.61
+ * [ed42fad](https://github.com/ysicing/tiga/commit/ed42fad6c7e182a27aefc3381c9934094af184f6) chore(deps): bump tailscale.com from 1.66.4 to 1.68.0
+ * [615d7f3](https://github.com/ysicing/tiga/commit/615d7f3a446956506add51ddb8fb524610b0cdc2) chore(deps): bump golang.org/x/net from 0.25.0 to 0.26.0
+ * [ff2af25](https://github.com/ysicing/tiga/commit/ff2af25a1136d69b705189ba82717f69784b0fe1) chore(deps): bump goreleaser/goreleaser-action from 5 to 6
+ * [496cb28](https://github.com/ysicing/tiga/commit/496cb281f957988ea52c01676977e3f8005970a8) chore(deps): bump github.com/oschwald/geoip2-golang from 1.9.0 to 1.11.0
+ * [6fb4917](https://github.com/ysicing/tiga/commit/6fb49178134c02b4721c9717befae0fa414d138e) chore(deps): bump github.com/shirou/gopsutil/v3 from 3.24.4 to 3.24.5
+ * [03c3f50](https://github.com/ysicing/tiga/commit/03c3f5012a2ac18365cb599b2174ad9f5ff0e410) chore(deps): bump github.com/imroc/req/v3 from 3.43.6 to 3.43.7
+ * [a6a1ad2](https://github.com/ysicing/tiga/commit/a6a1ad25d28440e883cc9c562a7192d29ecd7521) chore(deps): bump github.com/cockroachdb/errors from 1.11.2 to 1.11.3
+ * [884907b](https://github.com/ysicing/tiga/commit/884907b9b0b94cefdb99edba5ef0c1471f9194ad) chore(deps): bump github.com/imroc/req/v3 from 3.43.5 to 3.43.6
+ * [fcc84c6](https://github.com/ysicing/tiga/commit/fcc84c65f946095116ca57017c0ff07093819f6f) chore(deps): bump github.com/cockroachdb/errors from 1.11.1 to 1.11.2
+ * [34f62a5](https://github.com/ysicing/tiga/commit/34f62a58217c3b28b9229963985bd86cb86eb0db) chore(deps): bump github.com/xtls/xray-core from 1.8.12 to 1.8.13
+ * [b94690d](https://github.com/ysicing/tiga/commit/b94690d5aa790ae8abc5513764a5177931bcf6f2) --- updated-dependencies: - dependency-name: github.com/xtls/xray-core   dependency-type: direct:production   update-type: version-update:semver-patch ...
+ * [f3c5d63](https://github.com/ysicing/tiga/commit/f3c5d637e10fdb47650337dfabf569f245a72e90) --- updated-dependencies: - dependency-name: tailscale.com   dependency-type: direct:production   update-type: version-update:semver-patch ...
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.3.15 (2024-05-19)
 
  * [3dfaaba](https://github.com/ysicing/tiga/commit/3dfaaba00ca421eac6195c1eb3406cd0a01b761e) feat: update dependencies and fix bug in mmdb.go
