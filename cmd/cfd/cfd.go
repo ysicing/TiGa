@@ -15,6 +15,7 @@ import (
 	"github.com/cockroachdb/errors"
 	"github.com/ergoapi/util/output"
 	"github.com/gosuri/uitable"
+	"github.com/manifoldco/promptui"
 
 	"github.com/spf13/cobra"
 	"github.com/ysicing/tiga/common"
@@ -110,6 +111,78 @@ func TunnelListCmd(f factory.Factory) *cobra.Command {
 				table.AddRow("ID", "Name", "TunnelType", "Status", "Connections", "CreatedAt", "ConnsActiveAt", "ConnInactiveAt")
 				for _, p := range cfd {
 					table.AddRow(p.ID, p.Name, p.TunnelType, p.Status, len(p.Connections), p.CreatedAt.Format("2006-01-02"), util.PtrFormatTime(p.ConnsActiveAt, "2006-01-02 15:04:05"), util.PtrFormatTime(p.ConnInactiveAt, "2006-01-02 15:04:05"))
+				}
+				return output.EncodeTable(os.Stdout, table)
+			}
+		},
+	}
+	cmd.Flags().StringVarP(&common.ListOutput, "output", "o", "",
+		"prints the output in the specified format. Allowed values: table, json, yaml (default table)")
+	return cmd
+}
+
+func IngressCmd(f factory.Factory) *cobra.Command {
+	cmd := &cobra.Command{
+		Use:   "ingress",
+		Short: "tunnel ingress",
+	}
+	cmd.AddCommand(IngressListCmd(f))
+	return cmd
+}
+
+func IngressListCmd(f factory.Factory) *cobra.Command {
+	cmd := &cobra.Command{
+		Use:     "list",
+		Short:   "tunnel ingress list",
+		PreRunE: precheckCfApi,
+		RunE: func(_ *cobra.Command, _ []string) error {
+			authtype := "email"
+			token := fmt.Sprintf("%s:%s", cfmail, cfkey)
+			if len(cftoken) > 0 {
+				authtype = "token"
+				token = cftoken
+			}
+			client, err := cft.NewClient(authtype, token)
+			if err != nil {
+				return fmt.Errorf("create cloudflare client error: %w", err)
+			}
+			cfd, err := client.ListTunnels()
+			if err != nil {
+				return fmt.Errorf("list cloudflare tunnels error: %w", err)
+			}
+			selectTunnel := promptui.Select{
+				Label: "select tunnel",
+				Items: cfd,
+				Templates: &promptui.SelectTemplates{
+					Label:    "{{ . }}?",
+					Active:   "\U0001F449 {{ .ID | cyan }} ({{ .Name }})",
+					Inactive: "  {{ .ID | cyan }}",
+					Selected: "\U0001F389 {{ .ID | red | cyan }} ({{ .Name }})",
+				},
+				Size: 5,
+			}
+			it, _, _ := selectTunnel.Run()
+			f.GetLog().Infof("select tunnel: %s(%s)", cfd[it].ID, cfd[it].Name)
+			tunnelIngress, err := client.GetTunnelConfig(cfd[it].ID)
+			if err != nil {
+				return fmt.Errorf("get cloudflare tunnel ingress error: %w", err)
+			}
+			switch strings.ToLower(common.ListOutput) {
+			case "json":
+				return output.EncodeJSON(os.Stdout, tunnelIngress.Config.Ingress)
+			case "yaml":
+				return output.EncodeYAML(os.Stdout, tunnelIngress.Config.Ingress)
+			default:
+				table := uitable.New()
+				table.AddRow("Hostname", "Service", "Path")
+				for _, p := range tunnelIngress.Config.Ingress {
+					if p.Hostname == "" {
+						p.Hostname = "default"
+					}
+					if p.Path == "" {
+						p.Path = "/"
+					}
+					table.AddRow(p.Hostname, p.Service, p.Path)
 				}
 				return output.EncodeTable(os.Stdout, table)
 			}

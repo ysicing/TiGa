@@ -86,3 +86,16 @@ func (c *Client) GetTunnel(tunnelID string) (*cloudflare.Tunnel, error) {
 	}
 	return &tunnel, nil
 }
+
+func (c *Client) GetTunnelConfig(tunnelID string) (*cloudflare.TunnelConfigurationResult, error) {
+	ctx := context.Background()
+	config, err := c.client.GetTunnelConfiguration(
+		ctx,
+		cloudflare.AccountIdentifier(c.userID),
+		tunnelID,
+	)
+	if err != nil {
+		return nil, err
+	}
+	return &config, nil
+}

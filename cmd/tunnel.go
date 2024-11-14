@@ -19,5 +19,6 @@ func newCmdCfdTunnel(f factory.Factory) *cobra.Command {
 		Args:  cobra.NoArgs,
 	}
 	cmd.AddCommand(cfd.TunnelListCmd(f))
+	cmd.AddCommand(cfd.IngressCmd(f))
 	return cmd
 }
