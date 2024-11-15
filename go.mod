@@ -12,7 +12,7 @@ require (
 	github.com/cheggaaa/pb/v3 v3.1.5
 	github.com/cloudflare/cloudflare-go v0.109.0
 	github.com/cockroachdb/errors v1.11.3
-	github.com/containerd/continuity v0.4.4
+	github.com/containerd/continuity v0.4.5
 	github.com/ergoapi/util v0.7.8
 	github.com/go-ping/ping v1.1.0
 	github.com/gofrs/flock v0.12.1
