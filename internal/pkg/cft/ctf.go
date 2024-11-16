@@ -99,3 +99,54 @@ func (c *Client) GetTunnelConfig(tunnelID string) (*cloudflare.TunnelConfigurati
 	}
 	return &config, nil
 }
+
+func (c *Client) AddTunnelIngress(tunnelID string, hostname string, service string) error {
+	ctx := context.Background()
+	ingress := cloudflare.UnvalidatedIngressRule{
+		Hostname: hostname,
+		Service:  service,
+	}
+	config := cloudflare.TunnelConfigurationParams{
+		TunnelID: tunnelID,
+		Config: cloudflare.TunnelConfiguration{
+			Ingress: []cloudflare.UnvalidatedIngressRule{ingress},
+		},
+	}
+
+	if _, err := c.client.UpdateTunnelConfiguration(
+		ctx,
+		cloudflare.AccountIdentifier(c.userID),
+		config,
+	); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (c *Client) DeleteTunnelIngress(tunnelID string, hostname string) error {
+	ctx := context.Background()
+	currentConfig, err := c.GetTunnelConfig(tunnelID)
+	if err != nil {
+		return err
+	}
+	var newIngress []cloudflare.UnvalidatedIngressRule
+	for _, rule := range currentConfig.Config.Ingress {
+		if rule.Hostname != hostname {
+			newIngress = append(newIngress, rule)
+		}
+	}
+	config := cloudflare.TunnelConfigurationParams{
+		TunnelID: tunnelID,
+		Config: cloudflare.TunnelConfiguration{
+			Ingress: newIngress,
+		},
+	}
+	if _, err := c.client.UpdateTunnelConfiguration(
+		ctx,
+		cloudflare.AccountIdentifier(c.userID),
+		config,
+	); err != nil {
+		return err
+	}
+	return nil
+}

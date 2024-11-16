@@ -127,6 +127,8 @@ func IngressCmd(f factory.Factory) *cobra.Command {
 		Short: "tunnel ingress",
 	}
 	cmd.AddCommand(IngressListCmd(f))
+	cmd.AddCommand(IngressDeleteCmd(f))
+	cmd.AddCommand(IngressAddCmd(f))
 	return cmd
 }
 
@@ -190,5 +192,126 @@ func IngressListCmd(f factory.Factory) *cobra.Command {
 	}
 	cmd.Flags().StringVarP(&common.ListOutput, "output", "o", "",
 		"prints the output in the specified format. Allowed values: table, json, yaml (default table)")
+	return cmd
+}
+
+func IngressDeleteCmd(f factory.Factory) *cobra.Command {
+	var tunnelID, hostname string
+	cmd := &cobra.Command{
+		Use:     "delete",
+		Short:   "tunnel delete ingress",
+		PreRunE: precheckCfApi,
+		RunE: func(_ *cobra.Command, _ []string) error {
+			authtype := "email"
+			token := fmt.Sprintf("%s:%s", cfmail, cfkey)
+			if len(cftoken) > 0 {
+				authtype = "token"
+				token = cftoken
+			}
+			client, err := cft.NewClient(authtype, token)
+			if err != nil {
+				return fmt.Errorf("create cloudflare client error: %w", err)
+			}
+
+			// 如果没有指定tunnelID，则列出所有tunnel供选择
+			if tunnelID == "" {
+				cfd, err := client.ListTunnels()
+				if err != nil {
+					return fmt.Errorf("list cloudflare tunnels error: %w", err)
+				}
+				selectTunnel := promptui.Select{
+					Label: "select tunnel",
+					Items: cfd,
+					Templates: &promptui.SelectTemplates{
+						Label:    "{{ . }}?",
+						Active:   "\U0001F449 {{ .ID | cyan }} ({{ .Name }})",
+						Inactive: "  {{ .ID | cyan }}",
+						Selected: "\U0001F389 {{ .ID | red | cyan }} ({{ .Name }})",
+					},
+					Size: 5,
+				}
+				it, _, err := selectTunnel.Run()
+				if err != nil {
+					return fmt.Errorf("select tunnel error: %w", err)
+				}
+				tunnelID = cfd[it].ID
+				f.GetLog().Infof("select tunnel: %s(%s)", cfd[it].ID, cfd[it].Name)
+			}
+
+			// 获取指定tunnel的配置
+			tunnelIngress, err := client.GetTunnelConfig(tunnelID)
+			if err != nil {
+				return fmt.Errorf("get cloudflare tunnel ingress error: %w", err)
+			}
+			for _, p := range tunnelIngress.Config.Ingress {
+				if p.Hostname == hostname {
+					return client.DeleteTunnelIngress(tunnelID, hostname)
+				}
+			}
+			f.GetLog().Infof("ingress %s not found", hostname)
+			return nil
+		},
+	}
+	cmd.Flags().StringVarP(&tunnelID, "tunnel", "t", "", "tunnel ID")
+	cmd.Flags().StringVarP(&hostname, "hostname", "n", "", "hostname")
+	return cmd
+}
+
+func IngressAddCmd(f factory.Factory) *cobra.Command {
+	var tunnelID, hostname, service string
+	cmd := &cobra.Command{
+		Use:     "add",
+		Short:   "tunnel add ingress",
+		PreRunE: precheckCfApi,
+		RunE: func(_ *cobra.Command, _ []string) error {
+			authtype := "email"
+			token := fmt.Sprintf("%s:%s", cfmail, cfkey)
+			if len(cftoken) > 0 {
+				authtype = "token"
+				token = cftoken
+			}
+			client, err := cft.NewClient(authtype, token)
+			if err != nil {
+				return fmt.Errorf("create cloudflare client error: %w", err)
+			}
+			// 如果没有指定tunnelID,列出所有tunnel供选择
+			if tunnelID == "" {
+				cfd, err := client.ListTunnels()
+				if err != nil {
+					return fmt.Errorf("list cloudflare tunnels error: %w", err)
+				}
+				selectTunnel := promptui.Select{
+					Label: "select tunnel",
+					Items: cfd,
+					Templates: &promptui.SelectTemplates{
+						Label:    "{{ . }}?",
+						Active:   "\U0001F449 {{ .ID | cyan }} ({{ .Name }})",
+						Inactive: "  {{ .ID | cyan }}",
+						Selected: "\U0001F389 {{ .ID | red | cyan }} ({{ .Name }})",
+					},
+					Size: 5,
+				}
+				it, _, err := selectTunnel.Run()
+				if err != nil {
+					return fmt.Errorf("select tunnel error: %w", err)
+				}
+				tunnelID = cfd[it].ID
+				f.GetLog().Infof("select tunnel: %s(%s)", cfd[it].ID, cfd[it].Name)
+			}
+			tunnelIngress, err := client.GetTunnelConfig(tunnelID)
+			if err != nil {
+				return fmt.Errorf("get cloudflare tunnel ingress error: %w", err)
+			}
+			for _, ingress := range tunnelIngress.Config.Ingress {
+				if ingress.Hostname == hostname {
+					return fmt.Errorf("hostname %s already exists", hostname)
+				}
+			}
+			return client.AddTunnelIngress(tunnelID, hostname, service)
+		},
+	}
+	cmd.Flags().StringVarP(&tunnelID, "tunnel", "t", "", "tunnel ID")
+	cmd.Flags().StringVarP(&hostname, "hostname", "n", "", "hostname to route traffic from")
+	cmd.Flags().StringVarP(&service, "service", "s", "", "service URL to route traffic to (e.g. http://localhost:8000)")
 	return cmd
 }
