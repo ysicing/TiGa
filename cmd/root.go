@@ -63,7 +63,7 @@ func BuildRoot(f factory.Factory) *cobra.Command {
 	rootCmd.AddCommand(newCmdRepo(f))
 	rootCmd.AddCommand(newCmdFake(f))
 	rootCmd.AddCommand(newCmdCfdTunnel(f))
-
+	rootCmd.AddCommand(newCmdNas(f))
 	rootCmd.AddCommand(newManCmd())
 
 	args := os.Args
