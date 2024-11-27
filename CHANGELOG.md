@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.3.17 (2024-11-27)
+
+ * [0d8db60](https://github.com/ysicing/tiga/commit/0d8db6030abd81965de78625bd5085f0107f1c96) feat: add network tools commands for NAS and Wake-on-LAN
+ * [b78ca36](https://github.com/ysicing/tiga/commit/b78ca36a5f2730f9ac36de5b5a664fbdaea526b5) chore(deps): bump github.com/cloudflare/cloudflare-go
+ * [4f09f45](https://github.com/ysicing/tiga/commit/4f09f456ab39361e52276fabc7be12ff0b5c9f2d) chore(deps): bump github.com/Masterminds/semver/v3 from 3.3.0 to 3.3.1
+ * [c13d0c8](https://github.com/ysicing/tiga/commit/c13d0c85d41f1c7f7b8aac57a8f864bbaa6091fb) * add cft
+ * [ef08f11](https://github.com/ysicing/tiga/commit/ef08f11e4a8d73db67c01a2272954cab1c61a7f2) chore(deps): bump github.com/containerd/continuity from 0.4.4 to 0.4.5
+ * [ae728cb](https://github.com/ysicing/tiga/commit/ae728cbcdf72e955bdede88b57aa31b7b4025980) feat: list tunnel ingress
+
+### Contributors
+
+ * dependabot[bot]
+ * ysicing
+
 ## v0.3.16 (2024-11-13)
 
  * [460326d](https://github.com/ysicing/tiga/commit/460326d3b5b15ae7941663f241928a7d0a839924) feat: add cft list
