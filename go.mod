@@ -10,7 +10,7 @@ require (
 	github.com/Masterminds/semver/v3 v3.3.1
 	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d
 	github.com/cheggaaa/pb/v3 v3.1.5
-	github.com/cloudflare/cloudflare-go v0.110.0
+	github.com/cloudflare/cloudflare-go v0.111.0
 	github.com/cockroachdb/errors v1.11.3
 	github.com/containerd/continuity v0.4.5
 	github.com/ergoapi/util v0.7.8
@@ -148,7 +148,7 @@ require (
 	github.com/sagernet/sing v0.4.1 // indirect
 	github.com/shoenig/go-m1cpu v0.1.6 // indirect
 	github.com/stretchr/objx v0.5.2 // indirect
-	github.com/stretchr/testify v1.9.0 // indirect
+	github.com/stretchr/testify v1.10.0 // indirect
 	github.com/tailscale/go-winio v0.0.0-20231025203758-c4f33415bf55 // indirect
 	github.com/tklauser/go-sysconf v0.3.14 // indirect
 	github.com/tklauser/numcpus v0.8.0 // indirect
