@@ -43,7 +43,7 @@ require (
 	github.com/xtls/xray-core v1.8.24
 	go.etcd.io/bbolt v1.3.11
 	golang.org/x/net v0.31.0
-	google.golang.org/grpc v1.68.0
+	google.golang.org/grpc v1.68.1
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	k8s.io/apimachinery v0.31.1
 	k8s.io/kubectl v0.30.0
