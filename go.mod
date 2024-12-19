@@ -42,7 +42,7 @@ require (
 	github.com/xlab/treeprint v1.2.0
 	github.com/xtls/xray-core v1.8.24
 	go.etcd.io/bbolt v1.3.11
-	golang.org/x/net v0.32.0
+	golang.org/x/net v0.33.0
 	google.golang.org/grpc v1.69.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	k8s.io/apimachinery v0.31.1
