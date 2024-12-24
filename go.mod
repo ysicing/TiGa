@@ -13,7 +13,7 @@ require (
 	github.com/cloudflare/cloudflare-go v0.112.0
 	github.com/cockroachdb/errors v1.11.3
 	github.com/containerd/continuity v0.4.5
-	github.com/ergoapi/util v0.7.9
+	github.com/ergoapi/util v0.7.11
 	github.com/go-ping/ping v1.2.0
 	github.com/gofrs/flock v0.12.1
 	github.com/google/gops v0.3.28
@@ -91,7 +91,7 @@ require (
 	github.com/golang-module/carbon/v2 v2.4.1 // indirect
 	github.com/golang/protobuf v1.5.4 // indirect
 	github.com/google/btree v1.1.2 // indirect
-	github.com/google/gnostic-models v0.6.9-0.20230804172637-c7be7c783f49 // indirect
+	github.com/google/gnostic-models v0.6.9 // indirect
 	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/google/go-github/v65 v65.0.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
@@ -181,8 +181,8 @@ require (
 	k8s.io/client-go v0.32.0 // indirect
 	k8s.io/component-base v0.30.0 // indirect
 	k8s.io/klog/v2 v2.130.1 // indirect
-	k8s.io/kube-openapi v0.0.0-20241105132330-32ad38e42d3f // indirect
-	k8s.io/utils v0.0.0-20241104100929-3ea5e8cea738 // indirect
+	k8s.io/kube-openapi v0.0.0-20241212222426-2c72e554b1e7 // indirect
+	k8s.io/utils v0.0.0-20241210054802-24370beab758 // indirect
 	rsc.io/goversion v1.2.0 // indirect
 	sigs.k8s.io/json v0.0.0-20241010143419-9aa6b5e7a4b3 // indirect
 	sigs.k8s.io/kustomize/api v0.13.5-0.20230601165947-6ce0bf390ce3 // indirect
