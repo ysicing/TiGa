@@ -13,7 +13,7 @@ require (
 	github.com/cloudflare/cloudflare-go v0.112.0
 	github.com/cockroachdb/errors v1.11.3
 	github.com/containerd/continuity v0.4.5
-	github.com/ergoapi/util v0.7.11
+	github.com/ergoapi/util v0.7.12
 	github.com/go-ping/ping v1.2.0
 	github.com/gofrs/flock v0.12.1
 	github.com/google/gops v0.3.28
@@ -172,7 +172,7 @@ require (
 	golang.org/x/tools v0.28.0 // indirect
 	golang.zx2c4.com/wireguard/windows v0.5.3 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20241015192408-796eee8c2d53 // indirect
-	google.golang.org/protobuf v1.35.2 // indirect
+	google.golang.org/protobuf v1.36.1 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
