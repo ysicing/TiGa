@@ -26,7 +26,7 @@ require (
 	github.com/manifoldco/promptui v0.9.0
 	github.com/mattn/go-isatty v0.0.20
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
-	github.com/miekg/dns v1.1.62
+	github.com/miekg/dns v1.1.63
 	github.com/moby/term v0.5.2
 	github.com/morikuni/aec v1.0.0
 	github.com/muesli/mango-cobra v1.2.0
